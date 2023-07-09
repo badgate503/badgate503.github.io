@@ -8,7 +8,7 @@ subtitle: ''
 description: ''
 keywords:
 author: Liu404
-language: en
+language: zh-cn
 timezone: ''
 
 # URL
@@ -97,7 +97,7 @@ ignore:
 # Extensions
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
-theme: newtheme
+theme: fluid
 
 # Deployment
 ## Docs: https://hexo.io/docs/one-command-deployment
