@@ -1,6 +1,7 @@
 ---
 title: 浙江大学
 date: 2023-07-09 17:11:17
+index_img: /img/zjub.jpg
 banner_img: /img/zjub.jpg
 tags: 浙江大学
 ---
