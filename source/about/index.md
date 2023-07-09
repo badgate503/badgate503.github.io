@@ -3,3 +3,8 @@ title: about
 layout: about
 date: 2023-07-09 15:34:47
 ---
+C / Python / 8086汇编
+
+Unity / Android / 微信小程序  
+
+Ps / Pr / Au / HTML / CSS
