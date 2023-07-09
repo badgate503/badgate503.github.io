@@ -1,7 +1,7 @@
 ---
 title: Hello, world.
 date: 2023-07-09 12:07:17
-tags:
+tags: 好玩
 ---
 
 # 第一篇文章
