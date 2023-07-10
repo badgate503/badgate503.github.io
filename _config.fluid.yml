@@ -798,7 +798,10 @@ valine:
   recordIP: false
   serverURLs: ''
   emojiCDN: emojicdn.elk.sh
-  emojiMaps:
+  emojiMaps: {
+        "laugh": "/😋",
+        // ... More Expressions.
+  } 
   enableQQ: false
 
 # Waline
