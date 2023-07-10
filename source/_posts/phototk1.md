@@ -16,12 +16,38 @@ categories: 日常
 摄影器材为Canon M50 Mark I 和一个15-45mm变焦镜头。摄影技术一般，后期有较多调整。
 ## 摄影
 ![](/img/IMG_5331.png)
+
+<center>通衢路，路牌</center>
+
 ![](/img/IMG_5333.png)
+
+<center>椒江大剧院，正在举办活动</center>
+
 ![](/img/IMG_5337.png)
+
+<center>南新椒街，我高中时常走的路</center>
+
 ![](/img/IMG_5338.png)
+
+<center>看起来与“新”不沾边</center>
+
 ![](/img/IMG_5342.png)
+
+<center>一江山岛登陆战纪念馆门前的轰炸机</center>
+
 ![](/img/IMG_5350.png)
+
+<center>江滨公园，Monument</center>
+
 ![](/img/IMG_5347.png)
+
+<center>海运大楼，造型独特</center>
+
 ![](/img/IMG_5359.png)
+
+<center>沧海巷北侧，青春饭店（已废弃）</center>
+
 ![](/img/IMG_5360.png)
+
+<center>市立医院</center>
 
