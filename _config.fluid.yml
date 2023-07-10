@@ -797,9 +797,9 @@ valine:
   highlight: false
   recordIP: false
   serverURLs: ''
-  emojiCDN: emojicdn.elk.sh
+  emojiCDN: https://cdn.jsdelivr.net/gh/microlong666/tieba_mobile_emotions/
   emojiMaps: {
-        "laugh": "/😋",
+        "laugh": "image_emoticon25.png",
         // ... More Expressions.
   } 
   enableQQ: false
