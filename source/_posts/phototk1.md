@@ -15,5 +15,5 @@ categories: 日常
 
 摄影器材为Canon M50 Mark I 和一个15-45mm变焦镜头。摄影技术一般，后期有较多调整。
 ## 摄影
-{% asset_img /img/PHOTOS/IMG_5331.jpg This is an example image %}
+![](/img/PHOTOS/IMG_5331.jpg)
 
