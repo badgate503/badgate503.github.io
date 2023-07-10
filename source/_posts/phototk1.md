@@ -17,11 +17,11 @@ categories: 日常
 ## 摄影
 ![](/img/IMG_5331.png)
 ![](/img/IMG_5333.png)
-![](/img/IMG_5337.jpg)
-![](/img/IMG_5338.jpg)
-![](/img/IMG_5342.jpg)
-![](/img/IMG_5350.jpg)
-![](/img/IMG_5347.jpg)
-![](/img/IMG_5359.jpg)
-![](/img/IMG_5360.jpg)
+![](/img/IMG_5337.png)
+![](/img/IMG_5338.png)
+![](/img/IMG_5342.png)
+![](/img/IMG_5350.png)
+![](/img/IMG_5347.png)
+![](/img/IMG_5359.png)
+![](/img/IMG_5360.png)
 
