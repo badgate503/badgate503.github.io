@@ -1,8 +1,10 @@
 ---
 title: Z-Score 浙大人专属查分/通知软件
 date: 2023-07-09 22:36:17
+updated: 2023-07-10 09:55:12
 index_img: /img/idxzscore.png
-tags: 浙江大学
+categories: 技术
+tags: [浙江大学,Python,网页,程序]
 ---
 
 # Z-Score 浙大人专属查分/通知软件
