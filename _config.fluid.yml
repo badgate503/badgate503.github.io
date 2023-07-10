@@ -912,7 +912,6 @@ valine:
         "tieba122":"image_emoticon122.png",
         "tieba123":"image_emoticon123.png",
         "tieba124":"image_emoticon124.png"
-        // ... More Expressions.
   } 
   enableQQ: false
 
