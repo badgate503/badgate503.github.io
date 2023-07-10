@@ -21,7 +21,7 @@ $ git clone https://github.com/badgate503/z-score
 ### 从教务网获取数据
 若您是首次使用本程序，在登录成功后将自动从教务网加载一次成绩数据。在登录后，您可以使用 `/refresh` 指令从教务网更新成绩记录。同时，程序的自动更新功能默认开启，默认每隔30s从教务网刷新一次数据。您可以通过 `/config autoupdt switch` 来开启/关闭该功能。
 ### 配置自动通知
-本程序可通过WebHook功能向钉钉机器人发送成绩通知，在首次使用本程序时应当先申请钉钉机器人，通过  `/config notify webhook [url]` 指令设置WebHook链接，再使用 `/config notify switch` 指令开启通知功能，每次开启/关闭均会发送通知。程序每次刷新成绩时，若检测到有新记录，就会把课程的课程名、分数、绩点通过钉钉机器人发送给您。
+本程序可通过WebHook功能向钉钉机器人发送成绩通知，在首次使用本程序时应当先申请钉钉机器人获取WebHook链接，再通过  `/config notify webhook [url]` 指令设置WebHook链接。使用 `/config notify switch` 指令开启通知功能，每次开启/关闭均会发送通知。程序每次刷新成绩时，若检测到有新记录，就会把课程的课程名、分数、绩点信息通过钉钉机器人发送给您。
 ## 其余功能
 ### 均绩计算
 每次对成绩进行更新操作均会自动计算均绩。同时，您也可以通过 `/display all [semester]` 显示某个学期的均绩，例如，输入
@@ -38,7 +38,31 @@ $ git clone https://github.com/badgate503/z-score
 ┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
 ```
 ### 查看单门课程成绩
-输入 `/display detail [filter]` 指令，您可查看经 `filter` 条件筛选后的部分课程成绩。其中， `filter` 可以是学期信息，也可以是以下几种条件之一：`gpe X`, `gpg X`, `gpl X` 和 `contain X` 前三个分别是筛选绩点等于、高于、低于某个数 `X` 的记录，而最后一个则是筛选课程名称包含 `X` 的记录。
+输入 `/display detail [filter]` 指令，您可查看经 `filter` 条件筛选后的部分课程成绩。其中， `filter` 可以是学期信息，也可以是以下几种条件之一：
+| `filter` |含义|
+|:---:|:---:|
+| `gpe X` |绩点等于 `X` |
+| `gpl X` |绩点低于 `X` |
+| `gpg X` |绩点高于 `X` |
+| `contain X` |课程名含 `X` |
+## 代码分析
+### 网页自动化
+本程序使用 `Selenium` 插件实现网页自动化功能，用户在登录后，将自动执行网页自动化流程：
+```python
+web.find_element(By.XPATH, '//*[@id="username"]').send_keys(uname)
+web.find_element(By.XPATH, '//*[@id="password"]').send_keys(upwd, Keys.ENTER)
+```
+在浙江大学统一认证页面输入用户提供的账号与密码以尝试登录，由于登录成功后页面将会发生跳转，通过检测 `Url` 是否改变即可判断是否登录成功。登录成功后，将继续执行以下流程：
+```python
+web.find_element(By.XPATH, '//*[@id="Button1"]').click()
+web.find_element(By.XPATH, '//*[@id="xsmain_kscj.htm"]').click()
+web.find_element(By.XPATH, '//*[@class="iconcjcx"]/a').click()
+web.switch_to.window(web.window_handles[1])
+web.find_element(By.ID, 'Button2').click()
+```
+获取成绩页面。  
+![](/img/zscore10.png "成绩页面")
+
 
 
 
