@@ -25,7 +25,7 @@
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="http://example.com/img/idxzscore.png">
 <meta property="article:published_time" content="2023-07-09T22:36:17.000Z">
-<meta property="article:modified_time" content="2023-07-10T01:24:02.043Z">
+<meta property="article:modified_time" content="2023-07-10T01:50:56.147Z">
 <meta property="article:author" content="Liu404">
 <meta property="article:tag" content="浙江大学">
 <meta name="twitter:card" content="summary_large_image">
@@ -222,7 +222,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          1.9k 字
+          3.7k 字
         
       </span>
     
@@ -233,7 +233,7 @@
         
         
         
-          16 分钟
+          31 分钟
         
       </span>
     
@@ -275,10 +275,10 @@
             
               <div class="markdown-body">
                 
-                <h1 id="Z-Score-浙大人专属查分-x2F-通知软件"><a href="#Z-Score-浙大人专属查分-x2F-通知软件" class="headerlink" title="Z-Score 浙大人专属查分&#x2F;通知软件"></a>Z-Score 浙大人专属查分&#x2F;通知软件</h1><h2 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h2><p>查分，是三墩镇职校每位学生在期末周后喜闻乐见的娱乐活动。但是，钉钉工作台中“成绩查询”功能却常常因太多人同时访问而无法加载前端界面，令人无语凝噎。同时，在某门课程出分后不能立即接收通知，容易影响我们在钉钉群中发送“谢谢老师🌹🌹”的速度和首位度，进而严重破坏师生关系。  </p>
+                <h1 id="Z-Score-浙大人专属查分-x2F-通知软件"><a href="#Z-Score-浙大人专属查分-x2F-通知软件" class="headerlink" title="Z-Score 浙大人专属查分&#x2F;通知软件"></a>Z-Score 浙大人专属查分&#x2F;通知软件</h1><h2 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h2><p><img src="/img/zscore2.png" srcset="/img/loading.gif" lazyload><br>查分，是三墩镇职校每位学生在期末周后喜闻乐见的娱乐活动。但是，钉钉工作台中“成绩查询”功能却常常因太多人同时访问而无法加载前端界面，令人无语凝噎。同时，在某门课程出分后不能立即接收通知，容易影响我们在钉钉群中发送“谢谢老师🌹🌹”的速度和首位度，进而严重破坏师生关系。  </p>
 <h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><p>“<strong>Z-Score</strong>”致力于解决以上症（zhēng）结，只需通过简单的 </p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ git <span class="hljs-built_in">clone</span> https://github.com/badgate503/z-score<br></code></pre></td></tr></table></figure>
-<p>指令（可能对您的网络环境有特殊要求），我们即可将Z-Score部署到本地。接着，您既可以自行对 <code>Zscore.py</code> 进行编译，也可以直接运行 <code>dist\zscore.exe</code> 程序以启动Z-Score。</p>
+<p>指令（可能对您的网络环境有特殊要求），我们即可将Z-Score部署到本地。接着，您既可以自行对 <code>Zscore.py</code> 进行编译，也可以直接运行 <code>dist\zscore.exe</code> 程序以启动Z-Score。<br><img src="/img/zscore1.png" srcset="/img/loading.gif" lazyload></p>
 <h2 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h2><p>本程序仅适用于浙江大学本科生，您应有浙江大学教务网（ <a target="_blank" rel="noopener" href="http://jwbinfosys.zju.edu.cn/">http://jwbinfosys.zju.edu.cn/</a> ）的账号和密码。</p>
 <h3 id="登录"><a href="#登录" class="headerlink" title="登录"></a>登录</h3><p>请先输入 <code>/login</code> 指令进行登录，分别输入您的教务网账号和密码并进行联机验证，如果您选择”保存账号与密码”，您的账号与密码将会被保存在本地，并且此后打开软件无需再次输入账号密码。  </p>
 <h3 id="从教务网获取数据"><a href="#从教务网获取数据" class="headerlink" title="从教务网获取数据"></a>从教务网获取数据</h3><p>若您是首次使用本程序，在登录成功后将自动从教务网加载一次成绩数据。在登录后，您可以使用 <code>/refresh</code> 指令从教务网更新成绩记录。同时，程序的自动更新功能默认开启，默认每隔30s从教务网刷新一次数据。您可以通过 <code>/config autoupdt switch</code> 来开启&#x2F;关闭该功能。</p>
@@ -317,6 +317,15 @@
 <p>在浙江大学统一认证页面输入用户提供的账号与密码以尝试登录，由于登录成功后页面将会发生跳转，通过检测 <code>Url</code> 是否改变即可判断是否登录成功。登录成功后，将继续执行以下流程：</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs python">web.find_element(By.XPATH, <span class="hljs-string">&#x27;//*[@id=&quot;Button1&quot;]&#x27;</span>).click()<br>web.find_element(By.XPATH, <span class="hljs-string">&#x27;//*[@id=&quot;xsmain_kscj.htm&quot;]&#x27;</span>).click()<br>web.find_element(By.XPATH, <span class="hljs-string">&#x27;//*[@class=&quot;iconcjcx&quot;]/a&#x27;</span>).click()<br>web.switch_to.window(web.window_handles[<span class="hljs-number">1</span>])<br>web.find_element(By.ID, <span class="hljs-string">&#x27;Button2&#x27;</span>).click()<br></code></pre></td></tr></table></figure>
 <p>获取成绩页面。<br><img src="/img/zscore10.png" srcset="/img/loading.gif" lazyload title="成绩页面"></p>
+<h3 id="数据更新"><a href="#数据更新" class="headerlink" title="数据更新"></a>数据更新</h3><p>本程序采用一个字典数组储存包括课程代码、课程名、成绩、学分、绩点信息。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs python">dataList = &#123;&#125;<br>dataList[<span class="hljs-string">&#x27;serial&#x27;</span>] = []<br>dataList[<span class="hljs-string">&#x27;name&#x27;</span>] = []<br>dataList[<span class="hljs-string">&#x27;score&#x27;</span>] = []<br>dataList[<span class="hljs-string">&#x27;credit&#x27;</span>] = []<br>dataList[<span class="hljs-string">&#x27;grdpnt&#x27;</span>] = []<br></code></pre></td></tr></table></figure>
+<p>每次从教务网更新成绩时，会先利用网页自动化点击“在校学习成绩查询”按钮以刷新页面，再执行以下代码：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><code class="hljs python">table = web.find_element(By.ID, <span class="hljs-string">&quot;DataGrid1&quot;</span>)<br>rows = table.find_elements(By.TAG_NAME ,<span class="hljs-string">&quot;tr&quot;</span>)<br>dataList[<span class="hljs-string">&#x27;serial&#x27;</span>].clear()<br>dataList[<span class="hljs-string">&#x27;name&#x27;</span>].clear()<br>dataList[<span class="hljs-string">&#x27;score&#x27;</span>].clear()<br>dataList[<span class="hljs-string">&#x27;credit&#x27;</span>].clear()<br>dataList[<span class="hljs-string">&#x27;grdpnt&#x27;</span>].clear()<br><span class="hljs-keyword">for</span> row <span class="hljs-keyword">in</span> rows:<br>    <span class="hljs-keyword">if</span> isFirst:<br>        isFirst = <span class="hljs-literal">False</span><br>        <span class="hljs-keyword">continue</span><br>    cells = row.find_elements(By.TAG_NAME ,<span class="hljs-string">&quot;td&quot;</span>)<br>    <span class="hljs-keyword">if</span> cells[<span class="hljs-number">2</span>].text == <span class="hljs-string">&quot;弃修&quot;</span>:<br>        <span class="hljs-keyword">continue</span><br>    <span class="hljs-keyword">if</span>  orginScoreIndex.count(cells[<span class="hljs-number">0</span>].text) == <span class="hljs-number">0</span>:<br>        newScoreIndex.append(cells[<span class="hljs-number">0</span>].text)<br>    dataList[<span class="hljs-string">&#x27;serial&#x27;</span>].append(cells[<span class="hljs-number">0</span>].text)<br>    dataList[<span class="hljs-string">&#x27;name&#x27;</span>].append(cells[<span class="hljs-number">1</span>].text)<br>    dataList[<span class="hljs-string">&#x27;score&#x27;</span>].append(<span class="hljs-built_in">int</span>(cells[<span class="hljs-number">2</span>].text))<br>    dataList[<span class="hljs-string">&#x27;credit&#x27;</span>].append(<span class="hljs-built_in">float</span>(cells[<span class="hljs-number">3</span>].text))<br>    dataList[<span class="hljs-string">&#x27;grdpnt&#x27;</span>].append(<span class="hljs-built_in">float</span>(cells[<span class="hljs-number">4</span>].text))<br></code></pre></td></tr></table></figure>
+<p>其中，数组 <code>newScoreIndex</code> 记录了所有新记录的课程代码，布尔值 <code>isFirst</code> 将会抛弃表头内容。从代码中也可看出，程序将会自动跳过弃修课程，以免其以有碍观瞻的形式出现在成绩列表中。</p>
+<h3 id="WebHook"><a href="#WebHook" class="headerlink" title="WebHook"></a>WebHook</h3><p>通过以下代码，程序将向WebHook为 <code>uWebHook</code> 的钉钉机器人发送通知。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">def</span> <span class="hljs-title function_">sendNote</span>(<span class="hljs-params">text</span>):<br>    webhook = uWebHook<br>    header = &#123;<br>        <span class="hljs-string">&quot;Content-Type&quot;</span>: <span class="hljs-string">&quot;application/json&quot;</span>,<br>        <span class="hljs-string">&quot;Charset&quot;</span>: <span class="hljs-string">&quot;UTF-8&quot;</span><br>    &#125;<br>    message =&#123;<br>        <span class="hljs-string">&quot;msgtype&quot;</span>: <span class="hljs-string">&quot;markdown&quot;</span>,<br>        <span class="hljs-string">&quot;markdown&quot;</span>: &#123;<br>            <span class="hljs-string">&quot;title&quot;</span>:<span class="hljs-string">&quot;成绩通知&quot;</span>,<br>            <span class="hljs-string">&quot;text&quot;</span>: text<br>        &#125;,<br><br>        <span class="hljs-string">&quot;at&quot;</span>: &#123;<br><br>            <span class="hljs-string">&quot;isAtAll&quot;</span>: <span class="hljs-literal">True</span><br>        &#125;<br>    &#125;<br>    message_json = json.dumps(message)<br>    info = requests.post(url=webhook,data=message_json,headers=header)<br></code></pre></td></tr></table></figure>
+<p>其中， <code>text</code> 内容为markdown格式。</p>
+<h2 id="后记"><a href="#后记" class="headerlink" title="后记"></a>后记</h2><p>该程序是我本人第一个用Python写的程序，尽管先前从未写过Python，但利用之前学的C#、JS等，再查阅Runoob、CSDN等网站，我也仅花了一天时间完成该程序（很多时间在调整界面、颜色）。我不得不感叹：用别人造好的轮子是件美事。</p>
 
                 
               </div>
