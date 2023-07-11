@@ -79,7 +79,7 @@ jobs:
 ```
 保存后，可以看到 Github 页面的 Action 栏中出现了一个新的 Job，其完成后会显示
 ![](/img/instructsite3.png)  
-接着我们可以发现，储存库多了一个名为 `gh_pages` 的分支，这里面就储存着“编译完成”的网页文件，打开 Settings 栏，选择 Pages - Build and deployment 将 Branch 改为 `gh_pages` 等待片刻后打开 `https://[username].github.io` 即可查看网站。
+接着我们可以发现，储存库多了一个名为 `gh_pages` 的分支，这里面就储存着“编译完成”的网页文件，打开 Settings 栏，选择 Pages - Build and deployment 将 Branch 改为 `gh_pages`，打开 `https://[username].github.io` 即可查看网站。
 ### 网站操作：主题 / 写作
 #### 网站主题
 类似于 Steam 的创意工坊，Hexo 有着大量用户贡献的优质主题可供我们直接套用。可以在 Github 上搜索 `hexo theme` 寻找主题，使用 `git clone` 下载主题。  
@@ -95,3 +95,18 @@ hexo new [layout] name
 ```
 创建一篇新文章，他将被储存在 `/source/_post` 目录下，可以使用任何编辑器进行编辑。具体写作方式可查阅 [写作](https://hexo.io/zh-cn/docs/writing)
 ### 自定义域名
+尽管我们的网页已经初具雏形，但 `[username].github.io` 并不像是一个“合理”的网址，类似于 `[username].com` 的域名才是我们想要的。  
+想要实现自定义域名，我们必须先拥有一个域名。可以在阿里云上购买一个价格较低的域名，例如 `xxxx.top` 的域名往往只需要 ￥9 per year，几乎零成本。购买好域名后，我们需要先在 Github 储存库的根目录和 `/source` 目录下新建一个名为 `CNAME` 的文件，里面填入自己的域名即可。再在阿里云域名控制台中选择“解析”  
+![](/img/instructsite4.png)  
+添加如下两条记录：  
+![](/img/instructsite5.png)  
+保存即可，稍等片刻后打开我们的域名即可访问网站。
+### CDN加速
+由于某些特殊原因，在国内无代理条件下访问按照以上步骤完成的网站速度较为缓慢，图片加载耗时很长，严重影响用户体验。好在 CDN(内容分发网络) 可为我们的网站提供加速，我们将采用 Cloudflare 作为网站 CDN 服务商，他有以下几个优点：
+* 免费版足够使用
+* 无需备案
+* 可为网站提供安全防护  
+
+访问 [Cloudflare官网](https://www.cloudflare.com) 进行注册。注册完成后，点击“添加站点”，输入网站域名，再选择“免费计划”。
+![](/img/instructsite6.png)  
+接着按照平台提示，在阿里云域名管理中把网站域名的 DNS 修改为 Cloudflare 提供的 DNS 即可。
