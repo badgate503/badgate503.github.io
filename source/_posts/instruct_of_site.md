@@ -2,6 +2,7 @@
 title: Github Pages/Hexo建站指南
 date: 2023-07-11 12:13:17
 tags: [网页, 前端]
+index_img: /img/idxios.png
 categories: 技术
 ---
 
