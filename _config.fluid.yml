@@ -528,7 +528,7 @@ index:
 # Post Page
 #---------------------------
 post:
-  banner_img: /img/banner.png
+  banner_img: https://s2.loli.net/2023/07/12/5xlkPDhybVIonAG.png
   banner_img_height: 70
   banner_mask_alpha: 0.3
 
@@ -1005,7 +1005,7 @@ discuss:
 # Archive Page
 #---------------------------
 archive:
-  banner_img: /img/banner.png
+  banner_img: https://s2.loli.net/2023/07/12/5xlkPDhybVIonAG.png
   banner_img_height: 60
   banner_mask_alpha: 0.3
 
@@ -1016,7 +1016,7 @@ archive:
 #---------------------------
 category:
   enable: true
-  banner_img: /img/banner.png
+  banner_img: https://s2.loli.net/2023/07/12/5xlkPDhybVIonAG.png
   banner_img_height: 60
   banner_mask_alpha: 0.3
 
@@ -1045,7 +1045,7 @@ category:
 #---------------------------
 tag:
   enable: true
-  banner_img: /img/banner.png
+  banner_img: https://s2.loli.net/2023/07/12/5xlkPDhybVIonAG.png
   banner_img_height: 80
   banner_mask_alpha: 0.3
   tagcloud:
@@ -1062,7 +1062,7 @@ tag:
 #---------------------------
 about:
   enable: true
-  banner_img: /img/banner.png
+  banner_img: https://s2.loli.net/2023/07/12/5xlkPDhybVIonAG.png
   banner_img_height: 60
   banner_mask_alpha: 0.3
   avatar: /img/myava.jpg
