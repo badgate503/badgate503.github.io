@@ -9,17 +9,17 @@ categories: 日常
 # 椒江老城区摄影 第二辑
 ## 前言
 
-![IMG_5354.jpg](https://s2.loli.net/2023/07/14/RVt1NS68yfWvBCe.jpg)
-椒江，台州话读作 "Tsiao-kông"，是台州的Downtown Area。他既有初具繁华摸样的商务区，也有一些陈旧的、萧条的老城区，后者是我长大的地方。尽管椒江的城市风光无特色可言，但他包含了许多椒江人的共同记忆。利用相机记录下取之无禁的光的信息，以后回忆时也可以减少脑力的耗费。  
 
-摄影器材为Canon M50 Mark I 和一个15-45mm变焦镜头。摄影技术一般，后期有较多调整。
+本次的照片仍然集中在椒江区海门街道，前几天配置好了博客的域名解析和 CDN 加速，加载图片的速度快多了。
+
+摄影技术一般，后期用 Photoshop 进行了很多调整与一定的艺术创作。
 ## 摄影
-![](/img/IMG_5331.png "通衢路，路牌")
-![](/img/IMG_5333.png "椒江大剧院，正在举办活动")
-![](/img/IMG_5337.png "南新椒街，我高中时常走的路")
-![](/img/IMG_5338.png "看起来与“新”不沾边")
-![](/img/IMG_5342.png "一江山岛登陆战纪念馆门前的轰炸机")
-![](/img/IMG_5350.png "江滨公园，Monument")
-![](/img/IMG_5347.png "海运大楼，造型独特")
-![](/img/IMG_5359.png "沧海巷北侧，青春饭店（已废弃）")
-![](/img/IMG_5360.png "市立医院")
+![](https://s2.loli.net/2023/07/14/CRhsm9iJjylBaKF.jpg "人民路小学对面的五个小卖部之一")
+![](https://s2.loli.net/2023/07/14/i6gL3wIdqCkeuUO.jpg "通衢路西侧，破旧的旅馆")
+![](https://s2.loli.net/2023/07/14/FrbtGuMyiRS94sA.jpg "江滨路，可看见码头与船只")
+![](https://s2.loli.net/2023/07/14/Xa8mSZtFi24epBb.jpg "江城北路，尚在营业的心心快餐")
+![](https://s2.loli.net/2023/07/14/1UdVHr8bvqOP2ZX.jpg "解放北路北端")
+![IMG_5383.jpg](https://s2.loli.net/2023/07/14/i9olX4Kn8DgZAHz.jpg "椒江江面，客船")
+![IMG_5386.jpg](https://s2.loli.net/2023/07/14/F7qZBCAT1kcNgjW.jpg "对岸能看见的只有工业区")
+![IMG_5354.jpg](https://s2.loli.net/2023/07/14/RVt1NS68yfWvBCe.jpg)  
+所有照片遵循 CC BY-NC 4.0 协议，请勿商用。
