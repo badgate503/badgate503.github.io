@@ -19,7 +19,7 @@ categories: 日常
 ![](https://s2.loli.net/2023/07/14/FrbtGuMyiRS94sA.jpg "江滨路，可看见码头与船只")
 ![](https://s2.loli.net/2023/07/14/Xa8mSZtFi24epBb.jpg "江城北路，尚在营业的心心快餐")
 ![](https://s2.loli.net/2023/07/14/1UdVHr8bvqOP2ZX.jpg "解放北路北端")
-![IMG_5383.jpg](https://s2.loli.net/2023/07/14/i9olX4Kn8DgZAHz.jpg "椒江江面，客船")
-![IMG_5386.jpg](https://s2.loli.net/2023/07/14/F7qZBCAT1kcNgjW.jpg "对岸能看见的只有工业区")
-![IMG_5354.jpg](https://s2.loli.net/2023/07/14/RVt1NS68yfWvBCe.jpg)  
+![](https://s2.loli.net/2023/07/14/i9olX4Kn8DgZAHz.jpg "椒江江面，客船")
+![](https://s2.loli.net/2023/07/14/F7qZBCAT1kcNgjW.jpg "对岸能看见的只有工业区")
+![](https://s2.loli.net/2023/07/14/RVt1NS68yfWvBCe.jpg)  
 所有照片遵循 CC BY-NC 4.0 协议，请勿商用。
