@@ -4,6 +4,35 @@
   
   
   <entry>
+    <title>课程综合实践I Data Visualization</title>
+    <link href="/2023/07/31/dv/"/>
+    <url>/2023/07/31/dv/</url>
+    
+    <content type="html"><![CDATA[<h1 id="Data-Visualization-1-Intro"><a href="#Data-Visualization-1-Intro" class="headerlink" title="Data Visualization 1 : Intro"></a>Data Visualization 1 : Intro</h1><h2 id="Clustering-聚类"><a href="#Clustering-聚类" class="headerlink" title="Clustering 聚类"></a>Clustering 聚类</h2><h3 id="Definition"><a href="#Definition" class="headerlink" title="Definition"></a>Definition</h3><ul><li><strong>Input</strong>: A database of n data objects in R and a certain distance function  </li><li><strong>Output</strong>: Split the data objects into clusters so that objects in the same cluster are much closer to each other than those from other clusters</li></ul><h3 id="k-partitioning-Clustering"><a href="#k-partitioning-Clustering" class="headerlink" title="k-partitioning Clustering"></a>k-partitioning Clustering</h3><p>Given a set of n data objects $D &#x3D; {x_1,x_2,…,x_n}$ in $R$ and a certain distance function $dist()$</p><h4 id="Distance-Function"><a href="#Distance-Function" class="headerlink" title="Distance Function"></a>Distance Function</h4><ul><li>$L_p-norm$</li><li>Euclidean Distance, $L_2-norm$</li><li>Manhattan Distance, $L_1-norm$</li><li>Weight : Capture importance of attributes</li><li>Scaling : Normalization of attributes to within the same range</li></ul><h4 id="Objective-Function"><a href="#Objective-Function" class="headerlink" title="Objective Function"></a>Objective Function</h4><h4 id="Optimization-Function"><a href="#Optimization-Function" class="headerlink" title="Optimization Function"></a>Optimization Function</h4><h3 id="Sparse-data"><a href="#Sparse-data" class="headerlink" title="Sparse data"></a>Sparse data</h3><h4 id="Shingling"><a href="#Shingling" class="headerlink" title="Shingling"></a>Shingling</h4><p>A k-shingle for a document is a sequence of k tokens that appears in the document</p><ul><li>Tokens can be characters, words or some feature&#x2F;object, depending on the application</li></ul>]]></content>
+    
+    
+    <categories>
+      
+      <category>课程</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>网页</tag>
+      
+      <tag>大数据</tag>
+      
+      <tag>课程</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>椒江老城区摄影 第二辑</title>
     <link href="/2023/07/14/phototk2/"/>
     <url>/2023/07/14/phototk2/</url>
