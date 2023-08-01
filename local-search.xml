@@ -4,6 +4,37 @@
   
   
   <entry>
+    <title>Data Visualization 2</title>
+    <link href="/2023/08/01/dv2/"/>
+    <url>/2023/08/01/dv2/</url>
+    
+    <content type="html"><![CDATA[<h1 id="Data-Visualization-2"><a href="#Data-Visualization-2" class="headerlink" title="Data Visualization 2"></a>Data Visualization 2</h1><p><strong>Fact</strong> : To see an object change, it’s necessary to attend to it. </p><h2 id="Workflow"><a href="#Workflow" class="headerlink" title="Workflow"></a>Workflow</h2><ul><li>数据平台</li><li>数据储存</li><li>数据获取</li><li>数据分析和处理</li><li>数据可视化</li></ul><h2 id="Data-Profiling"><a href="#Data-Profiling" class="headerlink" title="Data Profiling"></a>Data Profiling</h2><h4 id="Data-Overview"><a href="#Data-Overview" class="headerlink" title="Data Overview"></a>Data Overview</h4><ul><li>Data Domain</li><li>Data Description</li><li>Data Schema</li><li>Data Type</li><li>Data Range</li><li>Data Distribution</li><li>Data Quality<ul><li>Missing</li><li>Abnormal</li><li>Over-bounding</li><li>Redundant</li><li>Inconsistent</li></ul></li></ul><h4 id="Data-Wrangling"><a href="#Data-Wrangling" class="headerlink" title="Data Wrangling"></a>Data Wrangling</h4><p>The process of cleaning and transforming messy and complex data into a desired format to make it easier.</p><ul><li>Data Transformations<ul><li>Sorting 排序</li><li>Filtering 筛选</li><li>Distinct 去重</li><li>Slicing 分割</li><li>Extracting 提取</li><li>Mutating 转化</li><li>Replacing 替换</li><li>Spliting 分割</li><li>Merging 合并</li><li>Aggregating</li><li>Reshaping</li><li>Join 表链接</li></ul></li></ul>]]></content>
+    
+    
+    <categories>
+      
+      <category>课程</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>课程</tag>
+      
+      <tag>技术</tag>
+      
+      <tag>可视化</tag>
+      
+      <tag>编程</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>课程综合实践I Data Visualization</title>
     <link href="/2023/07/31/dv/"/>
     <url>/2023/07/31/dv/</url>
