@@ -2,7 +2,7 @@
 title: Data Visualization 2
 date: 2023-08-01 09:10:17
 tags: [技术,可视化,课程,编程]
-index_img: /img/idxptk2.png
+index_img: /img/dvimg.png
 categories: 课程
 ---
 
@@ -43,3 +43,13 @@ The process of cleaning and transforming messy and complex data into a desired f
   + Aggregating
   + Reshaping
   + Join 表链接
++ Data Modeling
+  + Data Operators
+    + ETL
+    + Feature Engineering
+    + Machine Learning
+## Tableau 入门
+Tableau is a business intellingence tool for visually analyzing the data
+#### Features
++ Support powerful data discovery and exploration
++ Easy to use
