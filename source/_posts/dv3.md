@@ -1,4 +1,10 @@
-
+---
+title: Data Visualization 3
+date: 2023-08-03 14:18:17
+tags: [技术,可视化,课程,编程]
+index_img: https://img-blog.csdn.net/2018060216472448
+categories: 课程
+---
 
 
 # Data Visualization - React 入门
