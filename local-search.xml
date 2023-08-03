@@ -4,13 +4,31 @@
   
   
   <entry>
-    <title></title>
+    <title>Data Visualization 3</title>
     <link href="/2023/08/03/dv3/"/>
     <url>/2023/08/03/dv3/</url>
     
     <content type="html"><![CDATA[<h1 id="Data-Visualization-React-入门"><a href="#Data-Visualization-React-入门" class="headerlink" title="Data Visualization - React 入门"></a>Data Visualization - React 入门</h1><h2 id="MVC-模型"><a href="#MVC-模型" class="headerlink" title="MVC 模型"></a>MVC 模型</h2><p>MVC 模式代表 Model-View-Controller（模型-视图-控制器） 模式。这种模式用于应用程序的分层开发。</p><p><img src="https://img-blog.csdn.net/2018060216472448"></p><h3 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h3><p>应用程序状态分散，难以追踪和维护。</p><h2 id="Flux-框架"><a href="#Flux-框架" class="headerlink" title="Flux 框架"></a>Flux 框架</h2><p><img src="https://www.ruanyifeng.com/blogimg/asset/2016/bg2016011503.png"></p><h2 id="React"><a href="#React" class="headerlink" title="React"></a>React</h2><p><img src="https://www.runoob.com/wp-content/uploads/2016/02/react.png"><br>React 是一个用于构建用户界面的 JAVASCRIPT 库，主要用于构建 UI，React拥有较高的性能，代码逻辑非常简单。</p><h3 id="核心特性"><a href="#核心特性" class="headerlink" title="核心特性"></a>核心特性</h3><ul><li>声明式开发</li><li>组件化</li><li>单项数据流</li><li>函数式编程</li><li>兼容其他框架</li></ul>]]></content>
     
     
+    <categories>
+      
+      <category>课程</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>课程</tag>
+      
+      <tag>技术</tag>
+      
+      <tag>可视化</tag>
+      
+      <tag>编程</tag>
+      
+    </tags>
     
   </entry>
   
