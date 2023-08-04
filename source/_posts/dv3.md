@@ -58,9 +58,20 @@ root.render(
 #### 组件生命周期
 组件的生命周期可分成三个状态：
 + **Mounting** (挂载)：已插入真实 DOM
+    + `constructor()` 构造函数，挂载之前调用。
+    + `getDerivedStateFromProps()` 在调用 `render` 方法之前调用
+    + `render()`  渲染，`Class` 组件中唯一必须实现的方法。
+    + `componentDidMount()` 在组件挂载后立即调用
 + **Updating** (更新)：正在被重新渲染
+    + `getDerivedStateFromProps()`
+    + `shouldComponentUpdate()` 当 `props` 或 `state` 发生变化时会在渲染执行之前被调用
+    + `render()` 
+    + `getSnapshotBeforeUpdate()` 在最近一次渲染输出（提交到 DOM 节点）之前调用
+    + `componentDidMount()`
 + **Unmounting** (卸载)：已移出真实 DOM
+    + `componentWillMount()` 在组件卸载及销毁之前直接调用
 ![](/img/lifetime.png)
+
 #### 函数组件
 函数组件的声明，其中，函数名首字母必须大写，函数返回值一般为一个 `React` 元素。
 ```js
@@ -86,3 +97,4 @@ class ClassComp extends React.Component {
   }
 }
 ```
+类组件可以对组件各个生命周期所调用的方法进行自定义，但只有 `render()` 方法是必须实现的。
