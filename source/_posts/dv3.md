@@ -54,3 +54,35 @@ root.render(
   document.getElementById('example')
 );
 ```
+### 组件
+#### 组件生命周期
+组件的生命周期可分成三个状态：
++ **Mounting** (挂载)：已插入真实 DOM
++ **Updating** (更新)：正在被重新渲染
++ **Unmounting** (卸载)：已移出真实 DOM
+![](/img/lifetime.png)
+#### 函数组件
+函数组件的声明，其中，函数名首字母必须大写，函数返回值一般为一个 `React` 元素。
+```js
+function FunctionName(props) {
+    return something;
+}
+```
+使用以下语句对函数进行调用，其中，`a` 和 `b` 既是 `HTML` 元素的属性，也是函数调用时传递的参数。
+```html
+<FunctionName a="Cartman" b="Kenny"/>
+```
+函数组件的参数被传递给 `function` 的 `props` 属性。在 `function` 中，可以这样访问参数
+```js
+{props.a} // = "Cartman"
+{props.b} // = "Kenny"
+```
+#### 类组件
+类组件源自于 `ES6` ，与函数组件类似，他也可以接受参数并返回 `React` 元素，但与函数组件有一定区别。
+```js
+class ClassComp extends React.Component {
+  render() {
+    return something;
+  }
+}
+```
