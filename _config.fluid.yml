@@ -347,7 +347,7 @@ navbar:
     - { key: "category", link: "/categories/", icon: "iconfont icon-category-fill" }
     - { key: "tag", link: "/tags/", icon: "iconfont icon-tags-fill" }
     - { key: "about", link: "/about/", icon: "iconfont icon-user-fill" }
-    - { key: "metro", link: "/MetroDV/", icon: "iconfont rail-metro-15" }
+    - { key: "Metro", link: "/MetroDV/", icon: "iconfont icon-map-fill" }
 
 # 搜索功能，基于 hexo-generator-search 插件，若已安装其他搜索插件请关闭此功能，以避免生成多余的索引文件
 # Search feature, based on hexo-generator-search. If you have installed other search plugins, please disable this feature to avoid generating redundant index files
@@ -695,7 +695,7 @@ post:
   math:
     # 开启后文章默认可用，自定义页面如需使用，需在 Front-matter 中指定 `math: true`
     # If you want to use math on the custom page, you need to set `math: true` in Front-matter
-    enable: false
+    enable: true
 
     # 开启后，只有在文章 Front-matter 里指定 `math: true` 才会在文章页启动公式转换，以便在页面不包含公式时提高加载速度
     # If true, only set `math: true` in Front-matter will enable math, to load faster when the page does not contain math
@@ -1075,7 +1075,6 @@ about:
     - { class: "iconfont icon-github-fill", link: "https://github.com/badgate503", tip: "GitHub" }
     - { class: "iconfont icon-copyright", link: "https://www.cc98.org/user/id/701071", tip: "CC98" }
     - { class: "iconfont icon-wechat-fill", qrcode: "/img/qrcodewx.jpg" }
-
 #---------------------------
 # 自定义页
 # Custom Page
