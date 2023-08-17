@@ -2,7 +2,7 @@
 title: 北京旅行日志
 date: 2023-08-17 18:18:17
 tags: [生活,旅游,摄影]
-index_img: /img/dvimg2.jpg
+index_img: https://s1.imagehub.cc/images/2023/08/17/IMG_1869.th.jpeg
 categories: 日常
 ---
 
