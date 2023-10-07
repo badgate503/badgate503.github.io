@@ -21,8 +21,8 @@ F=BD+A\overline BC+A\overline C\overline D
 $$
 We can easily obtain that, 
 $$
-L = 8,\\
-G = 11,\\
+L = 8,
+G = 11,
 GN = 14,
 
 $$
