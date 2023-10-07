@@ -21,10 +21,7 @@ F=BD+A\overline BC+A\overline C\overline D
 $$
 We can easily obtain that, 
 $$
-L = 8,
-G = 11,
-GN = 14,
-
+L = 8,G = 11,GN = 14
 $$
 We found an efficient criteria to measure the cost, then what we need is a effective method to obtain the simplest implementation.
 ## 卡诺图 Karnaugh Map
@@ -64,5 +61,10 @@ E.G.
 $$
 F(X,Y,Z)= \Sigma (0, 1, 2,4,6,7)
 $$
+There are six minterms in the function, therefore six "1"s will be illustrated in the K-map.
+|  X\YZ   | 00  | 01 | 11 | 10 |
+|  :----:  | :----:  | :----: | :----:| :----:|
+| 0  |1|1|0|1|
+| 1  |1|0|1|1|
 
 
