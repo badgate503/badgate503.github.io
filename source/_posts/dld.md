@@ -34,10 +34,10 @@ $$
 in the k-map  
 |  AB\CD   | 00  | 01 | 11 | 10 |
 |  :----:  | :----:  | :----: | :----:| :----:|
-| 00  |0|0|0|0|
-| 01  |0|1|1|0|
-| 11  |1|1|1|0|
-| 10  |1|1|1|0|
+| **00**  |0|0|0|0|
+| **01**  |0|1|1|0|
+| **11**  |1|1|1|0|
+| **10**  |1|1|1|0|
   
 note that the enumerate of AB and CD must be arranged in Gray-code order.  
 
@@ -64,7 +64,41 @@ $$
 There are six minterms in the function, therefore six "1"s will be illustrated in the K-map.
 |  X\YZ   | 00  | 01 | 11 | 10 |
 |  :----:  | :----:  | :----: | :----:| :----:|
-| 0  |1|1|0|1|
-| 1  |1|0|1|1|
+| **0**  |1|1|0|1|
+| **1**  |1|0|1|1|
+  
+We can easily find three `Essential Prime Implicants`:
+>|  X\YZ   | 00  | ... | ... | 10 |
+>|  :----:  | :----:  | :----: | :----:| :----:|
+>| **0**  |1|...|...|1|
+>| **1**  |1|...|...|1|
+>
+>First one (Note that the first and the last column is **Adjacent**)
+  
+X and Y is redundant, Z = 0, we can obtain a term:
+$$\overline Z$$
+>|  X\YZ   | ...  | ... | 11 | 10 |
+>|  :----:  | :----:  | :----: | :----:| :----:|
+>| ...  |...|...|...|...|
+>| **1**  |...|...|1|1|
+>
+>Second one  
+  
+Z is redundant, X = Y = 1, we can obtain a term:
+$$XY$$
+>|  X\YZ   | 00  | 01 | ... | ... |
+>|  :----:  | :----:  | :----: | :----:| :----:|
+>| **0**  |1|1|...|...|
+>| ...  |...|...|...|...|
+>
+>Second one  
+  
+Z is redundant, X = Y = 0, we can obtain a term:
+$$\overline X\overline Y$$
+Finally we can obtain a implementation of the original boolean function:
+$$F(X,Y,Z)=\overline Z+XY+\overline X\overline Y$$
+which is the simplest form.
+
+
 
 
