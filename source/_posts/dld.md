@@ -1,5 +1,6 @@
 ---
-title: /[Logic and Computer Design/] Karnaugh Map
+title: Logic and Computer Design 笔记
+subtitile: Karnaugh Map
 date: 2023-10-07 12:56:17
 tags: [技术,数电,课程,编程,硬件]
 index_img: /img/dvimg2.jpg
@@ -20,4 +21,13 @@ $$
 F=BD+A\overline BC+A\overline C\overline D
 $$
 We can easily obtain that, 
+$$
+\left\{
+\begin{aligned}
+L = 8,\\
+G = 11,\\
+GN = 14,
+\end{aligned}
+\right.
+$$
 
