@@ -1,8 +1,8 @@
 ---
 title: Numerical Analysis 习题
-date: 2023-10-07 12:56:17
+date: 2023-10-07 19:40:17
 tags: [数学,课程,编程,习题]
-index_img: /img/dldimg.jpg
+index_img: /img/naimg.jpg
 categories: 习题
 ---
 本贴为浙江大学 Numerical Analysis Lab 题解集合，请勿直接复制使用。
