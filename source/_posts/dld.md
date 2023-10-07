@@ -1,5 +1,5 @@
 ---
-title: [Logic and Computer Design] Karnaugh Map
+title: /[Logic and Computer Design/] Karnaugh Map
 date: 2023-10-07 12:56:17
 tags: [技术,数电,课程,编程,硬件]
 index_img: /img/dvimg2.jpg
