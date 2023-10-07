@@ -20,3 +20,5 @@ E.G.
 $$
 F=BD+A\overline BC+A\overline C\overline D
 $$
+We can easily obtain that, 
+
