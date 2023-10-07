@@ -2,7 +2,7 @@
 title: Logic and Computer Design 笔记
 date: 2023-10-07 12:56:17
 tags: [技术,数电,课程,编程,硬件]
-index_img: /img/dvimg2.jpg
+index_img: /img/dldimg.jpg
 categories: 课程
 ---
 # 电路逻辑优化 Circuit Optimization
