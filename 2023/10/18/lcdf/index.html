@@ -16,28 +16,19 @@
   <meta name="author" content="Liu404">
   <meta name="keywords" content="">
   
-    <meta name="description" content="电路逻辑优化 Circuit OptimizationFor one same boolean function, we usually have more than one different implementations of it which costs different numbers of wires and logic gates.    In order to simplify">
-<meta property="og:type" content="article">
-<meta property="og:title" content="Logic and Computer Design 笔记">
-<meta property="og:url" content="http://badgate503.github.io/2023/10/07/dld/index.html">
+    <meta property="og:type" content="article">
+<meta property="og:title" content="Liu 404 博客">
+<meta property="og:url" content="http://badgate503.github.io/2023/10/18/lcdf/index.html">
 <meta property="og:site_name" content="Liu 404 博客">
-<meta property="og:description" content="电路逻辑优化 Circuit OptimizationFor one same boolean function, we usually have more than one different implementations of it which costs different numbers of wires and logic gates.    In order to simplify">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="http://badgate503.github.io/img/dldimg.jpg">
-<meta property="article:published_time" content="2023-10-07T12:56:17.000Z">
+<meta property="article:published_time" content="2023-10-18T02:08:48.230Z">
 <meta property="article:modified_time" content="2023-10-18T02:08:48.230Z">
 <meta property="article:author" content="Liu404">
-<meta property="article:tag" content="技术">
-<meta property="article:tag" content="数电">
-<meta property="article:tag" content="课程">
-<meta property="article:tag" content="编程">
-<meta property="article:tag" content="硬件">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="http://badgate503.github.io/img/dldimg.jpg">
   
   
   
-  <title>Logic and Computer Design 笔记 - Liu 404 博客</title>
+  <title>Liu 404 博客</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -220,7 +211,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="Logic and Computer Design 笔记"></span>
+            <span id="subtitle" data-typed-text=""></span>
           
         </div>
 
@@ -231,8 +222,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2023-10-07 12:56" pubdate>
-          2023年10月7日 下午
+        <time datetime="2023-10-18 02:08" pubdate>
+          2023年10月18日 凌晨
         </time>
       </span>
     
@@ -243,7 +234,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          2.3k 字
+          0 字
         
       </span>
     
@@ -254,7 +245,7 @@
         
         
         
-          19 分钟
+          1 分钟
         
       </span>
     
@@ -291,202 +282,12 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">Logic and Computer Design 笔记</h1>
+            <h1 id="seo-header"></h1>
             
             
               <div class="markdown-body">
                 
-                <h1 id="电路逻辑优化-Circuit-Optimization"><a href="#电路逻辑优化-Circuit-Optimization" class="headerlink" title="电路逻辑优化 Circuit Optimization"></a>电路逻辑优化 Circuit Optimization</h1><p>For one same boolean function, we usually have more than one different implementations of it which costs different numbers of wires and logic gates.   </p>
-<p>In order to simplify the circuit, we shall obtain the simplest implementation of a given boolean function.  </p>
-<h2 id="电路复杂度-Cost-Criteria"><a href="#电路复杂度-Cost-Criteria" class="headerlink" title="电路复杂度 Cost Criteria"></a>电路复杂度 Cost Criteria</h2><p>Before we make attempts to optimize the circuit, we must set up a certain criteria to measure costs of different implementations of a boolean function. We can define:  </p>
-<ul>
-<li><code>Literal cost (L)</code>  the count of boolean variable in the implementation.</li>
-<li><code>Gate input cost (G)</code>  the sum of gate inputs excluding inverters.</li>
-<li><code>Gate input cost with NOTs (GN)</code>  the sum of gate inputs including inverters.</li>
-</ul>
-<p>E.G.<br>$$<br>F&#x3D;BD+A\overline BC+A\overline C\overline D<br>$$<br>We can easily obtain that,<br>$$<br>L &#x3D; 8,G &#x3D; 11,GN &#x3D; 14<br>$$<br>We found an efficient criteria to measure the cost, then what we need is a effective method to obtain the simplest implementation.</p>
-<h2 id="卡诺图-Karnaugh-Map"><a href="#卡诺图-Karnaugh-Map" class="headerlink" title="卡诺图 Karnaugh Map"></a>卡诺图 Karnaugh Map</h2><p>Karnaugh map (K-map) is a graphical representation of a Boolean function, which is widely-used to obtain the simplest implementation of a boolean function.<br>E.G, we can represent the boolean function<br>$$<br>F&#x3D;BD+A\overline BC+A\overline C\overline D<br>$$<br>in the k-map  </p>
-<table>
-<thead>
-<tr>
-<th align="center">AB\CD</th>
-<th align="center">00</th>
-<th align="center">01</th>
-<th align="center">11</th>
-<th align="center">10</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center"><strong>00</strong></td>
-<td align="center">0</td>
-<td align="center">0</td>
-<td align="center">0</td>
-<td align="center">0</td>
-</tr>
-<tr>
-<td align="center"><strong>01</strong></td>
-<td align="center">0</td>
-<td align="center">1</td>
-<td align="center">1</td>
-<td align="center">0</td>
-</tr>
-<tr>
-<td align="center"><strong>11</strong></td>
-<td align="center">1</td>
-<td align="center">1</td>
-<td align="center">1</td>
-<td align="center">0</td>
-</tr>
-<tr>
-<td align="center"><strong>10</strong></td>
-<td align="center">1</td>
-<td align="center">1</td>
-<td align="center">1</td>
-<td align="center">0</td>
-</tr>
-</tbody></table>
-<p>note that the enumerate of AB and CD must be arranged in Gray-code order.  </p>
-<p>In the K-map, we can define:  </p>
-<ul>
-<li>项 <code>Term</code> <ul>
-<li>An “1” in the K-map, corresponding to one minterm in the DNF.</li>
-</ul>
-</li>
-<li>蕴含项 <code>Implicant</code><ul>
-<li>Rectangles produced by combining adjacent squares with the number of a power of 2.</li>
-</ul>
-</li>
-<li>质蕴含项 <code>Prime Implicant</code> <ul>
-<li><code>Implicants</code> that can’t be merged into other <code>Implicants</code></li>
-</ul>
-</li>
-<li>实质本源蕴含项 <code>Essential Prime Implicants</code> <ul>
-<li><code>Prime Implicants</code> which have at least one <code>term</code> not included by other <code>Implicants</code></li>
-</ul>
-</li>
-</ul>
-<p>To find the simplest implementation of a boolean function via K-map, we can follow the following steps:</p>
-<ul>
-<li>Find minterms of a function (via DNF)</li>
-<li>Illustrate the K-map</li>
-<li>Find all Essential Prime Implicants</li>
-<li>Eliminate the redundant (冗余的) variables</li>
-</ul>
-<p>E.G.<br>$$<br>F(X,Y,Z)&#x3D; \Sigma (0, 1, 2,4,6,7)<br>$$<br>There are six minterms in the function, therefore six “1”s will be illustrated in the K-map.</p>
-<table>
-<thead>
-<tr>
-<th align="center">X\YZ</th>
-<th align="center">00</th>
-<th align="center">01</th>
-<th align="center">11</th>
-<th align="center">10</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center"><strong>0</strong></td>
-<td align="center">1</td>
-<td align="center">1</td>
-<td align="center">0</td>
-<td align="center">1</td>
-</tr>
-<tr>
-<td align="center"><strong>1</strong></td>
-<td align="center">1</td>
-<td align="center">0</td>
-<td align="center">1</td>
-<td align="center">1</td>
-</tr>
-</tbody></table>
-<p>We can easily find three <code>Essential Prime Implicants</code>:</p>
-<blockquote>
-<table>
-<thead>
-<tr>
-<th align="center">X\YZ</th>
-<th align="center">00</th>
-<th align="center">…</th>
-<th align="center">…</th>
-<th align="center">10</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center"><strong>0</strong></td>
-<td align="center">1</td>
-<td align="center">…</td>
-<td align="center">…</td>
-<td align="center">1</td>
-</tr>
-<tr>
-<td align="center"><strong>1</strong></td>
-<td align="center">1</td>
-<td align="center">…</td>
-<td align="center">…</td>
-<td align="center">1</td>
-</tr>
-</tbody></table>
-<p>First one (Note that the first and the last column is <strong>Adjacent</strong>)</p>
-</blockquote>
-<p>X and Y is redundant, Z &#x3D; 0, we can obtain a term:<br>$$\overline Z$$</p>
-<blockquote>
-<table>
-<thead>
-<tr>
-<th align="center">X\YZ</th>
-<th align="center">…</th>
-<th align="center">…</th>
-<th align="center">11</th>
-<th align="center">10</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center">…</td>
-<td align="center">…</td>
-<td align="center">…</td>
-<td align="center">…</td>
-<td align="center">…</td>
-</tr>
-<tr>
-<td align="center"><strong>1</strong></td>
-<td align="center">…</td>
-<td align="center">…</td>
-<td align="center">1</td>
-<td align="center">1</td>
-</tr>
-</tbody></table>
-<p>Second one  </p>
-</blockquote>
-<p>Z is redundant, X &#x3D; Y &#x3D; 1, we can obtain a term:<br>$$XY$$</p>
-<blockquote>
-<table>
-<thead>
-<tr>
-<th align="center">X\YZ</th>
-<th align="center">00</th>
-<th align="center">01</th>
-<th align="center">…</th>
-<th align="center">…</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center"><strong>0</strong></td>
-<td align="center">1</td>
-<td align="center">1</td>
-<td align="center">…</td>
-<td align="center">…</td>
-</tr>
-<tr>
-<td align="center">…</td>
-<td align="center">…</td>
-<td align="center">…</td>
-<td align="center">…</td>
-<td align="center">…</td>
-</tr>
-</tbody></table>
-<p>Second one  </p>
-</blockquote>
-<p>Z is redundant, X &#x3D; Y &#x3D; 0, we can obtain a term:<br>$$\overline X\overline Y$$<br>Finally we can obtain a implementation of the original boolean function:<br>$$F(X,Y,Z)&#x3D;\overline Z+XY+\overline X\overline Y$$<br>which is the simplest form.</p>
-
+                
                 
               </div>
             
@@ -529,42 +330,6 @@
             <div>
               <div class="post-metas my-3">
   
-    <div class="post-meta mr-3 d-flex align-items-center">
-      <i class="iconfont icon-category"></i>
-      
-
-<span class="category-chains">
-  
-  
-    
-      <span class="category-chain">
-        
-  <a href="/categories/%E8%AF%BE%E7%A8%8B/" class="category-chain-item">课程</a>
-  
-  
-
-      </span>
-    
-  
-</span>
-
-    </div>
-  
-  
-    <div class="post-meta">
-      <i class="iconfont icon-tags"></i>
-      
-        <a href="/tags/%E6%8A%80%E6%9C%AF/" class="print-no-link">#技术</a>
-      
-        <a href="/tags/%E6%95%B0%E7%94%B5/" class="print-no-link">#数电</a>
-      
-        <a href="/tags/%E8%AF%BE%E7%A8%8B/" class="print-no-link">#课程</a>
-      
-        <a href="/tags/%E7%BC%96%E7%A8%8B/" class="print-no-link">#编程</a>
-      
-        <a href="/tags/%E7%A1%AC%E4%BB%B6/" class="print-no-link">#硬件</a>
-      
-    </div>
   
 </div>
 
@@ -574,8 +339,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>Logic and Computer Design 笔记</div>
-      <div>http://badgate503.github.io/2023/10/07/dld/</div>
+      <div></div>
+      <div>http://badgate503.github.io/2023/10/18/lcdf/</div>
     </div>
     <div class="license-meta">
       
@@ -587,7 +352,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2023年10月7日</div>
+          <div>2023年10月18日</div>
         </div>
       
       
@@ -625,18 +390,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2023/10/07/nalabs/" title="Numerical Analysis 习题">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">Numerical Analysis 习题</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2023/08/17/pek/" title="北京旅行日志 (未完待续)">
-                        <span class="hidden-mobile">北京旅行日志 (未完待续)</span>
+                      <a href="/2023/10/17/na/" title="数值分析笔记">
+                        <span class="hidden-mobile">数值分析笔记</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
