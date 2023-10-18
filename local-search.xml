@@ -4,6 +4,37 @@
   
   
   <entry>
+    <title>数值分析笔记</title>
+    <link href="/2023/10/17/na/"/>
+    <url>/2023/10/17/na/</url>
+    
+    <content type="html"><![CDATA[<h3 id="Direct-Methods-for-Solving-Linear-Systems"><a href="#Direct-Methods-for-Solving-Linear-Systems" class="headerlink" title="Direct Methods for Solving Linear Systems"></a>Direct Methods for Solving Linear Systems</h3><h4 id="Gaussian-Elimination"><a href="#Gaussian-Elimination" class="headerlink" title="Gaussian Elimination"></a>Gaussian Elimination</h4><p><strong>Elimination</strong>:Let $A^{(1)}&#x3D;A$<br>Step k: if $a_{kk}^{(k)} \neq 0$, compute $m_{ik}&#x3D;a_{ik}^{(k)}&#x2F;a_{kk}^{(k)}$, $$a_{ij}^{(k+1)}&#x3D;a_{ij}^{(k)}-m_{ik}a_{kj}^{(k)}$$<br>$$b_i^{(k+1)}&#x3D;b_i^{(k)}-m_{ik}b_k^{(k)}$$<br>There are $n-1$ steps.<br><strong>Backward-substitution</strong>: $x_n&#x3D;b_n^{(n)}&#x2F;a_{nn}^{(n)}; x_i&#x3D;(b_i^{(i)}-\Sigma <em>{j&#x3D;i+1}^n a</em>{ij}^{(i)}x_j)&#x2F;a_{ii}^{(i)}$<br>if $a_{ii}^{(i)}&#x3D;0$, then we must find $k$ such that $a_{ki}^{(i)} \neq 0$ and exchange row $i$ and row $k$. If there doesn’t exist such k, no unique solution exists.<br>Amount of Computation :</p><ul><li>Elimination:$\Sigma_{k&#x3D;1}^{n-1}(n-k)(n-k+2)&#x3D;\frac{n^3}{3}+\frac{n^2}{2}-\frac{5n}{6}$</li><li>Backward-substituion: $1+\Sigma_{i&#x3D;2}^{n-1}(n-i+1)&#x3D;\frac{n^2}{2}+\frac{n}{2}$</li></ul><h4 id="Pivoting-Strategies"><a href="#Pivoting-Strategies" class="headerlink" title="Pivoting Strategies"></a>Pivoting Strategies</h4><pre><code class="hljs">Problem: Small pivot element may cause trouble.</code></pre><p><strong>Partial Pivoting</strong>: Determine the smallest $p&gt;k$ such that $|a_{pk}^{(k)}|&#x3D;\mathop{max}\limits_{k\le i \le n}|a_{ik}^{(k)}|$, then interchange row $E_k$ and $E_p$.<br><strong>Scaled Partial Pivoting</strong>: Place the element in the pivot position that is largest relative to the entries in its row.</p><ul><li>Define a scale factor $s_i$ for each row as $s_i&#x3D;\mathop{max}\limits_{1\le j\le n} |(a_{ij})|$ (Note that $s_i$ can’t be 0 because the system have unique solution)</li><li>Determine the smallest $p&gt;k$ such that $\frac{|a_{pk}^{(k)}|}{s_p}&#x3D;\mathop{max}\limits_{i\le k\le n}\frac{|a_{pk}^{(k)}|}{s_p}$</li><li>Interchange row $E_i$ and $E_p$</li></ul><p><strong>Complete Pivoting</strong>: Searches all the entries $a_{ij}$ in range $i\in[k,n]$ and $j\in[k,n]$, to find the entry with the largest magnitude. Once the entry is found, both row and column interchanges are performed to bring this entry to the pivot position.<br>Complete pivoting is the strategy recommended <strong>only</strong> for systems where accuracy is essential and the amount of time needed for this method can be justified.<br><strong>Amount of Computation</strong>:</p><ul><li>Partial Pivoting : $O(n^2)$</li><li>Scaled Partial Pivoting : $O(n^2)$</li><li>Complete Pivoting : $O(n^3)$</li></ul><h4 id="Matrix-Factorization"><a href="#Matrix-Factorization" class="headerlink" title="Matrix Factorization"></a>Matrix Factorization</h4><p><strong>$LU$ factorization</strong>: The factorization is particularly useful when it has the form $A&#x3D;LU$, where $L$ is lower triangular and $U$ is upper triangular.</p><ul><li>In the first step, For each $j&#x3D;2,3,…n$, $E_j\leftarrow E_j-m_{j,1}E_1$, where $m_{j,1}&#x3D;\frac{a_{j1}^{(1)}}{a_{11}^{(1)}}$. The operation can be represented in matrix form:<br>$$M^{(1)}&#x3D;\begin{bmatrix}<br>1&amp;0&amp;…&amp;0\<br>-m_{21}&amp;1&amp;…&amp;0\<br>-m_{31}&amp;0&amp;…&amp;0\<br>…&amp;…&amp;…&amp;…\<br>-m_{n1}&amp;0&amp;…&amp;1            \end{bmatrix}$$</li><li>Then, for every step, repeat the same operation, we can obtain $M^{(1)}$,$M^{(2)}$…$M^{(n-1)}$.</li><li>Note that ${M^{(k)}}^{-1} &#x3D; -M^{(k)}+2I$, $M^{(k)}M^{(j)}&#x3D;M^{(k)}+M^{(j)}$, we can let $L &#x3D; \prod\limits_{j&#x3D;1}^{n-1}{M^{(j)}}^{-1}$, which can be represented by<br>$$L&#x3D;\begin{bmatrix}<br>1&amp;0&amp;0&amp;…&amp;0\<br>m_{21}&amp;1&amp;0&amp;…&amp;0\<br>m_{31}&amp;m_{32}&amp;1&amp;…&amp;0\<br>…&amp;…&amp;…&amp;…&amp;…\<br>m_{n1}&amp;m_{n2}&amp;m_{n3}&amp;…&amp;1<br>\end{bmatrix}$$</li><li>let $U &#x3D; (\prod\limits_{j&#x3D;n-1}^{1}{M^{(j)}})A$, then we can obtain $LU&#x3D;A$, because both $L$ and $U$ are triangular, when solving $Ax&#x3D;b$, we can let $y&#x3D;Ux$, then solve $Ly&#x3D;b$ and $Ux&#x3D;y$.</li></ul><h4 id="Special-Types-of-Matrices"><a href="#Special-Types-of-Matrices" class="headerlink" title="Special Types of Matrices"></a>Special Types of Matrices</h4><p><strong>Strictly Diagonally Dominant Matrix</strong>: $|a_{ii}|&gt;\Sigma_{j&#x3D;1}^n |a_{ij}|$. </p><ul><li>A strictly diagonally dominant matrix $A$ is nonsingular. </li><li>Gaussian elimination can be performed without row or column interchanges.</li><li>The computations will be stable with respect to the growth of roundoff errors.</li></ul><p><strong>Positive Definite Matrix</strong>: Definintion A matrix A is positive definite if it is symmetric and if $x^tAx &gt;0$ for every n-dimensional vertor $x\neq0$.  </p><ul><li>The symmetric matrix $A$ is positive definite if and only if Gaussian elimination without row interchanges can be performed on the linear system $Ax&#x3D;b$ with all pivot elements positive.</li><li>The computation are stable with respect to the growth of round-off errors</li><li>Matrix A is positive definite iff A can be factored in the form $LDL^t$, where $L$ is lower triangular with 1s on its dagonal and $D$ is diagonal matrix with positive diagonal entries.</li></ul><p><strong>Crout Reduction for Tridiagonal Linear System</strong></p><ul><li>Find the crout factorization of $A$</li></ul>]]></content>
+    
+    
+    <categories>
+      
+      <category>课程</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>技术</tag>
+      
+      <tag>课程</tag>
+      
+      <tag>编程</tag>
+      
+      <tag>数学</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>FDS 笔记 - Tree</title>
     <link href="/2023/10/16/fds/"/>
     <url>/2023/10/16/fds/</url>
