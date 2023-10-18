@@ -2,7 +2,7 @@
 title: FDS 笔记 - Tree
 date: 2023-10-16 18:18:17
 tags: [课程,算法,数据结构,技术]
-index_img: https://s1.imagehub.cc/images/2023/10/18/bt.png
+index_img: https://s1.imagehub.cc/images/2023/10/18/covver.jpeg
 categories: 课程
 ---
 
