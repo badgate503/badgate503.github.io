@@ -16,27 +16,27 @@
   <meta name="author" content="Liu404">
   <meta name="keywords" content="">
   
-    <meta name="description" content="本贴为浙江大学 Numerical Analysis Lab 题解集合，请勿直接复制使用。 6-1 Numerical Summation of a Series123456789101112131415161718192021222324252627282930313233343536373839404142double calcInt(double i)&amp;#123;    int j;  &#x2F;&#x2F;">
+    <meta name="description" content="DefinitionA tree is a collection of nodes. The collection can be empty, otherwise, a tree consists of  a distinguished node r, called the root and zero or more nonempty subtrees $T_1, T_2,…,$ each of">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Numerical Analysis 习题">
-<meta property="og:url" content="http://badgate503.github.io/2023/10/07/nalabs/index.html">
+<meta property="og:title" content="FDS 笔记 - Tree">
+<meta property="og:url" content="http://badgate503.github.io/2023/10/16/fds/index.html">
 <meta property="og:site_name" content="Liu 404 博客">
-<meta property="og:description" content="本贴为浙江大学 Numerical Analysis Lab 题解集合，请勿直接复制使用。 6-1 Numerical Summation of a Series123456789101112131415161718192021222324252627282930313233343536373839404142double calcInt(double i)&amp;#123;    int j;  &#x2F;&#x2F;">
+<meta property="og:description" content="DefinitionA tree is a collection of nodes. The collection can be empty, otherwise, a tree consists of  a distinguished node r, called the root and zero or more nonempty subtrees $T_1, T_2,…,$ each of">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="http://badgate503.github.io/img/naimg.jpg">
-<meta property="article:published_time" content="2023-10-07T19:40:17.000Z">
+<meta property="og:image" content="https://s1.imagehub.cc/images/2023/10/18/bt.png">
+<meta property="article:published_time" content="2023-10-16T18:18:17.000Z">
 <meta property="article:modified_time" content="2023-10-18T01:50:40.885Z">
 <meta property="article:author" content="Liu404">
+<meta property="article:tag" content="技术">
 <meta property="article:tag" content="课程">
-<meta property="article:tag" content="编程">
-<meta property="article:tag" content="数学">
-<meta property="article:tag" content="习题">
+<meta property="article:tag" content="算法">
+<meta property="article:tag" content="数据结构">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="http://badgate503.github.io/img/naimg.jpg">
+<meta name="twitter:image" content="https://s1.imagehub.cc/images/2023/10/18/bt.png">
   
   
   
-  <title>Numerical Analysis 习题 - Liu 404 博客</title>
+  <title>FDS 笔记 - Tree - Liu 404 博客</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -219,7 +219,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="Numerical Analysis 习题"></span>
+            <span id="subtitle" data-typed-text="FDS 笔记 - Tree"></span>
           
         </div>
 
@@ -230,8 +230,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2023-10-07 19:40" pubdate>
-          2023年10月7日 晚上
+        <time datetime="2023-10-16 18:18" pubdate>
+          2023年10月16日 晚上
         </time>
       </span>
     
@@ -242,7 +242,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          1.9k 字
+          2.7k 字
         
       </span>
     
@@ -253,7 +253,7 @@
         
         
         
-          16 分钟
+          23 分钟
         
       </span>
     
@@ -290,14 +290,36 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">Numerical Analysis 习题</h1>
+            <h1 id="seo-header">FDS 笔记 - Tree</h1>
             
             
               <div class="markdown-body">
                 
-                <p>本贴为浙江大学 Numerical Analysis Lab 题解集合，请勿直接复制使用。</p>
-<h2 id="6-1-Numerical-Summation-of-a-Series"><a href="#6-1-Numerical-Summation-of-a-Series" class="headerlink" title="6-1 Numerical Summation of a Series"></a>6-1 Numerical Summation of a Series</h2><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><code class="hljs c"><span class="hljs-type">double</span> <span class="hljs-title function_">calcInt</span><span class="hljs-params">(<span class="hljs-type">double</span> i)</span>&#123;<br>    <span class="hljs-type">int</span> j;  <span class="hljs-comment">//x为整数</span><br>    <span class="hljs-type">double</span> res =<span class="hljs-number">0</span>;<br>    <span class="hljs-keyword">for</span>(j = <span class="hljs-number">1</span>;j&lt;=i;j++)<br>    &#123;<br>        res+=<span class="hljs-number">1.0</span>/j;<br>    &#125;<br>    <span class="hljs-keyword">return</span> res/i;<br>&#125;<br><span class="hljs-type">void</span> <span class="hljs-title function_">Series_Sum</span><span class="hljs-params">( <span class="hljs-type">double</span> sum[] )</span><br>&#123;<br>    <span class="hljs-type">double</span> x;<br>    <span class="hljs-type">double</span> remain = <span class="hljs-number">0</span>;<br>    <span class="hljs-type">double</span> id,s1,s2,s3;<br>    <span class="hljs-type">double</span> k,res=<span class="hljs-number">0</span>;<br>    <span class="hljs-type">double</span> cx = <span class="hljs-number">0</span>;<br>    <span class="hljs-type">int</span> c = <span class="hljs-number">0</span>,i;<br>    <span class="hljs-comment">//for(k=6000;k&lt;=1e7;k++)&#123;</span><br>    <span class="hljs-comment">//    remain+=(1.0/(k*k*(k+1)));</span><br>    <span class="hljs-comment">//&#125;</span><br>    <span class="hljs-keyword">for</span>(c=<span class="hljs-number">0</span>;c&lt;=<span class="hljs-number">3000</span>;c++)&#123;<br>        <span class="hljs-keyword">if</span>(c%<span class="hljs-number">10</span>==<span class="hljs-number">0</span>)&#123;<br>            i = c/<span class="hljs-number">10</span>+<span class="hljs-number">1</span>;<br>            id = (<span class="hljs-type">double</span>) i;<br>            s1=calcInt(i);<br>            s2=calcInt(i+<span class="hljs-number">1</span>);<br>            s3=calcInt(i+<span class="hljs-number">2</span>);<br>            <span class="hljs-keyword">if</span>(c!=<span class="hljs-number">0</span>)&#123;<br>                sum[c]=calcInt(c/<span class="hljs-number">10</span>);<br>                cx+=<span class="hljs-number">0.1</span>;<br>                <span class="hljs-keyword">continue</span>;<br>            &#125;<br>            <span class="hljs-comment">//printf(&quot;%lf %lf %lf %lf\n&quot;,id,s1,s2,s3);</span><br>        &#125;<br>        res=<span class="hljs-number">0</span>;<br>        <span class="hljs-keyword">for</span>(k=<span class="hljs-number">2000</span>;k&gt;<span class="hljs-number">0</span>;k--)&#123;<br>            res+=<span class="hljs-number">1.0</span>/(k*(k+cx)*(k+id)*(k+id+<span class="hljs-number">1</span>)*(k+id+<span class="hljs-number">2</span>));<br>        &#125;<br>        sum[c]=(<span class="hljs-number">0</span>-s2+s1+(id-cx+<span class="hljs-number">1</span>)*((id-cx+<span class="hljs-number">2</span>)*res+<span class="hljs-number">0.5</span>*s1-s2+<span class="hljs-number">0.5</span>*s3))*(id-cx)+s1;<br>        cx+=<span class="hljs-number">0.1</span>;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
-<h2 id="6-2-Root-of-a-Polynomial"><a href="#6-2-Root-of-a-Polynomial" class="headerlink" title="6-2 Root of a Polynomial"></a>6-2 Root of a Polynomial</h2><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br></pre></td><td class="code"><pre><code class="hljs c"><span class="hljs-type">double</span> <span class="hljs-title function_">getVal</span><span class="hljs-params">(<span class="hljs-type">double</span> x,<span class="hljs-type">int</span> n, <span class="hljs-type">double</span> c[])</span><br>&#123;<br>    <span class="hljs-type">int</span> i;<br>    <span class="hljs-type">double</span> res = <span class="hljs-number">0</span>;<br>    <span class="hljs-keyword">for</span>(i=n;i&gt;=<span class="hljs-number">0</span>;i--)<br>    &#123;<br>        res=res*x+c[i];<br>    &#125;<br>    <span class="hljs-keyword">return</span> res;<br>&#125;<br><br><span class="hljs-type">double</span> <span class="hljs-title function_">getDVal</span><span class="hljs-params">(<span class="hljs-type">double</span> x,<span class="hljs-type">int</span> n, <span class="hljs-type">double</span> c[])</span><br>&#123;<br>    <span class="hljs-type">int</span> i;<br>    <span class="hljs-type">double</span> res = <span class="hljs-number">0</span>;<br>    <span class="hljs-keyword">for</span>(i=n;i&gt;=<span class="hljs-number">1</span>;i--)<br>    &#123;<br>        res=res*x+c[i]*i;<br>    &#125;<br>    <span class="hljs-keyword">return</span> res;<br>&#125;<br><span class="hljs-type">double</span> <span class="hljs-title function_">getDDVal</span><span class="hljs-params">(<span class="hljs-type">double</span> x,<span class="hljs-type">int</span> n, <span class="hljs-type">double</span> c[])</span><br>&#123;<br>    <span class="hljs-type">int</span> i;<br>    <span class="hljs-type">double</span> res = <span class="hljs-number">0</span>;<br>    <span class="hljs-keyword">for</span>(i=n;i&gt;=<span class="hljs-number">2</span>;i--)<br>    &#123;<br>        res=res*x+c[i]*i*(i<span class="hljs-number">-1</span>);<br>    &#125;<br>    <span class="hljs-keyword">return</span> res;<br>&#125;<br><span class="hljs-type">double</span> <span class="hljs-title function_">Polynomial_Root</span><span class="hljs-params">(<span class="hljs-type">int</span> n, <span class="hljs-type">double</span> c[], <span class="hljs-type">double</span> a, <span class="hljs-type">double</span> b, <span class="hljs-type">double</span> EPS)</span><br>&#123;<br>    <span class="hljs-type">double</span> l = a&lt;b?a:b;<br>    <span class="hljs-type">double</span> r = a&gt;b?a:b;<br>    <span class="hljs-type">double</span> x0,x1;<br>    <br>    <span class="hljs-type">double</span> val,der1,der2,xp;<br>    <span class="hljs-type">int</span> i;<br>    <br>    <span class="hljs-keyword">for</span>(xp=l;xp&lt;=r;xp+=(r-l)*<span class="hljs-number">0.5</span>)<br>    &#123;<br>        x0=xp;<br>        <span class="hljs-keyword">for</span>(i = <span class="hljs-number">0</span>;i&lt;<span class="hljs-number">1000</span>;i++)<br>        &#123;<br>            <br>            <span class="hljs-type">double</span> fm = (getDVal(x0,n,c)*getDVal(x0,n,c)-getDDVal(x0,n,c)*getVal(x0,n,c));<br>            <span class="hljs-comment">//if(fabs(fm)&lt;ZERO)break;</span><br>            <span class="hljs-keyword">if</span>(<span class="hljs-built_in">fabs</span>(getVal(x0,n,c))&lt;=ZERO)<span class="hljs-keyword">return</span> x0;<br>            x1 = x0 - getVal(x0,n,c)*getDVal(x0,n,c)/fm;<br>            <span class="hljs-comment">//x1 = x0-getVal(x0,n,c)/getDVal(x0,n,c);</span><br>            <span class="hljs-keyword">if</span>(x1&lt;l||x1&gt;r)<span class="hljs-keyword">break</span>;<br>            <br>            <span class="hljs-keyword">if</span>(<span class="hljs-built_in">fabs</span>(x1-x0)&lt;EPS)&#123;<span class="hljs-keyword">return</span> x1;&#125;<br>            x0 = x1;<br>        &#125;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+                <h3 id="Definition"><a href="#Definition" class="headerlink" title="Definition"></a>Definition</h3><p><img src="https://s1.imagehub.cc/images/2023/10/18/tree.png" srcset="/img/loading.gif" lazyload><br>A tree is a collection of nodes. The collection can be empty, otherwise, a tree consists of</p>
+<ul>
+<li>a distinguished node r, called the <strong>root</strong></li>
+<li>and zero or more nonempty subtrees $T_1, T_2,…,$ each of whose roots are connected by a directed edge from r.</li>
+</ul>
+<p>Tree is a special type of graph.<br>A tree is also referring to a kind of perennial plant with an elongated stem.</p>
+<h3 id="Terms"><a href="#Terms" class="headerlink" title="Terms"></a>Terms</h3><p><strong>Degree of a node</strong> : number of subtrees of the node.<br><strong>Degree of a tree</strong> : The maximum number of the degree of nodes.<br><strong>Parent</strong> : A node that has subtrees.<br><strong>Children</strong> : The roots of the subtrees of a parent. (Partial Order Class)<br><strong>Sibling</strong> : Children of the same parent (Equivalent Class)<br><strong>Path from $n_1$ to $n_k$</strong> : A sequence of nodes $n_1,n_2…n_k$ such that $n_i$ is the parent of $n_{i+1}$ for $1&lt;i&lt;k$<br><strong>Length of path</strong> : Number of edges on the path<br><strong>Depth of ni</strong> : Length of the unique path from the root to $n_i$<br><strong>Ancestors of a node</strong> : all the nodes along the path from the node up to the root.<br><strong>Decendants of a node</strong> : all the nodes of the subtree.</p>
+<h3 id="Implementation"><a href="#Implementation" class="headerlink" title="Implementation"></a>Implementation</h3><h4 id="FirstChild-NextSibling-Representation"><a href="#FirstChild-NextSibling-Representation" class="headerlink" title="FirstChild-NextSibling Representation"></a>FirstChild-NextSibling Representation</h4><p><img src="https://s1.imagehub.cc/images/2023/10/18/fnr.png" srcset="/img/loading.gif" lazyload><br>Every node have two pointers <code>First Child</code> and <code>Next Sibling</code>. The structure is displayed in the following figure.<br><img src="https://s1.imagehub.cc/images/2023/10/18/nc.png" srcset="/img/loading.gif" lazyload><br>The FirstChild-NextSibling Representation can be used to implement any kind of tree, though they might have a uncertain number of subtrees in their nodes.</p>
+<h4 id="Binary-tree"><a href="#Binary-tree" class="headerlink" title="Binary tree"></a>Binary tree</h4><p>A binary tree is a special type of tree that every node of the tree except the leaves have two subtrees. The binary tree can be easily implemented by the structure:<br><img src="https://s1.imagehub.cc/images/2023/10/18/bt.png" srcset="/img/loading.gif" lazyload></p>
+<h3 id="Tree-Traversal"><a href="#Tree-Traversal" class="headerlink" title="Tree Traversal"></a>Tree Traversal</h3><p>The traversal of a tree is an algorithm to visit every node of a tree exactly once.<br>There are Four different algorithms can be applied.<br>The time complexity should all be $O(n)$.</p>
+<h4 id="Preorder-Traversal"><a href="#Preorder-Traversal" class="headerlink" title="Preorder Traversal"></a>Preorder Traversal</h4><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs c">procedure <span class="hljs-title function_">preorder</span><span class="hljs-params">(tree)</span><br>    <span class="hljs-keyword">if</span> <span class="hljs-title function_">notEmpty</span><span class="hljs-params">(tree)</span> then<br>        <span class="hljs-title function_">visit</span><span class="hljs-params">(tree)</span>;<br>        <span class="hljs-keyword">for</span> each child c of tree<br>            <span class="hljs-title function_">preorder</span><span class="hljs-params">(c)</span>;<br></code></pre></td></tr></table></figure>
+<h4 id="Postorder-Traversal"><a href="#Postorder-Traversal" class="headerlink" title="Postorder Traversal"></a>Postorder Traversal</h4><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs c">procedure <span class="hljs-title function_">postorder</span><span class="hljs-params">(tree)</span><br>    <span class="hljs-keyword">if</span> <span class="hljs-title function_">notEmpty</span><span class="hljs-params">(tree)</span> then<br>        <span class="hljs-keyword">for</span> each child c of tree<br>            <span class="hljs-title function_">postorder</span><span class="hljs-params">(tree)</span><br>        <span class="hljs-title function_">visit</span><span class="hljs-params">(tree)</span><br></code></pre></td></tr></table></figure>
+<h4 id="Levelorder-Traversal"><a href="#Levelorder-Traversal" class="headerlink" title="Levelorder Traversal"></a>Levelorder Traversal</h4><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs c">procedure <span class="hljs-title function_">levelorder</span><span class="hljs-params">(tree)</span><br>    <span class="hljs-title function_">enqueue</span><span class="hljs-params">(tree)</span><br>    <span class="hljs-keyword">while</span> <span class="hljs-built_in">queue</span> is not empty<br>        visit <span class="hljs-title function_">dequeue</span><span class="hljs-params">()</span><br>        <span class="hljs-keyword">for</span> each child c of tree<br>            <span class="hljs-title function_">enqueue</span><span class="hljs-params">(c)</span><br></code></pre></td></tr></table></figure>
+<h4 id="Inorder-Traversal"><a href="#Inorder-Traversal" class="headerlink" title="Inorder Traversal"></a>Inorder Traversal</h4><p>Recursively</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs c">procedure <span class="hljs-title function_">inorder</span><span class="hljs-params">(tree)</span><br>    <span class="hljs-keyword">if</span> <span class="hljs-title function_">notEmpty</span><span class="hljs-params">(tree)</span> then<br>        <span class="hljs-title function_">inorder</span><span class="hljs-params">(tree-&gt;left)</span><br>        <span class="hljs-title function_">visit</span><span class="hljs-params">(tree-&gt;element)</span><br>        <span class="hljs-title function_">inorder</span><span class="hljs-params">(tree-&gt;right)</span><br></code></pre></td></tr></table></figure>
+<p>Iteratively</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs c">procedure <span class="hljs-title function_">inorder_iter</span><span class="hljs-params">(tree)</span><br>    <span class="hljs-keyword">for</span> <span class="hljs-literal">true</span><br>        <span class="hljs-keyword">for</span> tree = tree-&gt;next <br>            <span class="hljs-title function_">push</span><span class="hljs-params">(tree)</span><br>        tree = top(<span class="hljs-built_in">stack</span>)<br>        pop()<br>        <span class="hljs-keyword">if</span> <span class="hljs-title function_">isEmpty</span><span class="hljs-params">(tree)</span> then <span class="hljs-keyword">break</span><br>        <span class="hljs-title function_">visit</span><span class="hljs-params">(tree-&gt;element)</span><br>        tree = tree-&gt;right<br></code></pre></td></tr></table></figure>
+<h3 id="Application"><a href="#Application" class="headerlink" title="Application"></a>Application</h3><h4 id="Hierarchical-file-system"><a href="#Hierarchical-file-system" class="headerlink" title="Hierarchical file system"></a>Hierarchical file system</h4><p><img src="https://s1.imagehub.cc/images/2023/10/18/hfs.png" srcset="/img/loading.gif" lazyload><br>Listing format: files that are of depth $d_i$ will have their names indented by $d_i$ tabs.<br>Used the preorder traveral of tree.</p>
+<h4 id="Threaded-Binary-Tree"><a href="#Threaded-Binary-Tree" class="headerlink" title="Threaded Binary Tree"></a>Threaded Binary Tree</h4><p>Rules: </p>
+<ul>
+<li>if <code>tree-&gt;left</code> is <strong>null</strong>, replace it with a pointer to the inorder predecessor of <code>tree</code>  </li>
+<li>If <code>tree-&gt;right</code> is <strong>null</strong>, replace it with a pointer to the inorder successor of <code>tree</code></li>
+<li>There must not be any loose threads. Therefore a threaded binary tree must have a head node of which the left child points to the first node.<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs c"><span class="hljs-keyword">typedef</span> <span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">ThreadedTreeNode</span> *<span class="hljs-title">PtrTo</span> <span class="hljs-title">ThreadedNode</span>;</span><br><span class="hljs-keyword">typedef</span> <span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">PtrToThreadedNode</span> <span class="hljs-title">TheadedTreee</span>;</span><br><span class="hljs-keyword">typedef</span> <span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">ThreadedTreeNode</span>&#123;</span><br>    ElementType  Element;<br>    <span class="hljs-type">int</span>          LeftThread;<br>    ThreadedTree Left;<br>    <span class="hljs-type">int</span>          RightThread;<br>    ThreadedTree Right;<br>&#125;<br></code></pre></td></tr></table></figure></li>
+</ul>
+
                 
               </div>
             
@@ -350,7 +372,7 @@
     
       <span class="category-chain">
         
-  <a href="/categories/%E4%B9%A0%E9%A2%98/" class="category-chain-item">习题</a>
+  <a href="/categories/%E8%AF%BE%E7%A8%8B/" class="category-chain-item">课程</a>
   
   
 
@@ -365,13 +387,13 @@
     <div class="post-meta">
       <i class="iconfont icon-tags"></i>
       
+        <a href="/tags/%E6%8A%80%E6%9C%AF/" class="print-no-link">#技术</a>
+      
         <a href="/tags/%E8%AF%BE%E7%A8%8B/" class="print-no-link">#课程</a>
       
-        <a href="/tags/%E7%BC%96%E7%A8%8B/" class="print-no-link">#编程</a>
+        <a href="/tags/%E7%AE%97%E6%B3%95/" class="print-no-link">#算法</a>
       
-        <a href="/tags/%E6%95%B0%E5%AD%A6/" class="print-no-link">#数学</a>
-      
-        <a href="/tags/%E4%B9%A0%E9%A2%98/" class="print-no-link">#习题</a>
+        <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" class="print-no-link">#数据结构</a>
       
     </div>
   
@@ -383,8 +405,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>Numerical Analysis 习题</div>
-      <div>http://badgate503.github.io/2023/10/07/nalabs/</div>
+      <div>FDS 笔记 - Tree</div>
+      <div>http://badgate503.github.io/2023/10/16/fds/</div>
     </div>
     <div class="license-meta">
       
@@ -396,7 +418,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2023年10月7日</div>
+          <div>2023年10月16日</div>
         </div>
       
       
@@ -434,18 +456,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2023/10/16/fds/" title="FDS 笔记 - Tree">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">FDS 笔记 - Tree</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2023/10/07/dld/" title="Logic and Computer Design 笔记">
-                        <span class="hidden-mobile">Logic and Computer Design 笔记</span>
+                      <a href="/2023/10/07/nalabs/" title="Numerical Analysis 习题">
+                        <span class="hidden-mobile">Numerical Analysis 习题</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
