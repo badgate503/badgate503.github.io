@@ -11,7 +11,7 @@ categories: 课程
 Step k: if $a_{kk}^{(k)} \neq 0$, compute $m_{ik}=a_{ik}^{(k)}/a_{kk}^{(k)}$, $$a_{ij}^{(k+1)}=a_{ij}^{(k)}-m_{ik}a_{kj}^{(k)}$$
 $$b_i^{(k+1)}=b_i^{(k)}-m_{ik}b_k^{(k)}$$
 There are $n-1$ steps.  
-**Backward-substitution**: $x_n=b_n^{(n)}/a_{nn}^{(n)}; x_i=(b_i^{(i)}-\Sigma _{j=i+1}^n a_{ij}^{(i)}x_j)/a_{ii}^{(i)}$
+**Backward-substitution**: $x_n=b_n^{(n)}/a_{nn}^{(n)}; x_i=(b_i^{(i)}-\Sigma _{j=i+1}^n a_{ij}^{(i)}x_j)/a_{ii}^{(i)}$  
 if $a_{ii}^{(i)}=0$, then we must find $k$ such that $a_{ki}^{(i)} \neq 0$ and exchange row $i$ and row $k$. If there doesn't exist such k, no unique solution exists.
 Amount of Computation :
 + Elimination:$\Sigma_{k=1}^{n-1}(n-k)(n-k+2)=\frac{n^3}{3}+\frac{n^2}{2}-\frac{5n}{6}$
