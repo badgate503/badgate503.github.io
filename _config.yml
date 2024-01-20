@@ -103,4 +103,4 @@ theme: cactus
 deploy:
   type: git
   repo: git@github.com:badgate503/badgate503.github.io.git
-  branch: main
+  branch: gh-pages
