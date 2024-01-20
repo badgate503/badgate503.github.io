@@ -11,7 +11,7 @@ if (!!$.prototype.justifiedGallery) {
 }
 
 $(document).ready(function() {
-
+  
   /**
    * Shows the responsive navigation menu on mobile.
    */
@@ -28,19 +28,19 @@ $(document).ready(function() {
     var menu = $("#menu");
     var nav = $("#menu > #nav");
     var menuIcon = $("#menu-icon, #menu-icon-tablet");
-
+    menu.show();
     /**
      * Display the menu on hi-res laptops and desktops.
      */
-    if ($(document).width() >= 1440) {
+    /*if ($(document).width() >= 1440) {
       menu.show();
       menuIcon.addClass("active");
-    }
+    }*/
 
     /**
      * Display the menu if the menu icon is clicked.
      */
-    menuIcon.click(function() {
+    /*menuIcon.click(function() {
       if (menu.is(":hidden")) {
         menu.show();
         menuIcon.addClass("active");
@@ -49,7 +49,7 @@ $(document).ready(function() {
         menuIcon.removeClass("active");
       }
       return false;
-    });
+    });*/
 
     /**
      * Add a scroll listener to the menu to hide/show the navigation links.
@@ -60,7 +60,7 @@ $(document).ready(function() {
 
         // hide only the navigation links on desktop
         if (!nav.is(":visible") && topDistance < 50) {
-          //nav.show();
+          nav.show();
         } else if (nav.is(":visible") && topDistance > 100) {
           nav.hide();
         }

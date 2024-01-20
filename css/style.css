@@ -571,7 +571,7 @@ body {
   }
 }
 .max-width {
-  max-width: 48rem;
+  max-width: 70rem;
 }
 @media (max-width: 480px) {
   .px3 {
@@ -1085,6 +1085,9 @@ body {
 }
 .project-list .project-item p {
   display: inline;
+}
+article {
+  Margin-left: 13rem;
 }
 article header .posttitle {
   margin-top: 0;
