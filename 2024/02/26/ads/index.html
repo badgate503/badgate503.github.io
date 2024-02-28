@@ -6,12 +6,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="HandheldFriendly" content="True">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5" />
-    <meta name="description" content="Basic info课程名：高级数据结构 （Advanced Data Structure） 主讲教师： $A.P.$ $Yao$-$Xiang$ $Ding$ 分数占比：  作业 10% 讨论 10% Research Project 30% Midterm 10% Final 40%  教材：  Mark Allen Weiss, Data Structure and Algorithm An">
+    <meta name="description" content="Basic info课程名：高级数据结构 （Advanced Data Structure） 主讲教师： $\mathbf{A.P.}$ $Yao$-$Xiang$ $Ding$ 分数占比：  作业 $10\%$ 讨论 $10\%$ Research Project $30\%$ Midterm $10\%$ Final $40\%$  教材：  Mark Allen Weiss, Data St">
 <meta property="og:type" content="article">
 <meta property="og:title" content="计算机学院 高级数据结构 （Advanced Data Structure） 笔记">
 <meta property="og:url" content="https://404blog.com/2024/02/26/ads/index.html">
 <meta property="og:site_name" content="404 blog">
-<meta property="og:description" content="Basic info课程名：高级数据结构 （Advanced Data Structure） 主讲教师： $A.P.$ $Yao$-$Xiang$ $Ding$ 分数占比：  作业 10% 讨论 10% Research Project 30% Midterm 10% Final 40%  教材：  Mark Allen Weiss, Data Structure and Algorithm An">
+<meta property="og:description" content="Basic info课程名：高级数据结构 （Advanced Data Structure） 主讲教师： $\mathbf{A.P.}$ $Yao$-$Xiang$ $Ding$ 分数占比：  作业 $10\%$ 讨论 $10\%$ Research Project $30\%$ Midterm $10\%$ Final $40\%$  教材：  Mark Allen Weiss, Data St">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://404blog.com/images/img1.svg">
 <meta property="og:image" content="https://404blog.com/images/img2.svg">
@@ -23,7 +23,7 @@
 <meta property="og:image" content="https://404blog.com/images/zigzig.svg">
 <meta property="og:image" content="https://404blog.com/images/zigzag.svg">
 <meta property="article:published_time" content="2024-02-26T10:57:32.000Z">
-<meta property="article:modified_time" content="2024-02-27T11:57:21.656Z">
+<meta property="article:modified_time" content="2024-02-28T03:20:04.327Z">
 <meta property="article:author" content="404">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://404blog.com/images/img1.svg">
@@ -127,7 +127,7 @@
     
     
       <div id="toc">
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Basic-info"><span class="toc-number">1.</span> <span class="toc-text">Basic info</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Lec-1-Balanced-BST"><span class="toc-number">2.</span> <span class="toc-text">Lec 1 : Balanced BST</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Height-Balance"><span class="toc-number">2.1.</span> <span class="toc-text">Height Balance</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#AVL-Trees"><span class="toc-number">2.2.</span> <span class="toc-text">AVL Trees</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Splay-Trees"><span class="toc-number">2.3.</span> <span class="toc-text">Splay Trees</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Amortized-Analysis"><span class="toc-number">2.4.</span> <span class="toc-text">Amortized Analysis</span></a></li></ol></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Basic-info"><span class="toc-number">1.</span> <span class="toc-text">Basic info</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Lec-1-Balanced-BST"><span class="toc-number">2.</span> <span class="toc-text">Lec 1 : Balanced BST</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Height-Balance"><span class="toc-number">2.1.</span> <span class="toc-text">Height Balance</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#AVL-Trees"><span class="toc-number">2.2.</span> <span class="toc-text">AVL Trees</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Splay-Trees"><span class="toc-number">2.3.</span> <span class="toc-text">Splay Trees</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Amortized-Analysis-for-Splay-Tree"><span class="toc-number">2.4.</span> <span class="toc-text">Amortized Analysis for Splay Tree</span></a></li></ol></li></ol>
       </div>
     
   </span>
@@ -168,14 +168,14 @@
 
   <div class="content e-content" itemprop="articleBody">
     <h2 id="Basic-info"><a href="#Basic-info" class="headerlink" title="Basic info"></a>Basic info</h2><p>课程名：高级数据结构 （Advanced Data Structure）</p>
-<p>主讲教师： <a target="_blank" rel="noopener" href="https://yaoxiangding.github.io">$A.P.$ $Yao$-$Xiang$ $Ding$</a></p>
+<p>主讲教师： <a target="_blank" rel="noopener" href="https://yaoxiangding.github.io">$\mathbf{A.P.}$ $Yao$-$Xiang$ $Ding$</a></p>
 <p>分数占比：</p>
 <ul>
-<li>作业 10%</li>
-<li>讨论 10%</li>
-<li>Research Project 30%</li>
-<li>Midterm 10%</li>
-<li>Final 40%</li>
+<li>作业 $10\%$</li>
+<li>讨论 $10\%$</li>
+<li>Research Project $30\%$</li>
+<li>Midterm $10\%$</li>
+<li>Final $40\%$</li>
 </ul>
 <p>教材：</p>
 <ol>
@@ -186,11 +186,11 @@
 <p>课程网站：<a target="_blank" rel="noopener" href="https://yaoxiangding.github.io/ADS-2024/">Github Page</a></p>
 <h2 id="Lec-1-Balanced-BST"><a href="#Lec-1-Balanced-BST" class="headerlink" title="Lec 1 : Balanced BST"></a>Lec 1 : Balanced BST</h2><p>尽管二叉搜索树可以在一定程度上加快搜索的过程，但其仍有问题。在最差的情况下，即树的每层都只有一个节点时，搜索的复杂度达到 $O(N)$ . </p>
 <p>此时，对于除叶节点以外的任何一个节点，他必有一个子树为空，而另一个子树非空。直观上来看这样的树就是“不平衡”的，而假如一个树是完美二叉树或者完全二叉树，对其搜索的复杂度就可以达到或接近 $O(\log n)$ . </p>
-<p>因此，一个树越“平衡”，搜索的复杂度就越低，我们希望找到一种具备这种平衡性的优化的 BST . 在此之前我们先来定义何为“平衡” .</p>
-<h3 id="Height-Balance"><a href="#Height-Balance" class="headerlink" title="Height Balance"></a>Height Balance</h3><p>$【\mathbf{Def}】$ 树的<strong>高度平衡</strong></p>
+<p>因此，一个树越“平衡”，搜索的复杂度越低，我们希望找到一种具备这种平衡性的优化的 BST . 在此之前我们先来定义何为“平衡” .</p>
+<h3 id="Height-Balance"><a href="#Height-Balance" class="headerlink" title="Height Balance"></a>Height Balance</h3><p>$【\mathbf{Def}】$ 树的<strong>高度平衡</strong>：空树是平衡树. 若某树 $T$ 有其左子树 $T_L$ 和右子树 $T_R$，那么树 $T$ 是<strong>高度平衡</strong>的，当且仅当</p>
 <ol>
-<li>空树是平衡树</li>
-<li>某树 $T$ 有其左子树 $T_L$ 和右子树 $T_R$. 树 $T$ 是<strong>高度平衡</strong>的，当且仅当<br>i. $T_L$ 和 $T_R$ 都<strong>高度平衡</strong>.<br>ii. $T_L$ 和 $T_R$ 的高度差的绝对值小于等于 $1$.</li>
+<li>$T_L$ 和 $T_R$ 都<strong>高度平衡</strong>.</li>
+<li>$T_L$ 和 $T_R$ 的高度差的绝对值小于等于 $1$.</li>
 </ol>
 <p>$【\mathbf{Def}】$ 节点的<strong>平衡因数</strong><br>$n$ 为树的某个节点，$h_L$ 和 $h_R$ 分别为其左右子树的高度，节点的平衡因数$BF(n)=h_L -h_R.$ 对于高度平衡树而言，$BF(n)=-1,0$ 或 $1$. 如果某个节点 $n$ 的平衡因数大于等于 $2$ ，称这个节点<strong>失衡</strong>.</p>
 <h3 id="AVL-Trees"><a href="#AVL-Trees" class="headerlink" title="AVL Trees"></a>AVL Trees</h3><p>$Adelson$-$Velskii$-$Landis$ 树由苏联数学家格奥尔吉·马克西莫维奇和米哈伊洛维奇·兰迪斯发明.</p>
@@ -209,8 +209,23 @@
 <li>$n$ 的父节点 $p$ 是否是根节点</li>
 <li>$n$ 的父节点 $p$ 是其父节点 $q$ 的左子树还是右子树</li>
 </ul>
-<p>针对不同的情况，伸展树的操作有以下几种：<br><strong>Zig</strong>或<strong>Zag</strong>：当 $p$ 为根节点时进行，Zig 操作直接对 $p$ 进行右旋，而Zag 操作与之相反.<br><img src="/images/zig.svg" alt="Fig. 4 Zig"><br><strong>Zig-Zig</strong>或<strong>Zag-Zag</strong>：当 $p$ 不为根节点，且 $n$ 和 $p$ 均为左儿子或均为右儿子，Zig-Zig 操作先对 $q$ 进行右旋，再对 $p$ 进行右旋. Zag-Zag 操作与之相反.<br><img src="/images/zigzig.svg" alt="Fig. 4 Zig-Zig"><br><strong>Zig-Zag</strong>或<strong>Zag-Zig</strong>：当 $p$ 不为根节点，且 $n$ 和 $p$ 有一个是左儿子，另一个是右儿子的时候，Zig-Zag 操作先对 $p$ 进行左旋，再对 $q$ 进行右旋. Zag-Zig 操作与之相反.<br><img src="/images/zigzag.svg" alt="Fig. 4 Zig-Zag"></p>
-<h3 id="Amortized-Analysis"><a href="#Amortized-Analysis" class="headerlink" title="Amortized Analysis"></a>Amortized Analysis</h3>
+<p>针对不同的情况，伸展树的操作有以下几种：<br>► <strong>Zig</strong>或<strong>Zag</strong>：当 $p$ 为根节点时进行，Zig 操作直接对 $p$ 进行右旋，而Zag 操作与之相反.<br><img src="/images/zig.svg" alt="Fig. 4 Zig"><br>► <strong>Zig-Zig</strong>或<strong>Zag-Zag</strong>：当 $p$ 不为根节点，且 $n$ 和 $p$ 均为左儿子或均为右儿子，Zig-Zig 操作先对 $q$ 进行右旋，再对 $p$ 进行右旋. Zag-Zag 操作与之相反.<br><img src="/images/zigzig.svg" alt="Fig. 4 Zig-Zig"><br>► <strong>Zig-Zag</strong>或<strong>Zag-Zig</strong>：当 $p$ 不为根节点，且 $n$ 和 $p$ 有一个是左儿子，另一个是右儿子的时候，Zig-Zag 操作先对 $p$ 进行左旋，再对 $q$ 进行右旋. Zag-Zig 操作与之相反.<br><img src="/images/zigzag.svg" alt="Fig. 4 Zig-Zag"></p>
+<blockquote>
+<p>伸展树的操作基于树的旋转操作，因此三类操作都保证树的先序遍历不改变<br>做题时可以利用这一特征，记住操作前后树的形状和 $n$, $p$, $q$ 三个节点的顺序即可</p>
+</blockquote>
+<h3 id="Amortized-Analysis-for-Splay-Tree"><a href="#Amortized-Analysis-for-Splay-Tree" class="headerlink" title="Amortized Analysis for Splay Tree"></a>Amortized Analysis for Splay Tree</h3><p>对于某种数据结构，如果他的某几个特定操作速度较慢，但大多数操作速度较快，我们可以通过使用<strong>摊还分析</strong>计算多个连续的操作的平均时间复杂度. </p>
+<p>记最差时间为 $T_{worst}$ , 均摊时间为 $T_{amortized}$ , 平均时间复杂度为 $T_{average}$ , 那么有：</p>
+<script type="math/tex; mode=display">T_{worst}\ge T_{amortized}\ge T_{average}</script><p>上一节提到伸展树可以在<strong>均摊的</strong> $O(\log n)$ 时间内完成插入、查找等操作。因此任意 $m$ 个连续的操作最多使用 $O(m\log n)$ 时间.</p>
+<p>以下展示一个简单的例子：对于一个栈，定义一种新的操作 <code>multipop(s, k)</code>, 他可以连续的从栈 <code>s</code> 中出栈 <code>k</code> 个元素. 假设现在有 <code>n</code> 个由 <code>push</code>, <code>pop</code>, <code>multipop</code> 组成的操作序列.</p>
+<p>由于 <code>multipop</code> 的最差时间复杂度为 $O(n)$， 那么这些操作的最差时间复杂度为 $O(n^2)$，事实上，这一结论非常正确，但他并不是一个<strong>确界</strong>，因为参数恰为 <code>n</code> 的 <code>multipop</code> 不可能被执行 <code>n</code> 次. 因此需要通过摊还分析得出更准确的最差时间复杂度，也即均摊时间复杂度</p>
+<p>摊还分析的三种方法：聚合分析、核算法、势法</p>
+<p>► <strong>聚合分析</strong>：如果一系列的 $n$ 个操作总共的最差时间为 $T(n)$ . 那么平均每个操作的摊还消耗即为 $T(n)/n$ . </p>
+<p>上面的例子中，<code>pop</code> 操作的次数至多与 <code>push</code> 次数相等，因此 <code>n</code> 个由 <code>push</code>, <code>pop</code>, <code>multipop</code> 组成的操作序列的最差时间复杂度为 $O(n)$, 均摊下来的每个操作复杂度即为 $O(1)$.</p>
+<p>► <strong>会计法</strong>：当一个操作的摊还消耗 $\hat{c_i}$ 超过了他的实际消耗 $c_i$ ，我们可以将这一差异“存”到一个“账户”中. 这一“账户”可以为之后实际消耗大于摊还消耗的操作“支付”差值.</p>
+<blockquote>
+<p>对于任意 $n$ 个连续操作，我们有:</p>
+<script type="math/tex; mode=display">\sum_{i=1}^n\hat{c_i}\ge\sum_{i=1}^nc_i，</script><script type="math/tex; mode=display">T_{amortized}=\frac1{n}\sum_i^n\hat{c_i}</script></blockquote>
+
   </div>
 </article>
 
@@ -235,7 +250,7 @@
     
     
       <div id="toc-footer" style="display: none">
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Basic-info"><span class="toc-number">1.</span> <span class="toc-text">Basic info</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Lec-1-Balanced-BST"><span class="toc-number">2.</span> <span class="toc-text">Lec 1 : Balanced BST</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Height-Balance"><span class="toc-number">2.1.</span> <span class="toc-text">Height Balance</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#AVL-Trees"><span class="toc-number">2.2.</span> <span class="toc-text">AVL Trees</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Splay-Trees"><span class="toc-number">2.3.</span> <span class="toc-text">Splay Trees</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Amortized-Analysis"><span class="toc-number">2.4.</span> <span class="toc-text">Amortized Analysis</span></a></li></ol></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Basic-info"><span class="toc-number">1.</span> <span class="toc-text">Basic info</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Lec-1-Balanced-BST"><span class="toc-number">2.</span> <span class="toc-text">Lec 1 : Balanced BST</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Height-Balance"><span class="toc-number">2.1.</span> <span class="toc-text">Height Balance</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#AVL-Trees"><span class="toc-number">2.2.</span> <span class="toc-text">AVL Trees</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Splay-Trees"><span class="toc-number">2.3.</span> <span class="toc-text">Splay Trees</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Amortized-Analysis-for-Splay-Tree"><span class="toc-number">2.4.</span> <span class="toc-text">Amortized Analysis for Splay Tree</span></a></li></ol></li></ol>
       </div>
     
 
