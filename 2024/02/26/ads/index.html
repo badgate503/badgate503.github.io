@@ -6,12 +6,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="HandheldFriendly" content="True">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5" />
-    <meta name="description" content="Basic info课程名：高级数据结构 （Advanced Data Structure） 主讲教师： $\mathbf{A.P.}$ $Yao$-$Xiang$ $Ding$ E-mail：$yxding@zju.edu.cn$ 分数占比：  作业 $10\%$ 讨论 $10\%$ Research Project $30\%$ Midterm $10\%$ Final $40\%$  教材：">
+    <meta name="description" content="Basic info课程名：高级数据结构 （Advanced Data Structure） 主讲教师： $\mathbf{A.P.}$ $Yao$-$Xiang$ $Ding$ E-mail：$yxding@zju.edu.cn$ 分数占比：  Assignment $10\%$ 讨论 $10\%$ Research Project $30\%$ Midterm $10\%$ Final $40">
 <meta property="og:type" content="article">
 <meta property="og:title" content="计算机学院 高级数据结构 （Advanced Data Structure） 笔记">
 <meta property="og:url" content="https://404blog.com/2024/02/26/ads/index.html">
 <meta property="og:site_name" content="404 blog">
-<meta property="og:description" content="Basic info课程名：高级数据结构 （Advanced Data Structure） 主讲教师： $\mathbf{A.P.}$ $Yao$-$Xiang$ $Ding$ E-mail：$yxding@zju.edu.cn$ 分数占比：  作业 $10\%$ 讨论 $10\%$ Research Project $30\%$ Midterm $10\%$ Final $40\%$  教材：">
+<meta property="og:description" content="Basic info课程名：高级数据结构 （Advanced Data Structure） 主讲教师： $\mathbf{A.P.}$ $Yao$-$Xiang$ $Ding$ E-mail：$yxding@zju.edu.cn$ 分数占比：  Assignment $10\%$ 讨论 $10\%$ Research Project $30\%$ Midterm $10\%$ Final $40">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://404blog.com/images/img1.svg">
 <meta property="og:image" content="https://404blog.com/images/img2.svg">
@@ -23,7 +23,7 @@
 <meta property="og:image" content="https://404blog.com/images/zigzig.svg">
 <meta property="og:image" content="https://404blog.com/images/zigzag.svg">
 <meta property="article:published_time" content="2024-02-26T10:57:32.000Z">
-<meta property="article:modified_time" content="2024-02-28T05:33:20.581Z">
+<meta property="article:modified_time" content="2024-02-29T02:06:51.537Z">
 <meta property="article:author" content="404">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://404blog.com/images/img1.svg">
@@ -174,7 +174,7 @@
 <p>E-mail：$yxding@zju.edu.cn$</p>
 <p>分数占比：</p>
 <ul>
-<li>作业 $10\%$</li>
+<li>Assignment $10\%$</li>
 <li>讨论 $10\%$</li>
 <li>Research Project $30\%$</li>
 <li>Midterm $10\%$</li>
@@ -224,7 +224,7 @@
 <p>摊还分析的三种方法：聚合分析、核算法、势法</p>
 <p>► <strong>聚合分析</strong>：如果一系列的 $n$ 个操作总共的最差时间为 $T(n)$ . 那么平均每个操作的摊还消耗即为 $T(n)/n$ . </p>
 <p>上面的例子中，<code>pop</code> 操作的次数至多与 <code>push</code> 次数相等，因此 <code>n</code> 个由 <code>push</code>, <code>pop</code>, <code>multipop</code> 组成的操作序列的最差时间复杂度为 $O(n)$, 均摊下来的每个操作复杂度即为 $O(1)$.</p>
-<p>► <strong>会计法</strong>：当一个操作的摊还消耗 $\hat{c_i}$ 超过了他的实际消耗 $c_i$ ，我们可以将这一差异“存”到一个“账户”中. 这一“账户”可以为之后实际消耗大于摊还消耗的操作“支付”差值.</p>
+<p>► <strong>核算法</strong>：当一个操作的摊还消耗 $\hat{c_i}$ 超过了他的实际消耗 $c_i$ ，我们可以将这一差异“存”到一个“账户”中. 这一“账户”可以为之后实际消耗大于摊还消耗的操作“支付”差值.</p>
 <blockquote>
 <p>对于任意 $n$ 个连续操作，我们有:</p>
 <script type="math/tex; mode=display">\sum_{i=1}^n\hat{c_i}\ge\sum_{i=1}^nc_i，</script><script type="math/tex; mode=display">T_{amortized}=\frac1{n}\sum_i^n\hat{c_i}</script></blockquote>
