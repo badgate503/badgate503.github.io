@@ -15,7 +15,7 @@
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://404blog.com/images/dbarc.svg">
 <meta property="article:published_time" content="2024-02-29T01:56:04.000Z">
-<meta property="article:modified_time" content="2024-03-03T07:22:36.816Z">
+<meta property="article:modified_time" content="2024-03-03T07:30:09.038Z">
 <meta property="article:author" content="404">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://404blog.com/images/dbarc.svg">
@@ -121,7 +121,7 @@
     
     
       <div id="toc">
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Basic-info"><span class="toc-number">1.</span> <span class="toc-text">Basic info</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Lec-1-Introduction"><span class="toc-number">2.</span> <span class="toc-text">Lec 1 : Introduction</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Lec-2-Relational-Model"><span class="toc-number">3.</span> <span class="toc-text">Lec 2 : Relational Model</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Basic-info"><span class="toc-number">1.</span> <span class="toc-text">Basic info</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Lec-1-Introduction"><span class="toc-number">2.</span> <span class="toc-text">Lec 1 : Introduction</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Lec-2-Relational-Model"><span class="toc-number">3.</span> <span class="toc-text">Lec 2 : Relational Model</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Relations"><span class="toc-number">3.1.</span> <span class="toc-text">Relations</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Fundamental-Relational-Algebra-Operations"><span class="toc-number">3.2.</span> <span class="toc-text">Fundamental Relational-Algebra Operations</span></a></li></ol></li></ol>
       </div>
     
   </span>
@@ -219,7 +219,7 @@
 </ol>
 <h2 id="Lec-2-Relational-Model"><a href="#Lec-2-Relational-Model" class="headerlink" title="Lec 2 : Relational Model"></a>Lec 2 : Relational Model</h2><p>A <strong>Relation</strong> is a table with rows and columns.</p>
 <p>A relational database is a collection  of one or more relations, which are based on the relational model</p>
-<p><strong>Basic Definition of a relation</strong>:<br>Formally, given sets $D_1,D_2,\dots,D_n\ (D_i=a_{ij}|_{j=1\dots k})$, a relation $r$ is a <em>subset</em> of $D_1\times D_2\times \dots \times D_n$.</p>
+<h3 id="Relations"><a href="#Relations" class="headerlink" title="Relations"></a>Relations</h3><p><strong>Basic Definition of a relation</strong>:<br>Formally, given sets $D_1,D_2,\dots,D_n\ (D_i=a_{ij}|_{j=1\dots k})$, a relation $r$ is a <em>subset</em> of $D_1\times D_2\times \dots \times D_n$.</p>
 <p><strong>Attribute Types</strong>：</p>
 <ul>
 <li>Each attribute of a relation has a name. </li>
@@ -227,7 +227,7 @@
 <li>$1^{st}\ NF$: Attribute values are required to be atomic (indivisible) </li>
 <li>The special value <strong>null</strong> is a member of every domain.</li>
 </ul>
-<p><strong>Relations</strong>： A relation is concerned with two concepts: <strong>relation schema</strong> and <strong>relation instance</strong>.</p>
+<p>A relation is concerned with two concepts: <strong>relation schema</strong> and <strong>relation instance</strong>.</p>
 <ul>
 <li>The <strong>relation schema</strong> describes the structure of the relation</li>
 <li>The <strong>relation instance</strong> corresponds to the <strong>snapshot</strong> of the data in the relation at a given instant in time<blockquote>
@@ -254,7 +254,7 @@
 <li><strong>Primary key</strong>: $K$ is a Primary key if $K$ is a candidate key and is defined by user explicitly.</li>
 <li><strong>Foreign key</strong>: Assume there exists relations $r$ and $s$: $r(A,B,C),r(B,D)$, we can say that attribute $B$ in relation $r$ is foreign key referencing $s$ and $r$ is a referencing relation and $s$ is a referenced relation.</li>
 </ul>
-<p><strong>Fundamental Relational-Algebra Operations</strong>:<br>There are six basic operators:</p>
+<h3 id="Fundamental-Relational-Algebra-Operations"><a href="#Fundamental-Relational-Algebra-Operations" class="headerlink" title="Fundamental Relational-Algebra Operations"></a>Fundamental Relational-Algebra Operations</h3><p>There are six basic operators:</p>
 <ol>
 <li><p><strong>Select</strong>: defined as $\sigma_p(r)=\{t|t\in r\ \land\ p(t)\}$, where $p$ is a formula in propositional calculas consisting of terms connected by $\land,\ \vee,\ \neg.$ e.g. </p>
 <script type="math/tex; mode=display">\sigma_{customer-name='Dickson'\ \land\ type='debit'}(account).</script></li>
@@ -294,7 +294,7 @@
     
     
       <div id="toc-footer" style="display: none">
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Basic-info"><span class="toc-number">1.</span> <span class="toc-text">Basic info</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Lec-1-Introduction"><span class="toc-number">2.</span> <span class="toc-text">Lec 1 : Introduction</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Lec-2-Relational-Model"><span class="toc-number">3.</span> <span class="toc-text">Lec 2 : Relational Model</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Basic-info"><span class="toc-number">1.</span> <span class="toc-text">Basic info</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Lec-1-Introduction"><span class="toc-number">2.</span> <span class="toc-text">Lec 1 : Introduction</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Lec-2-Relational-Model"><span class="toc-number">3.</span> <span class="toc-text">Lec 2 : Relational Model</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Relations"><span class="toc-number">3.1.</span> <span class="toc-text">Relations</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Fundamental-Relational-Algebra-Operations"><span class="toc-number">3.2.</span> <span class="toc-text">Fundamental Relational-Algebra Operations</span></a></li></ol></li></ol>
       </div>
     
 
