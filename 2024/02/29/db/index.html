@@ -15,7 +15,7 @@
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://404blog.com/images/dbarc.svg">
 <meta property="article:published_time" content="2024-02-29T01:56:04.000Z">
-<meta property="article:modified_time" content="2024-03-03T04:59:03.569Z">
+<meta property="article:modified_time" content="2024-03-03T07:17:25.061Z">
 <meta property="article:author" content="404">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://404blog.com/images/dbarc.svg">
@@ -121,7 +121,7 @@
     
     
       <div id="toc">
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Basic-info"><span class="toc-number">1.</span> <span class="toc-text">Basic info</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Lec-1-Introduction"><span class="toc-number">2.</span> <span class="toc-text">Lec 1 : Introduction</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Basic-info"><span class="toc-number">1.</span> <span class="toc-text">Basic info</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Lec-1-Introduction"><span class="toc-number">2.</span> <span class="toc-text">Lec 1 : Introduction</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Lec-2-Relational-Model"><span class="toc-number">3.</span> <span class="toc-text">Lec 2 : Relational Model</span></a></li></ol>
       </div>
     
   </span>
@@ -217,30 +217,54 @@
 <li><p><strong>Data Control Language</strong></p>
 </li>
 </ol>
-<p>Basic Structure of a sheet, Formally, given sets $D_1,D_2,\dots,D_n$,</p>
+<h2 id="Lec-2-Relational-Model"><a href="#Lec-2-Relational-Model" class="headerlink" title="Lec 2 : Relational Model"></a>Lec 2 : Relational Model</h2><p>A <strong>Relation</strong> is a table with rows and columns.</p>
+<p>A relational database is a collection  of one or more relations, which are based on the relational model</p>
+<p><strong>Basic Definition of a relation</strong>:<br>Formally, given sets $D_1,D_2,\dots,D_n\ (D_i=a_{ij}|_{j=1\dots k})$, a relation $r$ is a <em>subset</em> of $D_1\times D_2\times \dots \times D_n$.</p>
 <p><strong>Attribute Types</strong>：</p>
 <ul>
 <li>Each attribute of a relation has a name. </li>
-<li>1st NF: Attribute values are required to be atomic (indivisible) </li>
-<li>The special value <strong>null</strong> is a member of a </li>
+<li>The set of allowed values for each attribute is called the <strong>domain</strong> of the attribute.</li>
+<li>$1^{st}\ NF$: Attribute values are required to be atomic (indivisible) </li>
+<li>The special value <strong>null</strong> is a member of every domain.</li>
 </ul>
-<p><strong>Relations</strong>： A relation is concerned with two concepts: relation schema and relation instance.</p>
+<p><strong>Relations</strong>： A relation is concerned with two concepts: <strong>relation schema</strong> and <strong>relation instance</strong>.</p>
 <ul>
 <li>The <strong>relation schema</strong> describes the structure of the relation</li>
-<li>The <strong>relation instance</strong> corresponds to the <strong>snapshot</strong> of the data in the relation at a given instant in time</li>
-<li>Properties of Relation<ul>
-<li>The order of tuples is irrelevant.</li>
-</ul>
+<li>The <strong>relation instance</strong> corresponds to the <strong>snapshot</strong> of the data in the relation at a given instant in time<blockquote>
+<p>Assume $A_1,A_2,\dots,A_n$ are attributes, then <script type="math/tex">\mathbf{R}=(A_1,A_2,\dots,A_n)</script>  </p>
+<p>is a relation schema<br>$r(\mathbf{R})$ is a relation on the relation schema $\mathbf{R}$</p>
+</blockquote>
 </li>
 </ul>
-<p><strong>Database</strong>：A database consists of multiple relations.</p>
-<p><strong>Key</strong>：$K\sube \mathbf{R}$</p>
+<p><strong>Properties of a relation</strong>:</p>
 <ul>
-<li>Superkey. $K$ is a superkey of $\mathbf{R}$ if values for $K$ are sufficient to identify a unique tuple of each possible relation $r(\mathbf{R})$.</li>
-<li>Candidate Key. $K$ is a candidate key if it is minimal superkey.</li>
-<li>Primary key. $K$ is a Primary key if $K$ is a candidate key and is defined by user explicitly.</li>
-<li>Foreign key. Assume there exists relations $r$ and $s$: $r(A,B,C),r(B,D)$, we can say that attribute $B$ in relation $r$ is foreign key referencing $s$ and $r$ is a referencing relation and $s$ is a referenced relation.</li>
+<li>The order of tuples is irrelevant.</li>
+<li>No duplicated tuple in a relation.</li>
+<li>Attribute values are atomic.</li>
 </ul>
+<p><strong>Database</strong>：</p>
+<ul>
+<li>A database consists of multiple relations.</li>
+<li></li>
+</ul>
+<p><strong>Key</strong>：$K\subseteq \mathbf{R}$. (An attribute of the relation schema)</p>
+<ul>
+<li><strong>Superkey</strong>: $K$ is a superkey of $\mathbf{R}$ if values for $K$ are sufficient to identify a unique tuple of each possible relation $r(\mathbf{R})$.</li>
+<li><strong>Candidate Key</strong>: $K$ is a candidate key if it is minimal superkey.</li>
+<li><strong>Primary key</strong>: $K$ is a Primary key if $K$ is a candidate key and is defined by user explicitly.</li>
+<li><strong>Foreign key</strong>: Assume there exists relations $r$ and $s$: $r(A,B,C),r(B,D)$, we can say that attribute $B$ in relation $r$ is foreign key referencing $s$ and $r$ is a referencing relation and $s$ is a referenced relation.</li>
+</ul>
+<p><strong>Fundamental Relational-Algebra Operations</strong>:<br>There are six basic operators:</p>
+<ol>
+<li><p><strong>Select</strong>: defined as $\sigma_p(r)=\{t|t\in r\ \land\ p(t)\}$, where $p$ is a formula in propositional calculas consisting of terms connected by $\land,\ \vee,\ \neg.$ e.g.<script type="math/tex">\sigma_{customer-name='Dickson'\ \land\ type='debit'}(account).</script></p>
+</li>
+<li><p><strong>Project</strong>: defined as $\prod_{A_1,A_2,\dots,A_k}(r).$ Where $A_1,A_2,\dots,A_k$ are attribute names and $r$ is a relation name. The result is defined as the relation of $k$ columns obtained by <strong>erasing</strong> the columns that are not listed. Note that duplicated rows <strong>must be removed</strong> from the result.</p>
+</li>
+<li><strong>Union</strong>: defined as $r\cap s=\{t|t\in r\vee\ t\in s\}.$ where $r$ and $s$ must have the same number of attributes, and the attribute domains must be compatible.</li>
+<li><strong>Set Difference</strong>: defined as $r-s=\{t|t\in r\ \land\ t \notin s\}.$ where $r$ and $s$ must have the same number of attributes, and the attribute domains must be compatible.</li>
+<li><strong>Cartesian Product</strong>: defined as $r\times s=\{\{t\ q\}|t\in r\ \land\ q\in s\}$. Assume that attributes of $r(\mathbf{R})$ and $s(\mathbf{S})$ are disjoint. If attributes of $r(\mathbf{R})$ and $s(\mathbf{S})$ are not disjoint, then <strong>renaming</strong> for attributes must be used.</li>
+<li><strong>Rename</strong>: defined as $\rho_x(E)$</li>
+</ol>
 
   </div>
 </article>
@@ -266,7 +290,7 @@
     
     
       <div id="toc-footer" style="display: none">
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Basic-info"><span class="toc-number">1.</span> <span class="toc-text">Basic info</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Lec-1-Introduction"><span class="toc-number">2.</span> <span class="toc-text">Lec 1 : Introduction</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Basic-info"><span class="toc-number">1.</span> <span class="toc-text">Basic info</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Lec-1-Introduction"><span class="toc-number">2.</span> <span class="toc-text">Lec 1 : Introduction</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Lec-2-Relational-Model"><span class="toc-number">3.</span> <span class="toc-text">Lec 2 : Relational Model</span></a></li></ol>
       </div>
     
 
