@@ -15,7 +15,7 @@
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://404blog.com/images/dbarc.svg">
 <meta property="article:published_time" content="2024-02-29T01:56:04.000Z">
-<meta property="article:modified_time" content="2024-03-03T07:17:25.061Z">
+<meta property="article:modified_time" content="2024-03-03T07:22:36.816Z">
 <meta property="article:author" content="404">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://404blog.com/images/dbarc.svg">
@@ -256,14 +256,18 @@
 </ul>
 <p><strong>Fundamental Relational-Algebra Operations</strong>:<br>There are six basic operators:</p>
 <ol>
-<li><p><strong>Select</strong>: defined as $\sigma_p(r)=\{t|t\in r\ \land\ p(t)\}$, where $p$ is a formula in propositional calculas consisting of terms connected by $\land,\ \vee,\ \neg.$ e.g.<script type="math/tex">\sigma_{customer-name='Dickson'\ \land\ type='debit'}(account).</script></p>
+<li><p><strong>Select</strong>: defined as $\sigma_p(r)=\{t|t\in r\ \land\ p(t)\}$, where $p$ is a formula in propositional calculas consisting of terms connected by $\land,\ \vee,\ \neg.$ e.g. </p>
+<script type="math/tex; mode=display">\sigma_{customer-name='Dickson'\ \land\ type='debit'}(account).</script></li>
+<li><p><strong>Project</strong>: defined as $\prod_{A_1,A_2,\dots,A_k}(r).$ Where $A_1,A_2,\dots,A_k$ are attribute names and $r$ is a relation name. The result is defined as the relation of $k$ columns obtained by <strong>erasing</strong> the columns that are not listed. Note that duplicated rows <strong>must be removed</strong> from the result.  </p>
 </li>
-<li><p><strong>Project</strong>: defined as $\prod_{A_1,A_2,\dots,A_k}(r).$ Where $A_1,A_2,\dots,A_k$ are attribute names and $r$ is a relation name. The result is defined as the relation of $k$ columns obtained by <strong>erasing</strong> the columns that are not listed. Note that duplicated rows <strong>must be removed</strong> from the result.</p>
+<li><p><strong>Union</strong>: defined as $r\cap s=\{t|t\in r\vee\ t\in s\}.$ where $r$ and $s$ must have the same number of attributes, and the attribute domains must be compatible.  </p>
 </li>
-<li><strong>Union</strong>: defined as $r\cap s=\{t|t\in r\vee\ t\in s\}.$ where $r$ and $s$ must have the same number of attributes, and the attribute domains must be compatible.</li>
-<li><strong>Set Difference</strong>: defined as $r-s=\{t|t\in r\ \land\ t \notin s\}.$ where $r$ and $s$ must have the same number of attributes, and the attribute domains must be compatible.</li>
-<li><strong>Cartesian Product</strong>: defined as $r\times s=\{\{t\ q\}|t\in r\ \land\ q\in s\}$. Assume that attributes of $r(\mathbf{R})$ and $s(\mathbf{S})$ are disjoint. If attributes of $r(\mathbf{R})$ and $s(\mathbf{S})$ are not disjoint, then <strong>renaming</strong> for attributes must be used.</li>
-<li><strong>Rename</strong>: defined as $\rho_x(E)$</li>
+<li><p><strong>Set Difference</strong>: defined as $r-s=\{t|t\in r\ \land\ t \notin s\}.$ where $r$ and $s$ must have the same number of attributes, and the attribute domains must be compatible.  </p>
+</li>
+<li><p><strong>Cartesian Product</strong>: defined as $r\times s=\{\{t\ q\}|t\in r\ \land\ q\in s\}$. Assume that attributes of $r(\mathbf{R})$ and $s(\mathbf{S})$ are disjoint. If attributes of $r(\mathbf{R})$ and $s(\mathbf{S})$ are not disjoint, then <strong>renaming</strong> for attributes must be used.  </p>
+</li>
+<li><p><strong>Rename</strong>: defined as $\rho_x(E)$</p>
+</li>
 </ol>
 
   </div>
