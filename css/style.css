@@ -284,11 +284,11 @@
   }
 }
 :root {
-  --primary-color: #fb6f92;
-  --primary-color-light-1: #fb7d9d;
-  --primary-color-light-2: #fc8ca8;
-  --primary-color-dark-1: #fa4c77;
-  --primary-color-dark-2: #f9295d;
+  --primary-color: #e54b3b;
+  --primary-color-light-1: #e85d4f;
+  --primary-color-light-2: #ea6f62;
+  --primary-color-dark-1: #e23422;
+  --primary-color-dark-2: #cb2c1b;
   --background-color-1: #fff;
   --background-color-1-transparent: rgba(255,255,255,0.6);
   --background-color-2: #f7f7f7;
@@ -304,14 +304,14 @@
   --badge-color: #f0f0f0;
   --badge-background-color: #9393a1;
   --border-color: #b3b3b3;
-  --selection-color: #fb7d9d;
+  --selection-color: #e85d4f;
   --shadow-color: rgba(0,0,0,0.16);
   --shadow-hover-color: rgba(0,0,0,0.22);
   --scrollbar-color: #686877;
   --scrollbar-background-color: #e6e6e6;
   --toc-scrollbar-color: rgba(80,80,92,0.1);
   --copyright-icon-bg-color: rgba(80,80,92,0.12);
-  --avatar-background-color: #fa4c77;
+  --avatar-background-color: #e23422;
   --header-transparent-background-1: rgba(255,255,255,0.28);
   --header-transparent-background-2: rgba(255,255,255,0.4);
   --pjax-progress-bar-color: linear-gradient(45deg, #f10006, #ef5b00, #e59c01, #19ca05, #00cab5, #0264c8, #c303c3);
@@ -334,11 +334,11 @@
 }
 @media (prefers-color-scheme: light) {
   :root {
-    --primary-color: #fb6f92;
-    --primary-color-light-1: #fb7d9d;
-    --primary-color-light-2: #fc8ca8;
-    --primary-color-dark-1: #fa4c77;
-    --primary-color-dark-2: #f9295d;
+    --primary-color: #e54b3b;
+    --primary-color-light-1: #e85d4f;
+    --primary-color-light-2: #ea6f62;
+    --primary-color-dark-1: #e23422;
+    --primary-color-dark-2: #cb2c1b;
     --background-color-1: #fff;
     --background-color-1-transparent: rgba(255,255,255,0.6);
     --background-color-2: #f7f7f7;
@@ -354,14 +354,14 @@
     --badge-color: #f0f0f0;
     --badge-background-color: #9393a1;
     --border-color: #b3b3b3;
-    --selection-color: #fb7d9d;
+    --selection-color: #e85d4f;
     --shadow-color: rgba(0,0,0,0.16);
     --shadow-hover-color: rgba(0,0,0,0.22);
     --scrollbar-color: #686877;
     --scrollbar-background-color: #e6e6e6;
     --toc-scrollbar-color: rgba(80,80,92,0.1);
     --copyright-icon-bg-color: rgba(80,80,92,0.12);
-    --avatar-background-color: #fa4c77;
+    --avatar-background-color: #e23422;
     --header-transparent-background-1: rgba(255,255,255,0.28);
     --header-transparent-background-2: rgba(255,255,255,0.4);
     --pjax-progress-bar-color: linear-gradient(45deg, #f10006, #ef5b00, #e59c01, #19ca05, #00cab5, #0264c8, #c303c3);
@@ -385,11 +385,11 @@
 }
 @media (prefers-color-scheme: dark) {
   :root {
-    --primary-color: #fb6f92;
-    --primary-color-light-1: #fb7d9d;
-    --primary-color-light-2: #fc8ca8;
-    --primary-color-dark-1: #fa4c77;
-    --primary-color-dark-2: #f9295d;
+    --primary-color: #e54b3b;
+    --primary-color-light-1: #e85d4f;
+    --primary-color-light-2: #ea6f62;
+    --primary-color-dark-1: #e23422;
+    --primary-color-dark-2: #cb2c1b;
     --background-color-1: #22272e;
     --background-color-1-transparent: rgba(34,39,46,0.6);
     --background-color-2: #292f38;
@@ -405,14 +405,14 @@
     --badge-color: #343c47;
     --badge-background-color: #ced6dc;
     --border-color: #596678;
-    --selection-color: #f93466;
+    --selection-color: #dc2e1d;
     --shadow-color: rgba(120,120,120,0.18);
     --shadow-hover-color: rgba(120,120,120,0.24);
     --scrollbar-color: #505b6c;
     --scrollbar-background-color: #1d2127;
     --toc-scrollbar-color: rgba(173,186,197,0.1);
     --copyright-icon-bg-color: rgba(173,186,197,0.12);
-    --avatar-background-color: #f80d47;
+    --avatar-background-color: #b82718;
     --header-transparent-background-1: rgba(34,39,46,0.28);
     --header-transparent-background-2: rgba(34,39,46,0.4);
     --pjax-progress-bar-color: linear-gradient(45deg, #ea404a, #ea722f, #e9a71f, #67e559, #18ecec, #1b85f1, #ee1dee);
@@ -435,11 +435,11 @@
   }
 }
 .light-mode {
-  --primary-color: #fb6f92;
-  --primary-color-light-1: #fb7d9d;
-  --primary-color-light-2: #fc8ca8;
-  --primary-color-dark-1: #fa4c77;
-  --primary-color-dark-2: #f9295d;
+  --primary-color: #e54b3b;
+  --primary-color-light-1: #e85d4f;
+  --primary-color-light-2: #ea6f62;
+  --primary-color-dark-1: #e23422;
+  --primary-color-dark-2: #cb2c1b;
   --background-color-1: #fff;
   --background-color-1-transparent: rgba(255,255,255,0.6);
   --background-color-2: #f7f7f7;
@@ -455,14 +455,14 @@
   --badge-color: #f0f0f0;
   --badge-background-color: #9393a1;
   --border-color: #b3b3b3;
-  --selection-color: #fb7d9d;
+  --selection-color: #e85d4f;
   --shadow-color: rgba(0,0,0,0.16);
   --shadow-hover-color: rgba(0,0,0,0.22);
   --scrollbar-color: #686877;
   --scrollbar-background-color: #e6e6e6;
   --toc-scrollbar-color: rgba(80,80,92,0.1);
   --copyright-icon-bg-color: rgba(80,80,92,0.12);
-  --avatar-background-color: #fa4c77;
+  --avatar-background-color: #e23422;
   --header-transparent-background-1: rgba(255,255,255,0.28);
   --header-transparent-background-2: rgba(255,255,255,0.4);
   --pjax-progress-bar-color: linear-gradient(45deg, #f10006, #ef5b00, #e59c01, #19ca05, #00cab5, #0264c8, #c303c3);
@@ -484,11 +484,11 @@
   --keep-danger-border-color: rgba(244,63,94,0.6);
 }
 .dark-mode {
-  --primary-color: #fb6f92;
-  --primary-color-light-1: #fb7d9d;
-  --primary-color-light-2: #fc8ca8;
-  --primary-color-dark-1: #fa4c77;
-  --primary-color-dark-2: #f9295d;
+  --primary-color: #e54b3b;
+  --primary-color-light-1: #e85d4f;
+  --primary-color-light-2: #ea6f62;
+  --primary-color-dark-1: #e23422;
+  --primary-color-dark-2: #cb2c1b;
   --background-color-1: #22272e;
   --background-color-1-transparent: rgba(34,39,46,0.6);
   --background-color-2: #292f38;
@@ -504,14 +504,14 @@
   --badge-color: #343c47;
   --badge-background-color: #ced6dc;
   --border-color: #596678;
-  --selection-color: #f93466;
+  --selection-color: #dc2e1d;
   --shadow-color: rgba(120,120,120,0.18);
   --shadow-hover-color: rgba(120,120,120,0.24);
   --scrollbar-color: #505b6c;
   --scrollbar-background-color: #1d2127;
   --toc-scrollbar-color: rgba(173,186,197,0.1);
   --copyright-icon-bg-color: rgba(173,186,197,0.12);
-  --avatar-background-color: #f80d47;
+  --avatar-background-color: #b82718;
   --header-transparent-background-1: rgba(34,39,46,0.28);
   --header-transparent-background-2: rgba(34,39,46,0.4);
   --pjax-progress-bar-color: linear-gradient(45deg, #ea404a, #ea722f, #e9a71f, #67e559, #18ecec, #1b85f1, #ee1dee);
@@ -1065,8 +1065,8 @@ img[lazyload]::after {
   --toolbar-foreground: #50505c;
   --toolbar-background: #f0f0f0;
   --code-foreground: #585865;
-  --code-background: rgba(251,111,146,0.15);
-  --code-border-color: #fc9ab3;
+  --code-background: rgba(229,75,59,0.15);
+  --code-border-color: #ed8176;
   --highlight-background: #fafafa;
   --highlight-foreground: #535360;
   --highlight-comment: #8e908c;
@@ -1089,8 +1089,8 @@ img[lazyload]::after {
     --toolbar-foreground: #50505c;
     --toolbar-background: #f0f0f0;
     --code-foreground: #585865;
-    --code-background: rgba(251,111,146,0.15);
-    --code-border-color: #fc9ab3;
+    --code-background: rgba(229,75,59,0.15);
+    --code-border-color: #ed8176;
     --highlight-background: #fafafa;
     --highlight-foreground: #535360;
     --highlight-comment: #8e908c;
@@ -1114,8 +1114,8 @@ img[lazyload]::after {
     --toolbar-foreground: #adbac5;
     --toolbar-background: #313842;
     --code-foreground: #b5c1cb;
-    --code-background: rgba(251,111,146,0.15);
-    --code-border-color: #d30639;
+    --code-background: rgba(229,75,59,0.15);
+    --code-border-color: #992114;
     --highlight-background: #1f242a;
     --highlight-foreground: #afbbc6;
     --highlight-comment: #969896;
@@ -1138,8 +1138,8 @@ img[lazyload]::after {
   --toolbar-foreground: #50505c;
   --toolbar-background: #f0f0f0;
   --code-foreground: #585865;
-  --code-background: rgba(251,111,146,0.15);
-  --code-border-color: #fc9ab3;
+  --code-background: rgba(229,75,59,0.15);
+  --code-border-color: #ed8176;
   --highlight-background: #fafafa;
   --highlight-foreground: #535360;
   --highlight-comment: #8e908c;
@@ -1161,8 +1161,8 @@ img[lazyload]::after {
   --toolbar-foreground: #adbac5;
   --toolbar-background: #313842;
   --code-foreground: #b5c1cb;
-  --code-background: rgba(251,111,146,0.15);
-  --code-border-color: #d30639;
+  --code-background: rgba(229,75,59,0.15);
+  --code-border-color: #992114;
   --highlight-background: #1f242a;
   --highlight-foreground: #afbbc6;
   --highlight-comment: #969896;
@@ -1500,8 +1500,8 @@ figure.highlight .shrink-line:hover::before {
   --toolbar-foreground: #50505c;
   --toolbar-background: #f0f0f0;
   --code-foreground: #585865;
-  --code-background: rgba(251,111,146,0.15);
-  --code-border-color: #fc9ab3;
+  --code-background: rgba(229,75,59,0.15);
+  --code-border-color: #ed8176;
   --highlight-background: #fafafa;
   --highlight-foreground: #535360;
   --highlight-comment: #8e908c;
@@ -1524,8 +1524,8 @@ figure.highlight .shrink-line:hover::before {
     --toolbar-foreground: #50505c;
     --toolbar-background: #f0f0f0;
     --code-foreground: #585865;
-    --code-background: rgba(251,111,146,0.15);
-    --code-border-color: #fc9ab3;
+    --code-background: rgba(229,75,59,0.15);
+    --code-border-color: #ed8176;
     --highlight-background: #fafafa;
     --highlight-foreground: #535360;
     --highlight-comment: #8e908c;
@@ -1549,8 +1549,8 @@ figure.highlight .shrink-line:hover::before {
     --toolbar-foreground: #adbac5;
     --toolbar-background: #313842;
     --code-foreground: #b5c1cb;
-    --code-background: rgba(251,111,146,0.15);
-    --code-border-color: #d30639;
+    --code-background: rgba(229,75,59,0.15);
+    --code-border-color: #992114;
     --highlight-background: #1f242a;
     --highlight-foreground: #afbbc6;
     --highlight-comment: #969896;
@@ -1573,8 +1573,8 @@ figure.highlight .shrink-line:hover::before {
   --toolbar-foreground: #50505c;
   --toolbar-background: #f0f0f0;
   --code-foreground: #585865;
-  --code-background: rgba(251,111,146,0.15);
-  --code-border-color: #fc9ab3;
+  --code-background: rgba(229,75,59,0.15);
+  --code-border-color: #ed8176;
   --highlight-background: #fafafa;
   --highlight-foreground: #535360;
   --highlight-comment: #8e908c;
@@ -1596,8 +1596,8 @@ figure.highlight .shrink-line:hover::before {
   --toolbar-foreground: #adbac5;
   --toolbar-background: #313842;
   --code-foreground: #b5c1cb;
-  --code-background: rgba(251,111,146,0.15);
-  --code-border-color: #d30639;
+  --code-background: rgba(229,75,59,0.15);
+  --code-border-color: #992114;
   --highlight-background: #1f242a;
   --highlight-foreground: #afbbc6;
   --highlight-comment: #969896;
