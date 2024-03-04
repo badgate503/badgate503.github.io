@@ -1,5 +1,5 @@
 :root {
-    --box-border-radius: 30px;
+    --box-border-radius: 25px;
     --post-img-align: 0 auto;
-    
+    --components-spacing: 40px;
 }
