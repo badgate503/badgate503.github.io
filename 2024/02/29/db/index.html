@@ -90,25 +90,25 @@
                     <li class="menu-item">
                         <a class=""
                            href="/"
-                        >HOME</a>
+                        >首頁</a>
                     </li>
                     
                         <li class="menu-item">
                             <a class=""
                                href="/archives"
-                            >ARCHIVES</a>
+                            >歸檔</a>
                         </li>
                     
                         <li class="menu-item">
                             <a class=""
                                href="/categories"
-                            >CATEGORIES</a>
+                            >分類</a>
                         </li>
                     
                         <li class="menu-item">
                             <a class=""
                                href="/about"
-                            >ABOUT</a>
+                            >關於</a>
                         </li>
                     
                     
@@ -134,25 +134,25 @@
             <li class="drawer-menu-item flex-center">
                 <a class=""
                    href="/"
-                >HOME</a>
+                >首頁</a>
             </li>
             
                 <li class="drawer-menu-item flex-center">
                     <a class=""
                        href="/archives"
-                    >ARCHIVES</a>
+                    >歸檔</a>
                 </li>
             
                 <li class="drawer-menu-item flex-center">
                     <a class=""
                        href="/categories"
-                    >CATEGORIES</a>
+                    >分類</a>
                 </li>
             
                 <li class="drawer-menu-item flex-center">
                     <a class=""
                        href="/about"
-                    >ABOUT</a>
+                    >關於</a>
                 </li>
             
         </ul>
@@ -210,7 +210,7 @@
 
             <span class="meta-info-item post-update-date">
                 <i class="icon fa-solid fa-file-pen"></i>&nbsp;
-                <span class="datetime" data-updated="Mon Mar 04 2024 13:31:56 GMT+0800">2024 年 03 月 04 日 13:31</span>
+                <span class="datetime" data-updated="Thu Mar 07 2024 18:53:12 GMT+0800">2024 年 03 月 07 日 18:53</span>
             </span>
         
 
@@ -250,8 +250,7 @@
 <li>$Abraham Silberschatz$, Database System Concepts (7th Edition).</li>
 </ol>
 <h2 id="Lec-1-Introduction"><a href="#Lec-1-Introduction" class="headerlink" title="Lec 1 : Introduction"></a>Lec 1 : Introduction</h2><p><img   src="/images/dbarc.svg"  alt=""></p>
-<p><strong>Abstraction of a database system</strong>：</p>
-<ol>
+<h3 id="Abstraction-of-a-database-system："><a href="#Abstraction-of-a-database-system：" class="headerlink" title="Abstraction of a database system："></a><strong>Abstraction of a database system</strong>：</h3><ol>
 <li><strong>Physical</strong> Level: Describes how a record is stored</li>
 <li><strong>Logical</strong> Level: Describes data stored in database, and the relationships among the data on upper level.</li>
 <li><strong>View</strong> Level: Application programs hide details of data types.</li>
@@ -293,9 +292,8 @@
 </ol>
 <h2 id="Lec-2-Relational-Model"><a href="#Lec-2-Relational-Model" class="headerlink" title="Lec 2 : Relational Model"></a>Lec 2 : Relational Model</h2><p>A <strong>Relation</strong> is a table with rows and columns.</p>
 <p>A relational database is a collection  of one or more relations, which are based on the relational model</p>
-<h3 id="Relations"><a href="#Relations" class="headerlink" title="Relations"></a>Relations</h3><p><strong>Basic Definition of a relation</strong>:<br>Formally, given sets $D_1,D_2,\dots,D_n (D_i=a_{ij}|_{j=1\dots k})$, a relation $r$ is a <em>subset</em> of $D_1\times D_2\times \dots \times D_n$.</p>
-<p><strong>Attribute Types</strong>：</p>
-<ul>
+<h3 id="Relations"><a href="#Relations" class="headerlink" title="Relations"></a>Relations</h3><h4 id="Basic-Definition-of-a-relation"><a href="#Basic-Definition-of-a-relation" class="headerlink" title="Basic Definition of a relation:"></a><strong>Basic Definition of a relation</strong>:</h4><p>Formally, given sets $D_1,D_2,\dots,D_n (D_i=a_{ij}|_{j=1\dots k})$, a relation $r$ is a <em>subset</em> of $D_1\times D_2\times \dots \times D_n$.</p>
+<h4 id="Attribute-Types："><a href="#Attribute-Types：" class="headerlink" title="Attribute Types："></a><strong>Attribute Types</strong>：</h4><ul>
 <li>Each attribute of a relation has a name. </li>
 <li>The set of allowed values for each attribute is called the <strong>domain</strong> of the attribute.</li>
 <li>$1^{st} NF$: Attribute values are required to be atomic (indivisible) </li>
@@ -310,37 +308,32 @@
 </blockquote>
 </li>
 </ul>
-<p><strong>Properties of a relation</strong>:</p>
-<ul>
+<h4 id="Properties-of-a-relation"><a href="#Properties-of-a-relation" class="headerlink" title="Properties of a relation:"></a><strong>Properties of a relation</strong>:</h4><ul>
 <li>The order of tuples is irrelevant.</li>
 <li>No duplicated tuple in a relation.</li>
 <li>Attribute values are atomic.</li>
 </ul>
-<p><strong>Database</strong>：</p>
-<ul>
+<h4 id="Database："><a href="#Database：" class="headerlink" title="Database："></a><strong>Database</strong>：</h4><ul>
 <li>A database consists of multiple relations.</li>
 <li></li>
 </ul>
-<p><strong>Key</strong>：$K\subseteq \mathbf{R}$. (An attribute of the relation schema)</p>
-<ul>
+<h4 id="Key：-K-subseteq-mathbf-R-An-attribute-of-the-relation-schema"><a href="#Key：-K-subseteq-mathbf-R-An-attribute-of-the-relation-schema" class="headerlink" title="Key：$K\subseteq \mathbf{R}$. (An attribute of the relation schema)"></a><strong>Key</strong>：$K\subseteq \mathbf{R}$. (An attribute of the relation schema)</h4><ul>
 <li><strong>Superkey</strong>: $K$ is a superkey of $\mathbf{R}$ if values for $K$ are sufficient to identify a unique tuple of each possible relation $r(\mathbf{R})$.</li>
 <li><strong>Candidate Key</strong>: $K$ is a candidate key if it is minimal superkey.</li>
 <li><strong>Primary key</strong>: $K$ is a Primary key if $K$ is a candidate key and is defined by user explicitly.</li>
 <li><strong>Foreign key</strong>: Assume there exists relations $r$ and $s$: $r(A,B,C),r(B,D)$, we can say that attribute $B$ in relation $r$ is foreign key referencing $s$ and $r$ is a referencing relation and $s$ is a referenced relation.</li>
 </ul>
 <h3 id="Fundamental-Relational-Algebra-Operations"><a href="#Fundamental-Relational-Algebra-Operations" class="headerlink" title="Fundamental Relational-Algebra Operations"></a>Fundamental Relational-Algebra Operations</h3><p>There are six basic operators:</p>
-<ol>
-<li><p><strong>Select</strong>: defined as $\sigma_p(r)=\{t|t\in r \land p(t)\}$, where $p$ is a formula in propositional calculas consisting of terms connected by $\land, \vee, \neg.$ e.g. </p>
-<script type="math/tex; mode=display">\sigma_{customer-name='Dickson'\ \land\ type='debit'}(account).</script></li>
-<li><p><strong>Project</strong>: defined as $\prod_{A_1,A_2,\dots,A_k}(r).$ Where $A_1,A_2,\dots,A_k$ are attribute names and $r$ is a relation name. The result is defined as the relation of $k$ columns obtained by <strong>erasing</strong> the columns that are not listed. Note that duplicated rows <strong>must be removed</strong> from the result.  </p>
-</li>
-<li><p><strong>Union</strong>: defined as $r\cap s=\{t|t\in r\vee t\in s\}.$ where $r$ and $s$ must have the same number of attributes, and the attribute domains must be compatible.  </p>
-</li>
-<li><p><strong>Set Difference</strong>: defined as $r-s=\{t|t\in r \land t \notin s\}.$ where $r$ and $s$ must have the same number of attributes, and the attribute domains must be compatible.</p>
-</li>
-<li><strong>Cartesian Product</strong>: defined as $r\times s=\{ \{t ,q\}|t\in r \land q\in s\}$. Assume that attributes of $r(\mathbf{R})$ and $s(\mathbf{S})$ are disjoint. If attributes of $r(\mathbf{R})$ and $s(\mathbf{S})$ are not disjoint, then <strong>renaming</strong> for attributes must be used.</li>
-<li><strong>Rename</strong>: defined as $\rho_x(E)$</li>
-</ol>
+<h4 id="Select"><a href="#Select" class="headerlink" title="Select"></a><strong>Select</strong></h4><p>defined as $\sigma_p(r)=\{t|t\in r \land p(t)\}$, where $p$ is a formula in propositional calculas consisting of terms connected by $\land, \vee, \neg.$ e.g. </p>
+<script type="math/tex; mode=display">\mathrm{\sigma_{customer-name='Dickson'\ \land\ type='debit'}(account).}</script><h4 id="Project"><a href="#Project" class="headerlink" title="Project"></a><strong>Project</strong></h4><p>defined as $\prod_{A_1,A_2,\dots,A_k}(r).$ Where $A_1,A_2,\dots,A_k$ are attribute names and $r$ is a relation name. The result is defined as the relation of $k$ columns obtained by <strong>erasing</strong> the columns that are not listed. Note that duplicated rows <strong>must be removed</strong> from the result.  </p>
+<h4 id="Union"><a href="#Union" class="headerlink" title="Union"></a><strong>Union</strong></h4><p>defined as $r\cap s=\{t|t\in r\vee t\in s\}.$ where $r$ and $s$ must have the same number of attributes, and the attribute domains must be compatible.  </p>
+<h4 id="Set-Difference"><a href="#Set-Difference" class="headerlink" title="Set Difference"></a><strong>Set Difference</strong></h4><p>defined as $r-s=\{t|t\in r \land t \notin s\}.$ where $r$ and $s$ must have the same number of attributes, and the attribute domains must be compatible.</p>
+<h4 id="Cartesian-Product"><a href="#Cartesian-Product" class="headerlink" title="Cartesian Product"></a><strong>Cartesian Product</strong></h4><p>defined as $r\times s=\{ \{t ,q\}|t\in r \land q\in s\}$. Assume that attributes of $r(\mathbf{R})$ and $s(\mathbf{S})$ are disjoint. If attributes of $r(\mathbf{R})$ and $s(\mathbf{S})$ are not disjoint, then <strong>renaming</strong> for attributes must be used.</p>
+<h4 id="Rename"><a href="#Rename" class="headerlink" title="Rename"></a><strong>Rename</strong></h4><p>defined as $\rho_x(E)$, essential when self-compare occurs, e.g. $\mathrm{\max(r)}$.</p>
+<h3 id="Advanced"><a href="#Advanced" class="headerlink" title="Advanced"></a>Advanced</h3><h4 id="Natural-Join-Operation"><a href="#Natural-Join-Operation" class="headerlink" title="Natural Join Operation"></a><strong>Natural Join Operation</strong></h4><p>Notation: $r\bowtie s$<br>Example:$\mathrm{R=(A,B,C,D), S=(B,D,E)}$</p>
+<script type="math/tex; mode=display">\mathrm{r\bowtie s=\prod_{r.A,r.B,r.C,r.D,s.E}(\sigma_{r.B=s.B\land r.D=s.D}(r\times s))}</script><h4 id="Theta-join-Operation"><a href="#Theta-join-Operation" class="headerlink" title="Theta join Operation"></a><strong>Theta join Operation</strong></h4><p>Notation: $r\bowtie_\theta s$<br>where $\theta$ is the predicate on attributes in the schema. note that <script type="math/tex">\mathrm{r\bowtie_\theta s=\sigma_\theta(r\times s)}</script></p>
+<h4 id="Division-Operation"><a href="#Division-Operation" class="headerlink" title="Division Operation"></a><strong>Division Operation</strong></h4><p>Notation: $r\div s$<br>The backward operation of Cartesian Product.</p>
+<script type="math/tex; mode=display">\mathrm{  r\div s=\prod_{R-S}(r)-\prod_{R-S}((\prod_{R-S}(r\times s)-\prod_{R-S,S}(r)) ) }.</script><h4 id="Assignment-Operation"><a href="#Assignment-Operation" class="headerlink" title="Assignment Operation"></a><strong>Assignment Operation</strong></h4><p>Notation: $r\leftarrow s$</p>
 
                 </div>
 
@@ -361,14 +354,14 @@
         <div class="copyright-info-bottom border-box">
             <div class="copyright-post-author bottom-item">
                 <div class="type">
-                    Author
+                    作者
                 </div>
                 <div class="content">404</div>
             </div>
 
             <div class="post-time bottom-item">
                 <div class="type">
-                    Published
+                    發布于
                 </div>
                 <div class="content">2024-02-29 09:56</div>
             </div>
@@ -376,7 +369,7 @@
 
             <div class="post-license bottom-item">
                 <div class="type">
-                    License
+                    許可
                 </div>
                 <div class="content tooltip" data-tooltip-content="CC BY-NC-SA 4.0">
                     <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed">
@@ -391,7 +384,7 @@
 
         <i class="copyright-bg fa-solid fa-copyright"></i>
     </div>
-    <div class="copy-copyright-info flex-center tooltip" data-tooltip-content="Copy copyright info" data-tooltip-offset-y="-2px">
+    <div class="copy-copyright-info flex-center tooltip" data-tooltip-content="復製版權信息" data-tooltip-offset-y="-2px">
         <i class="fa-solid fa-copy"></i>
     </div>
 </div>
@@ -407,19 +400,19 @@
                             <div class="post-share-container border-box">
     <ul class="share-list-wrap border-box">
         <li class="qq share-item border-box flex-center tooltip"
-            data-tooltip-content="Share to QQ"
+            data-tooltip-content="分享到 QQ"
         >
             <i class="fa-brands fa-qq"></i>
         </li>
         <li class="wechat share-item border-box flex-center tooltip tooltip-img"
-            data-tooltip-content="Share to WeChat"
-            data-tooltip-img-tip="Scan by WeChat"
+            data-tooltip-content="分享到微信"
+            data-tooltip-img-tip="微信掃壹掃"
             data-tooltip-img-style="background-color: #fff; top: -10px; padding: 0.6rem 0.6rem 0.1rem 0.6rem;"
         >
             <i class="fa-brands fa-weixin"></i>
         </li>
         <li class="weibo share-item border-box flex-center tooltip"
-            data-tooltip-content="Share to WeiBo"
+            data-tooltip-content="分享到微博"
         >
             <i class="fa-brands fa-weibo"></i>
         </li>
@@ -446,7 +439,7 @@
                                     </span>
                                     <span class="title flex-center">
                                         <span class="post-nav-title-item text-ellipsis">🖊️ 计算机学院 面向对象程序设计 （Object-Oriented Programming）</span>
-                                        <span class="post-nav-item">Prev posts</span>
+                                        <span class="post-nav-item">上一篇</span>
                                     </span>
                                 </a>
                             </div>
@@ -460,7 +453,7 @@
                                 >
                                     <span class="title flex-center">
                                         <span class="post-nav-title-item text-ellipsis">🖊️ 计算机学院 计算机组成 （Computer Organization）</span>
-                                        <span class="post-nav-item">Next posts</span>
+                                        <span class="post-nav-item">下一篇</span>
                                     </span>
                                     <span class="right arrow-icon flex-center">
                                         <i class="fas fa-chevron-right"></i>
@@ -477,15 +470,15 @@
 
     <div class="comments-container border-box">
         <div id="comments-anchor" class="comment-area-title border-box">
-            <i class="fas fa-comments"></i>&nbsp;Comments
+            <i class="fas fa-comments"></i>&nbsp;留言
         </div>
         <div class="comment-plugin-fail border-box">
-    <span class="fail-tip">Comment plugin failed to load</span>
-    <button class="reload keep-button">Click to reload</button>
+    <span class="fail-tip">評論插件加載失敗</span>
+    <button class="reload keep-button">點擊重新加載</button>
 </div>
 <div class="comment-plugin-loading flex-center border-box">
     <i class="loading-icon fa-solid fa-spinner fa-spin"></i>
-    <span class="load-tip">Loading comment plugin</span>
+    <span class="load-tip">正在加載評論插件</span>
 </div>
 <script data-pjax>
   window.KeepCommentPlugin = {}
@@ -559,7 +552,7 @@
             <div class="pc-post-toc right-toc">
                 <div class="post-toc-wrap border-box">
     <div class="post-toc border-box">
-        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Basic-info"><span class="nav-text">Basic info</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Lec-1-Introduction"><span class="nav-text">Lec 1 : Introduction</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Lec-2-Relational-Model"><span class="nav-text">Lec 2 : Relational Model</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Relations"><span class="nav-text">Relations</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Fundamental-Relational-Algebra-Operations"><span class="nav-text">Fundamental Relational-Algebra Operations</span></a></li></ol></li></ol>
+        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Basic-info"><span class="nav-text">Basic info</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Lec-1-Introduction"><span class="nav-text">Lec 1 : Introduction</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Abstraction-of-a-database-system%EF%BC%9A"><span class="nav-text">Abstraction of a database system：</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Lec-2-Relational-Model"><span class="nav-text">Lec 2 : Relational Model</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Relations"><span class="nav-text">Relations</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Basic-Definition-of-a-relation"><span class="nav-text">Basic Definition of a relation:</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Attribute-Types%EF%BC%9A"><span class="nav-text">Attribute Types：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Properties-of-a-relation"><span class="nav-text">Properties of a relation:</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Database%EF%BC%9A"><span class="nav-text">Database：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Key%EF%BC%9A-K-subseteq-mathbf-R-An-attribute-of-the-relation-schema"><span class="nav-text">Key：$K\subseteq \mathbf{R}$. (An attribute of the relation schema)</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Fundamental-Relational-Algebra-Operations"><span class="nav-text">Fundamental Relational-Algebra Operations</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Select"><span class="nav-text">Select</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Project"><span class="nav-text">Project</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Union"><span class="nav-text">Union</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Set-Difference"><span class="nav-text">Set Difference</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Cartesian-Product"><span class="nav-text">Cartesian Product</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Rename"><span class="nav-text">Rename</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Advanced"><span class="nav-text">Advanced</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Natural-Join-Operation"><span class="nav-text">Natural Join Operation</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Theta-join-Operation"><span class="nav-text">Theta join Operation</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Division-Operation"><span class="nav-text">Division Operation</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Assignment-Operation"><span class="nav-text">Assignment Operation</span></a></li></ol></li></ol></li></ol>
     </div>
 </div>
 
@@ -587,7 +580,7 @@
             </div>
 
             <div class="theme-info info-item default">
-                Powered by&nbsp;<a target="_blank" href="https://hexo.io">Hexo</a>&nbsp;&&nbsp;Theme&nbsp;<a class="keep-version" target="_blank" href="https://github.com/XPoet/hexo-theme-keep">Keep</a>
+                <a target="_blank" href="https://hexo.io">Hexo</a>&nbsp;框架&nbsp;&&nbsp;主題&nbsp;<a class="keep-version" target="_blank" href="https://github.com/XPoet/hexo-theme-keep">Keep</a>
             </div>
 
             
@@ -596,7 +589,7 @@
                 
                 <div class="deploy-info info-item default">
                     
-                        This site is deployed on <span class="tooltip" data-tooltip-content="GitHub Pages"><img src="/images/deploy-provider/github.png"></span>
+                        本站由 <span class="tooltip" data-tooltip-content="GitHub Pages"><img src="/images/deploy-provider/github.png"></span> 提供部署服務
                     
                 </div>
             
@@ -708,7 +701,7 @@
                 <input autocomplete="off"
                        autocorrect="off"
                        autocapitalize="off"
-                       placeholder="Search..."
+                       placeholder="搜尋..."
                        spellcheck="false"
                        type="search"
                        class="search-input"
@@ -734,7 +727,7 @@
             <div class="tablet-post-toc">
                 <div class="post-toc-wrap border-box">
     <div class="post-toc border-box">
-        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Basic-info"><span class="nav-text">Basic info</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Lec-1-Introduction"><span class="nav-text">Lec 1 : Introduction</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Lec-2-Relational-Model"><span class="nav-text">Lec 2 : Relational Model</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Relations"><span class="nav-text">Relations</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Fundamental-Relational-Algebra-Operations"><span class="nav-text">Fundamental Relational-Algebra Operations</span></a></li></ol></li></ol>
+        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Basic-info"><span class="nav-text">Basic info</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Lec-1-Introduction"><span class="nav-text">Lec 1 : Introduction</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Abstraction-of-a-database-system%EF%BC%9A"><span class="nav-text">Abstraction of a database system：</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Lec-2-Relational-Model"><span class="nav-text">Lec 2 : Relational Model</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Relations"><span class="nav-text">Relations</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Basic-Definition-of-a-relation"><span class="nav-text">Basic Definition of a relation:</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Attribute-Types%EF%BC%9A"><span class="nav-text">Attribute Types：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Properties-of-a-relation"><span class="nav-text">Properties of a relation:</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Database%EF%BC%9A"><span class="nav-text">Database：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Key%EF%BC%9A-K-subseteq-mathbf-R-An-attribute-of-the-relation-schema"><span class="nav-text">Key：$K\subseteq \mathbf{R}$. (An attribute of the relation schema)</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Fundamental-Relational-Algebra-Operations"><span class="nav-text">Fundamental Relational-Algebra Operations</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Select"><span class="nav-text">Select</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Project"><span class="nav-text">Project</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Union"><span class="nav-text">Union</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Set-Difference"><span class="nav-text">Set Difference</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Cartesian-Product"><span class="nav-text">Cartesian Product</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Rename"><span class="nav-text">Rename</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Advanced"><span class="nav-text">Advanced</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Natural-Join-Operation"><span class="nav-text">Natural Join Operation</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Theta-join-Operation"><span class="nav-text">Theta join Operation</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Division-Operation"><span class="nav-text">Division Operation</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Assignment-Operation"><span class="nav-text">Assignment Operation</span></a></li></ol></li></ol></li></ol>
     </div>
 </div>
 

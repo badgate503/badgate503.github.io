@@ -90,25 +90,25 @@
                     <li class="menu-item">
                         <a class=""
                            href="/"
-                        >HOME</a>
+                        >首頁</a>
                     </li>
                     
                         <li class="menu-item">
                             <a class=""
                                href="/archives"
-                            >ARCHIVES</a>
+                            >歸檔</a>
                         </li>
                     
                         <li class="menu-item">
                             <a class=""
                                href="/categories"
-                            >CATEGORIES</a>
+                            >分類</a>
                         </li>
                     
                         <li class="menu-item">
                             <a class=""
                                href="/about"
-                            >ABOUT</a>
+                            >關於</a>
                         </li>
                     
                     
@@ -134,25 +134,25 @@
             <li class="drawer-menu-item flex-center">
                 <a class=""
                    href="/"
-                >HOME</a>
+                >首頁</a>
             </li>
             
                 <li class="drawer-menu-item flex-center">
                     <a class=""
                        href="/archives"
-                    >ARCHIVES</a>
+                    >歸檔</a>
                 </li>
             
                 <li class="drawer-menu-item flex-center">
                     <a class=""
                        href="/categories"
-                    >CATEGORIES</a>
+                    >分類</a>
                 </li>
             
                 <li class="drawer-menu-item flex-center">
                     <a class=""
                        href="/about"
-                    >ABOUT</a>
+                    >關於</a>
                 </li>
             
         </ul>
@@ -210,7 +210,7 @@
 
             <span class="meta-info-item post-update-date">
                 <i class="icon fa-solid fa-file-pen"></i>&nbsp;
-                <span class="datetime" data-updated="Tue Mar 05 2024 17:34:01 GMT+0800">2024 年 03 月 05 日 17:34</span>
+                <span class="datetime" data-updated="Mon Mar 11 2024 10:06:19 GMT+0800">2024 年 03 月 11 日 10:06</span>
             </span>
         
 
@@ -335,22 +335,50 @@
 <li>放宽平衡条件</li>
 </ul>
 <h3 id="M-Ary-Search-Trees"><a href="#M-Ary-Search-Trees" class="headerlink" title="M-Ary Search Trees"></a>M-Ary Search Trees</h3><p>$m$ 叉搜索树与二叉搜索树类似，每个节点至多有 $m-1$ 个元素，这些元素将范围划分为 $m$ 个区间，每个区间各对应一条子树. 例如，下图展示了一种四叉搜索树：<br><img   src="/images/faryt.svg"  alt="4-ary tree"></p>
-<h3 id="B-Tree"><a href="#B-Tree" class="headerlink" title="B Tree"></a>B Tree</h3><p>B 树是一种特殊的平衡 $M$ 叉搜索树，B 树的每个节点有 $\lceil M/2\rceil\le d\le M$ 个子树，并包含 $d-1$ 个值. 且其叶节点全部在同一高度.</p>
+<h3 id="B-Tree"><a href="#B-Tree" class="headerlink" title="B Tree"></a>B Tree</h3><p>B 树是一种特殊的平衡 $M$ 叉搜索树，他由两种节点构成：</p>
+<ol>
+<li>内部节点 (Internal Nodes) : 储存数据以及指向子节点的指针</li>
+<li>叶节点 (Leaf Nodes) : 只储存数据</li>
+</ol>
 <p>【$\mathbf{Def}$】$M$ 阶 B 树有以下属性：</p>
 <ol>
-<li>根节点要么是叶节点要么有 $[2,M]$ 个子节点.</li>
+<li>根节点要么是叶节点 (无子节点) 要么有 $[2,M]$ 个子节点.</li>
 <li>所有非叶节点有 $[\lceil M/2\rceil,M]$ 个子节点.</li>
+<li>有 $k$ 个子节点的内部节点拥有 $k-1$ 个键.</li>
 <li>所有叶节点都在相同高度.</li>
 </ol>
-<h4 id="►-搜索"><a href="#►-搜索" class="headerlink" title="► 搜索"></a>► 搜索</h4><p>2-3-4 树在搜索时要在一个节点上进行线性的搜索，如果没有找到，则需要继续向下索引，这样的下沉最多发生 $O(h)=O(\log N)$ 次.</p>
-<h4 id="►-插入"><a href="#►-插入" class="headerlink" title="► 插入"></a>► 插入</h4><p>先进行搜索操作，如果树中已存在要插入的数，就什么都不做. 如果在叶节点中找到适合该数的空间，就插入.</p>
-<p>当目标的叶节点已满时，选中溢出的叶子中数字的中位数，将他移至其父节点，若父节点也满了，就重复进行此操作.</p>
-<h4 id="►-删除"><a href="#►-删除" class="headerlink" title="► 删除"></a>► 删除</h4><p>两元素叶节点或四元素叶节点中的元素可直接被删除. 若要删除非叶节点中的元素，类似于 BST, 先找到该元素右侧第一子树中最小的元素替代他（由于平衡性，必在叶节点上），如果这一元素所处的叶为两元素或三元素，直接删除即可，若仅有一个元素，则不可直接删除，因为这样会破坏 2-3-4 树的性质. 此时可以将父节点的元素移下来，并用该节点的兄弟节点的元素补充父节点（类似于旋转操作）如果没有非单元素的兄弟节点，可以讲父节点的元素直接移到某兄弟节点.</p>
-<h4 id="►-B-Trees"><a href="#►-B-Trees" class="headerlink" title="► B+ Trees"></a>► B+ Trees</h4><p>B+ 树是一种特殊的 B 树，他在形式上和 B 树没有区别，但在应用中有以下几个不同点</p>
+<p>B 树的阶数 $m\ge 3$, 若 $m=2$, 此时的 B 树退化为平衡 BST. </p>
+<h4 id="►-搜索"><a href="#►-搜索" class="headerlink" title="► 搜索"></a>► 搜索</h4><p>从上到下对 $m$ 阶 B 树进行 $m$ 分查找，若找到包含目标值 $k$ 区间的节点，则继续在这个节点上进行线性搜索. </p>
+<h4 id="►-插入"><a href="#►-插入" class="headerlink" title="► 插入"></a>► 插入</h4><p>假设要在一个以 $r$ 为根节点的 B 树中插入一个新节点 $k$ , 先进行搜索找到 B 树上包含该节点值的区间，这一区间对应了一个叶节点 $l$，要往这一叶节点中插入新的值，可以分为两种情况：</p>
 <ol>
-<li>只有叶节点储存实际内容.</li>
-<li>内部节点的值用于寻址.</li>
-<li>插入和删除只发生在叶节点.</li>
+<li>$l$ 中键的数量小于 $m-1$:<br> 此时直接将 $k$ 的值作为键放入 $l$ 中并对 $l$ 中键重新排序即可. 以下图 4 阶 B 树为例：<br> <img   src="/images/bin.svg"  alt="bin"></li>
+<li><p>$l$ 中键的数量等于 $m-1$:<br> 此时 $l$ 节点已满，需要对这一节点进行拆分. 步骤如下:</p>
+<ol>
+<li>选出 $l$ 的所有键值与 $k$ 的值的中位数 $u$.</li>
+<li>小于 $u$ 的数进入左节点 $p$ 中.</li>
+<li>大于 $u$ 的数进入右节点 $q$ 中.</li>
+<li>$u$ 上移至其父节点.</li>
+<li>若 $u$ 的父节点也满，则对其父节点进行分裂</li>
+<li><p>分裂停止或者产生了新的根节点</p>
+<p>以下图 4 阶 B 树为例，插入 17:<br><img   src="/images/bin2.svg"  alt="bin2"></p>
+</li>
+</ol>
+</li>
+</ol>
+<h4 id="►-删除"><a href="#►-删除" class="headerlink" title="► 删除"></a>► 删除</h4><p>两元素叶节点或四元素叶节点中的元素可直接被删除. 若要删除非叶节点中的元素，类似于 BST, 先找到该元素右侧第一子树中最小的元素替代他（由于平衡性，必在叶节点上），如果这一元素所处的叶为两元素或三元素，直接删除即可，若仅有一个元素，则不可直接删除，因为这样会破坏 2-3-4 树的性质. 此时可以将父节点的元素移下来，并用该节点的兄弟节点的元素补充父节点（类似于旋转操作）如果没有非单元素的兄弟节点，可以讲父节点的元素直接移到某兄弟节点.</p>
+<h3 id="B-Trees"><a href="#B-Trees" class="headerlink" title="B+ Trees"></a>B+ Trees</h3><p>B+ 树是一种特殊的 B 树，他在形式上和 B 树类似，包含以下几种节点：</p>
+<ol>
+<li>根节点</li>
+<li>内部节点</li>
+<li>叶节点</li>
+</ol>
+<p>【$\mathbf{Def}$】$m$ 阶的 B+ 树具有以下性质：</p>
+<ol>
+<li>每个节点最多有 $m$ 个子节点</li>
+<li>有 $n$ 个子节点的节点有 $n-1$ 个键值.</li>
+<li>所有数据储存在叶节点中，每个叶节点的最右侧指针指向下一个叶节点.</li>
+<li>内部节点用于作索引，仅含有其子树中的最小关键字.</li>
+<li>除了根节点外，其他节点中所含键值至少有 $\lceil m/2\rceil$ (比同阶 B 树多一个).</li>
 </ol>
 <h4 id="►-2-3-4树"><a href="#►-2-3-4树" class="headerlink" title="► 2-3-4树"></a>► 2-3-4树</h4><p>2-3-4 树是 $m=4$ 的 B 树，他具有 B 树的所有性质，也具有自己的一些特殊之处，在下文中会提到.</p>
 <h3 id="Red-black-Tree"><a href="#Red-black-Tree" class="headerlink" title="Red-black Tree"></a>Red-black Tree</h3><p>为了避免 2-3-4 树的插入和删除的复杂性，同时利用其优点，我们可以采用另一种特殊的二叉树——红黑树. </p>
@@ -384,6 +412,7 @@
 <li>$u$ 不存在或是黑色，且 $c,p$ 和 $p,g$ 间左右相反 ：$p$ 左旋之后，假装 $p$ 是新插入的节点，按照情况 2 处理.<img   src="/images/case3.svg"  alt="case1"></li>
 </ol>
 <h4 id="►-删除-1"><a href="#►-删除-1" class="headerlink" title="► 删除"></a>► <strong>删除</strong></h4><p>红黑树的删除操作较为逆天. 假设要删除的节点为 $v$, 被用来替代 $v$ 的节点是 $u$. 红黑树的删除可以遵循以下步骤：</p>
+<blockquote>
 <ol>
 <li>标准的 BST 删除操作</li>
 <li>维护红黑树性质：大致以下情况<ol>
@@ -404,10 +433,13 @@
 </ol>
 </li>
 </ol>
+</blockquote>
 <p>接下来分情况开始讨论：</p>
 <ul>
-<li>i. 若 $u$ 或 $v$ 为红色，将 $u$ 改为黑色 （注意，由于最后的删除过程肯定存在 $v$ 是 $u$ 的父节点，因此两者不会同为红色）</li>
-<li>ii. 若 $u$ 和 $v$ 都是黑色结点，直接删除 $v$ 并用 $u$ 替代，此时红黑树的性质 5 被破坏，为了进行维护，我们使 $u$ 成为<strong>双黑节点</strong>，接下来的任务是将这个双黑节点变回普通节点</li>
+<li><p>i. 若 $u$ 或 $v$ 为红色，将 $u$ 改为黑色 （注意，由于最后的删除过程肯定存在 $v$ 是 $u$ 的父节点，因此两者不会同为红色）</p>
+</li>
+<li><p>ii. 若 $u$ 和 $v$ 都是黑色结点，直接删除 $v$ 并用 $u$ 替代，此时红黑树的性质 5 被破坏，为了进行维护，我们使 $u$ 成为<strong>双黑节点</strong>，接下来的任务是将这个双黑节点变回普通节点</p>
+</li>
 <li>ii. a. 若双黑节点 $u$ 是根节点，其可直接变为普通黑节点，$bh(T)$ 减一.</li>
 <li>ii. b. 若双黑节点 $u$ 不是根节点，可分为三种情况，记 $u$ 的兄弟节点为 $s$, 他们的父节点为 $p$. </li>
 <li>ii. b. a. 若 $s$ 是黑色节点，且 $s$ 至少有一个红色子节点，记作 $r$<ul>
@@ -460,7 +492,14 @@
 <li>Java的 TreeMap 和 TreeSet 的实现;</li>
 </ol>
 <p>（参考自<a class="link"   target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/145006031" >知乎<i class="fas fa-external-link-alt"></i></a>)</p>
-
+<h2 id="Lec-3-Inverted-File-Index"><a href="#Lec-3-Inverted-File-Index" class="headerlink" title="Lec 3 : Inverted File Index"></a>Lec 3 : Inverted File Index</h2><p>逆索引（Inverted file index）是一种常见的文本检索技术，他通过将单词或短语作为关键词并将其在文档中的位置记录在一个索引中实现快速的文本检索.</p>
+<p>【$\mathbf{Def}$】<strong>索引</strong> 在上下文中定位某段给定文本. 即建立 文本位置 $\rightarrow$ 文本内容的单射.<br>【$\mathbf{Def}$】<strong>逆索引</strong> 对于每一个单词，记录他出现在哪些文档的哪些位置中，并记录它们出现的频次. </p>
+<h3 id="基本实现"><a href="#基本实现" class="headerlink" title="基本实现"></a>基本实现</h3><p>例如，有以下文档集合：<br><img   src="/images/invs.svg"  alt="nva"><br>我们可以建立这种索引：<br><img   src="/images/invb.svg"  alt="b"></p>
+<h3 id="优化"><a href="#优化" class="headerlink" title="优化"></a>优化</h3><p>如果将所有词都存入逆索引，那么工作量非常大，且会有很大的冗余. 因此我们可以通过一系列方法来对其进行改进</p>
+<h4 id="►-停用词"><a href="#►-停用词" class="headerlink" title="► 停用词"></a>► 停用词</h4><p>有些词语会频繁的出现在所有文档中，但他们往往不会被用于索引. 例如单词 <code>a</code>、 <code>the</code>、 <code>I</code> 等，因此可以在建立逆索引时跳过这些词语, 这一类词就被称作<strong>停用词</strong>.</p>
+<p>停用词的共同点是他们通常有着较高的出现频次，但并不能盲目的设计停用词.</p>
+<h4 id="►-词干分析"><a href="#►-词干分析" class="headerlink" title="► 词干分析"></a>► 词干分析</h4><p><strong>词干分析</strong> 是一种将单词转化为词干的技术，例如，可以将 <code>eats</code>, <code>ate</code>, <code>eaten</code>, <code>eating</code> 等词转化为 <code>eat</code>. 这些词由于他们的词干相同，因此往往在上下文中含义类似，我们在检索 <code>eat</code> 时，当然也希望找到 <code>ate</code> . 这一技术可以让多个单词共享同一个逆索引记录，从而对建立索引和搜索进行优化.</p>
+<h3 id="分布式"><a href="#分布式" class="headerlink" title="分布式"></a>分布式</h3>
                 </div>
 
                 
@@ -480,14 +519,14 @@
         <div class="copyright-info-bottom border-box">
             <div class="copyright-post-author bottom-item">
                 <div class="type">
-                    Author
+                    作者
                 </div>
                 <div class="content">404</div>
             </div>
 
             <div class="post-time bottom-item">
                 <div class="type">
-                    Published
+                    發布于
                 </div>
                 <div class="content">2024-02-26 18:57</div>
             </div>
@@ -495,7 +534,7 @@
 
             <div class="post-license bottom-item">
                 <div class="type">
-                    License
+                    許可
                 </div>
                 <div class="content tooltip" data-tooltip-content="CC BY-NC-SA 4.0">
                     <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed">
@@ -510,7 +549,7 @@
 
         <i class="copyright-bg fa-solid fa-copyright"></i>
     </div>
-    <div class="copy-copyright-info flex-center tooltip" data-tooltip-content="Copy copyright info" data-tooltip-offset-y="-2px">
+    <div class="copy-copyright-info flex-center tooltip" data-tooltip-content="復製版權信息" data-tooltip-offset-y="-2px">
         <i class="fa-solid fa-copy"></i>
     </div>
 </div>
@@ -526,19 +565,19 @@
                             <div class="post-share-container border-box">
     <ul class="share-list-wrap border-box">
         <li class="qq share-item border-box flex-center tooltip"
-            data-tooltip-content="Share to QQ"
+            data-tooltip-content="分享到 QQ"
         >
             <i class="fa-brands fa-qq"></i>
         </li>
         <li class="wechat share-item border-box flex-center tooltip tooltip-img"
-            data-tooltip-content="Share to WeChat"
-            data-tooltip-img-tip="Scan by WeChat"
+            data-tooltip-content="分享到微信"
+            data-tooltip-img-tip="微信掃壹掃"
             data-tooltip-img-style="background-color: #fff; top: -10px; padding: 0.6rem 0.6rem 0.1rem 0.6rem;"
         >
             <i class="fa-brands fa-weixin"></i>
         </li>
         <li class="weibo share-item border-box flex-center tooltip"
-            data-tooltip-content="Share to WeiBo"
+            data-tooltip-content="分享到微博"
         >
             <i class="fa-brands fa-weibo"></i>
         </li>
@@ -565,7 +604,7 @@
                                     </span>
                                     <span class="title flex-center">
                                         <span class="post-nav-title-item text-ellipsis">🖊️ 计算机学院 计算机组成 （Computer Organization）</span>
-                                        <span class="post-nav-item">Prev posts</span>
+                                        <span class="post-nav-item">上一篇</span>
                                     </span>
                                 </a>
                             </div>
@@ -579,7 +618,7 @@
                                 >
                                     <span class="title flex-center">
                                         <span class="post-nav-title-item text-ellipsis">🖊️ 计算机学院 数值分析 （Numerical Analysis）</span>
-                                        <span class="post-nav-item">Next posts</span>
+                                        <span class="post-nav-item">下一篇</span>
                                     </span>
                                     <span class="right arrow-icon flex-center">
                                         <i class="fas fa-chevron-right"></i>
@@ -596,15 +635,15 @@
 
     <div class="comments-container border-box">
         <div id="comments-anchor" class="comment-area-title border-box">
-            <i class="fas fa-comments"></i>&nbsp;Comments
+            <i class="fas fa-comments"></i>&nbsp;留言
         </div>
         <div class="comment-plugin-fail border-box">
-    <span class="fail-tip">Comment plugin failed to load</span>
-    <button class="reload keep-button">Click to reload</button>
+    <span class="fail-tip">評論插件加載失敗</span>
+    <button class="reload keep-button">點擊重新加載</button>
 </div>
 <div class="comment-plugin-loading flex-center border-box">
     <i class="loading-icon fa-solid fa-spinner fa-spin"></i>
-    <span class="load-tip">Loading comment plugin</span>
+    <span class="load-tip">正在加載評論插件</span>
 </div>
 <script data-pjax>
   window.KeepCommentPlugin = {}
@@ -678,7 +717,7 @@
             <div class="pc-post-toc right-toc">
                 <div class="post-toc-wrap border-box">
     <div class="post-toc border-box">
-        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Basic-info"><span class="nav-text">Basic info</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Lec-1-Balanced-BST"><span class="nav-text">Lec 1 : Balanced BST</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Height-Balance"><span class="nav-text">Height Balance</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#AVL-Trees"><span class="nav-text">AVL Trees</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E2%96%BA-%E5%8D%95%E6%97%8B%E6%93%8D%E4%BD%9C"><span class="nav-text">► 单旋操作</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E2%96%BA-%E5%8F%8C%E6%97%8B%E6%93%8D%E4%BD%9C"><span class="nav-text">► 双旋操作</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Splay-Trees"><span class="nav-text">Splay Trees</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E2%96%BA-Zig%E6%88%96Zag"><span class="nav-text">► Zig或Zag</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E2%96%BA-Zig-Zig%E6%88%96Zag-Zag"><span class="nav-text">► Zig-Zig或Zag-Zag</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E2%96%BA-Zig-Zag%E6%88%96Zag-Zig"><span class="nav-text">► Zig-Zag或Zag-Zig</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Amortized-Analysis"><span class="nav-text">Amortized Analysis</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E2%96%BA-%E8%81%9A%E5%90%88%E5%88%86%E6%9E%90"><span class="nav-text">► 聚合分析</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E2%96%BA-%E6%A0%B8%E7%AE%97%E6%B3%95"><span class="nav-text">► 核算法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E2%96%BA-%E5%8A%BF%E6%B3%95"><span class="nav-text">► 势法</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Lec-2-Red-black-Tree-and-B-Tree"><span class="nav-text">Lec 2 : Red-black Tree and B Tree</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#M-Ary-Search-Trees"><span class="nav-text">M-Ary Search Trees</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#B-Tree"><span class="nav-text">B Tree</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E2%96%BA-%E6%90%9C%E7%B4%A2"><span class="nav-text">► 搜索</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E2%96%BA-%E6%8F%92%E5%85%A5"><span class="nav-text">► 插入</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E2%96%BA-%E5%88%A0%E9%99%A4"><span class="nav-text">► 删除</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E2%96%BA-B-Trees"><span class="nav-text">► B+ Trees</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E2%96%BA-2-3-4%E6%A0%91"><span class="nav-text">► 2-3-4树</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Red-black-Tree"><span class="nav-text">Red-black Tree</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E2%96%BA-%E5%9F%BA%E6%9C%AC%E5%B1%9E%E6%80%A7"><span class="nav-text">► 基本属性</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E2%96%BA-%E6%8F%92%E5%85%A5-1"><span class="nav-text">► 插入</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E2%96%BA-%E5%88%A0%E9%99%A4-1"><span class="nav-text">► 删除</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E2%96%BA-%E6%8B%93%E5%B1%95"><span class="nav-text">► 拓展</span></a></li></ol></li></ol></li></ol>
+        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Basic-info"><span class="nav-text">Basic info</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Lec-1-Balanced-BST"><span class="nav-text">Lec 1 : Balanced BST</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Height-Balance"><span class="nav-text">Height Balance</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#AVL-Trees"><span class="nav-text">AVL Trees</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E2%96%BA-%E5%8D%95%E6%97%8B%E6%93%8D%E4%BD%9C"><span class="nav-text">► 单旋操作</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E2%96%BA-%E5%8F%8C%E6%97%8B%E6%93%8D%E4%BD%9C"><span class="nav-text">► 双旋操作</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Splay-Trees"><span class="nav-text">Splay Trees</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E2%96%BA-Zig%E6%88%96Zag"><span class="nav-text">► Zig或Zag</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E2%96%BA-Zig-Zig%E6%88%96Zag-Zag"><span class="nav-text">► Zig-Zig或Zag-Zag</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E2%96%BA-Zig-Zag%E6%88%96Zag-Zig"><span class="nav-text">► Zig-Zag或Zag-Zig</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Amortized-Analysis"><span class="nav-text">Amortized Analysis</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E2%96%BA-%E8%81%9A%E5%90%88%E5%88%86%E6%9E%90"><span class="nav-text">► 聚合分析</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E2%96%BA-%E6%A0%B8%E7%AE%97%E6%B3%95"><span class="nav-text">► 核算法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E2%96%BA-%E5%8A%BF%E6%B3%95"><span class="nav-text">► 势法</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Lec-2-Red-black-Tree-and-B-Tree"><span class="nav-text">Lec 2 : Red-black Tree and B Tree</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#M-Ary-Search-Trees"><span class="nav-text">M-Ary Search Trees</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#B-Tree"><span class="nav-text">B Tree</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E2%96%BA-%E6%90%9C%E7%B4%A2"><span class="nav-text">► 搜索</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E2%96%BA-%E6%8F%92%E5%85%A5"><span class="nav-text">► 插入</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E2%96%BA-%E5%88%A0%E9%99%A4"><span class="nav-text">► 删除</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#B-Trees"><span class="nav-text">B+ Trees</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E2%96%BA-2-3-4%E6%A0%91"><span class="nav-text">► 2-3-4树</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Red-black-Tree"><span class="nav-text">Red-black Tree</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E2%96%BA-%E5%9F%BA%E6%9C%AC%E5%B1%9E%E6%80%A7"><span class="nav-text">► 基本属性</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E2%96%BA-%E6%8F%92%E5%85%A5-1"><span class="nav-text">► 插入</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E2%96%BA-%E5%88%A0%E9%99%A4-1"><span class="nav-text">► 删除</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E2%96%BA-%E6%8B%93%E5%B1%95"><span class="nav-text">► 拓展</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Lec-3-Inverted-File-Index"><span class="nav-text">Lec 3 : Inverted File Index</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9F%BA%E6%9C%AC%E5%AE%9E%E7%8E%B0"><span class="nav-text">基本实现</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BC%98%E5%8C%96"><span class="nav-text">优化</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E2%96%BA-%E5%81%9C%E7%94%A8%E8%AF%8D"><span class="nav-text">► 停用词</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E2%96%BA-%E8%AF%8D%E5%B9%B2%E5%88%86%E6%9E%90"><span class="nav-text">► 词干分析</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%88%86%E5%B8%83%E5%BC%8F"><span class="nav-text">分布式</span></a></li></ol></li></ol>
     </div>
 </div>
 
@@ -706,7 +745,7 @@
             </div>
 
             <div class="theme-info info-item default">
-                Powered by&nbsp;<a target="_blank" href="https://hexo.io">Hexo</a>&nbsp;&&nbsp;Theme&nbsp;<a class="keep-version" target="_blank" href="https://github.com/XPoet/hexo-theme-keep">Keep</a>
+                <a target="_blank" href="https://hexo.io">Hexo</a>&nbsp;框架&nbsp;&&nbsp;主題&nbsp;<a class="keep-version" target="_blank" href="https://github.com/XPoet/hexo-theme-keep">Keep</a>
             </div>
 
             
@@ -715,7 +754,7 @@
                 
                 <div class="deploy-info info-item default">
                     
-                        This site is deployed on <span class="tooltip" data-tooltip-content="GitHub Pages"><img src="/images/deploy-provider/github.png"></span>
+                        本站由 <span class="tooltip" data-tooltip-content="GitHub Pages"><img src="/images/deploy-provider/github.png"></span> 提供部署服務
                     
                 </div>
             
@@ -827,7 +866,7 @@
                 <input autocomplete="off"
                        autocorrect="off"
                        autocapitalize="off"
-                       placeholder="Search..."
+                       placeholder="搜尋..."
                        spellcheck="false"
                        type="search"
                        class="search-input"
@@ -853,7 +892,7 @@
             <div class="tablet-post-toc">
                 <div class="post-toc-wrap border-box">
     <div class="post-toc border-box">
-        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Basic-info"><span class="nav-text">Basic info</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Lec-1-Balanced-BST"><span class="nav-text">Lec 1 : Balanced BST</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Height-Balance"><span class="nav-text">Height Balance</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#AVL-Trees"><span class="nav-text">AVL Trees</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E2%96%BA-%E5%8D%95%E6%97%8B%E6%93%8D%E4%BD%9C"><span class="nav-text">► 单旋操作</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E2%96%BA-%E5%8F%8C%E6%97%8B%E6%93%8D%E4%BD%9C"><span class="nav-text">► 双旋操作</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Splay-Trees"><span class="nav-text">Splay Trees</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E2%96%BA-Zig%E6%88%96Zag"><span class="nav-text">► Zig或Zag</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E2%96%BA-Zig-Zig%E6%88%96Zag-Zag"><span class="nav-text">► Zig-Zig或Zag-Zag</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E2%96%BA-Zig-Zag%E6%88%96Zag-Zig"><span class="nav-text">► Zig-Zag或Zag-Zig</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Amortized-Analysis"><span class="nav-text">Amortized Analysis</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E2%96%BA-%E8%81%9A%E5%90%88%E5%88%86%E6%9E%90"><span class="nav-text">► 聚合分析</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E2%96%BA-%E6%A0%B8%E7%AE%97%E6%B3%95"><span class="nav-text">► 核算法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E2%96%BA-%E5%8A%BF%E6%B3%95"><span class="nav-text">► 势法</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Lec-2-Red-black-Tree-and-B-Tree"><span class="nav-text">Lec 2 : Red-black Tree and B Tree</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#M-Ary-Search-Trees"><span class="nav-text">M-Ary Search Trees</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#B-Tree"><span class="nav-text">B Tree</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E2%96%BA-%E6%90%9C%E7%B4%A2"><span class="nav-text">► 搜索</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E2%96%BA-%E6%8F%92%E5%85%A5"><span class="nav-text">► 插入</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E2%96%BA-%E5%88%A0%E9%99%A4"><span class="nav-text">► 删除</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E2%96%BA-B-Trees"><span class="nav-text">► B+ Trees</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E2%96%BA-2-3-4%E6%A0%91"><span class="nav-text">► 2-3-4树</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Red-black-Tree"><span class="nav-text">Red-black Tree</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E2%96%BA-%E5%9F%BA%E6%9C%AC%E5%B1%9E%E6%80%A7"><span class="nav-text">► 基本属性</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E2%96%BA-%E6%8F%92%E5%85%A5-1"><span class="nav-text">► 插入</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E2%96%BA-%E5%88%A0%E9%99%A4-1"><span class="nav-text">► 删除</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E2%96%BA-%E6%8B%93%E5%B1%95"><span class="nav-text">► 拓展</span></a></li></ol></li></ol></li></ol>
+        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Basic-info"><span class="nav-text">Basic info</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Lec-1-Balanced-BST"><span class="nav-text">Lec 1 : Balanced BST</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Height-Balance"><span class="nav-text">Height Balance</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#AVL-Trees"><span class="nav-text">AVL Trees</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E2%96%BA-%E5%8D%95%E6%97%8B%E6%93%8D%E4%BD%9C"><span class="nav-text">► 单旋操作</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E2%96%BA-%E5%8F%8C%E6%97%8B%E6%93%8D%E4%BD%9C"><span class="nav-text">► 双旋操作</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Splay-Trees"><span class="nav-text">Splay Trees</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E2%96%BA-Zig%E6%88%96Zag"><span class="nav-text">► Zig或Zag</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E2%96%BA-Zig-Zig%E6%88%96Zag-Zag"><span class="nav-text">► Zig-Zig或Zag-Zag</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E2%96%BA-Zig-Zag%E6%88%96Zag-Zig"><span class="nav-text">► Zig-Zag或Zag-Zig</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Amortized-Analysis"><span class="nav-text">Amortized Analysis</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E2%96%BA-%E8%81%9A%E5%90%88%E5%88%86%E6%9E%90"><span class="nav-text">► 聚合分析</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E2%96%BA-%E6%A0%B8%E7%AE%97%E6%B3%95"><span class="nav-text">► 核算法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E2%96%BA-%E5%8A%BF%E6%B3%95"><span class="nav-text">► 势法</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Lec-2-Red-black-Tree-and-B-Tree"><span class="nav-text">Lec 2 : Red-black Tree and B Tree</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#M-Ary-Search-Trees"><span class="nav-text">M-Ary Search Trees</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#B-Tree"><span class="nav-text">B Tree</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E2%96%BA-%E6%90%9C%E7%B4%A2"><span class="nav-text">► 搜索</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E2%96%BA-%E6%8F%92%E5%85%A5"><span class="nav-text">► 插入</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E2%96%BA-%E5%88%A0%E9%99%A4"><span class="nav-text">► 删除</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#B-Trees"><span class="nav-text">B+ Trees</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E2%96%BA-2-3-4%E6%A0%91"><span class="nav-text">► 2-3-4树</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Red-black-Tree"><span class="nav-text">Red-black Tree</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E2%96%BA-%E5%9F%BA%E6%9C%AC%E5%B1%9E%E6%80%A7"><span class="nav-text">► 基本属性</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E2%96%BA-%E6%8F%92%E5%85%A5-1"><span class="nav-text">► 插入</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E2%96%BA-%E5%88%A0%E9%99%A4-1"><span class="nav-text">► 删除</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E2%96%BA-%E6%8B%93%E5%B1%95"><span class="nav-text">► 拓展</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Lec-3-Inverted-File-Index"><span class="nav-text">Lec 3 : Inverted File Index</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9F%BA%E6%9C%AC%E5%AE%9E%E7%8E%B0"><span class="nav-text">基本实现</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BC%98%E5%8C%96"><span class="nav-text">优化</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E2%96%BA-%E5%81%9C%E7%94%A8%E8%AF%8D"><span class="nav-text">► 停用词</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E2%96%BA-%E8%AF%8D%E5%B9%B2%E5%88%86%E6%9E%90"><span class="nav-text">► 词干分析</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%88%86%E5%B8%83%E5%BC%8F"><span class="nav-text">分布式</span></a></li></ol></li></ol>
     </div>
 </div>
 
