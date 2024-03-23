@@ -90,25 +90,25 @@
                     <li class="menu-item">
                         <a class=""
                            href="/"
-                        >首頁</a>
+                        >HOME</a>
                     </li>
                     
                         <li class="menu-item">
                             <a class=""
                                href="/archives"
-                            >歸檔</a>
+                            >ARCHIVES</a>
                         </li>
                     
                         <li class="menu-item">
                             <a class=""
                                href="/categories"
-                            >分類</a>
+                            >CATEGORIES</a>
                         </li>
                     
                         <li class="menu-item">
                             <a class=""
                                href="/about"
-                            >關於</a>
+                            >ABOUT</a>
                         </li>
                     
                     
@@ -134,25 +134,25 @@
             <li class="drawer-menu-item flex-center">
                 <a class=""
                    href="/"
-                >首頁</a>
+                >HOME</a>
             </li>
             
                 <li class="drawer-menu-item flex-center">
                     <a class=""
                        href="/archives"
-                    >歸檔</a>
+                    >ARCHIVES</a>
                 </li>
             
                 <li class="drawer-menu-item flex-center">
                     <a class=""
                        href="/categories"
-                    >分類</a>
+                    >CATEGORIES</a>
                 </li>
             
                 <li class="drawer-menu-item flex-center">
                     <a class=""
                        href="/about"
-                    >關於</a>
+                    >ABOUT</a>
                 </li>
             
         </ul>
@@ -210,7 +210,7 @@
 
             <span class="meta-info-item post-update-date">
                 <i class="icon fa-solid fa-file-pen"></i>&nbsp;
-                <span class="datetime" data-updated="Thu Mar 07 2024 18:53:12 GMT+0800">2024 年 03 月 07 日 18:53</span>
+                <span class="datetime" data-updated="Sat Mar 23 2024 13:24:24 GMT+0800">2024 年 03 月 23 日 13:24</span>
             </span>
         
 
@@ -317,12 +317,28 @@
 <li>A database consists of multiple relations.</li>
 <li></li>
 </ul>
-<h4 id="Key：-K-subseteq-mathbf-R-An-attribute-of-the-relation-schema"><a href="#Key：-K-subseteq-mathbf-R-An-attribute-of-the-relation-schema" class="headerlink" title="Key：$K\subseteq \mathbf{R}$. (An attribute of the relation schema)"></a><strong>Key</strong>：$K\subseteq \mathbf{R}$. (An attribute of the relation schema)</h4><ul>
+<h4 id="Key"><a href="#Key" class="headerlink" title="Key"></a><strong>Key</strong></h4><p>$K\subseteq \mathbf{R}$. (An attribute of the relation schema)</p>
+<ul>
 <li><strong>Superkey</strong>: $K$ is a superkey of $\mathbf{R}$ if values for $K$ are sufficient to identify a unique tuple of each possible relation $r(\mathbf{R})$.</li>
 <li><strong>Candidate Key</strong>: $K$ is a candidate key if it is minimal superkey.</li>
 <li><strong>Primary key</strong>: $K$ is a Primary key if $K$ is a candidate key and is defined by user explicitly.</li>
-<li><strong>Foreign key</strong>: Assume there exists relations $r$ and $s$: $r(A,B,C),r(B,D)$, we can say that attribute $B$ in relation $r$ is foreign key referencing $s$ and $r$ is a referencing relation and $s$ is a referenced relation.</li>
+<li><strong>Foreign key</strong>: Assume there exists relations $r$ and $s$: $r(A,B,C),s(B,D)$, we can say that attribute $B$ in relation $r$ is foreign key referencing $s$ and $r$ is a referencing relation and $s$ is a referenced relation. There are two types of <strong>constraints</strong>:<ol>
+<li>Foreign-key constraint: <ol>
+<li>the value of $B$ for each tuple in $r$ must also be the value of $B$ for some tuple in $s$.</li>
+<li>$B$ must be the primary key of $s$.</li>
+</ol>
+</li>
+<li>Referential-integrity constraint:<ol>
+<li>the value of $B$ for each tuple in $r$ must also be the value of $B$ for some tuple in $s$.</li>
+<li>Usually not supported by Database Systems.<br><img   src="/images/keyexa.svg"  alt=""></li>
+</ol>
+</li>
+</ol>
+</li>
 </ul>
+<p>Take the table above as an example, <code>id</code> and <code>name</code> are both superkey. <code>birth year</code> and <code>weight</code> is a superkey when we combine them together. </p>
+<p>Superkey <code>id</code> or <code>name</code> have only one attribute, thus they are both candidate key. The user can decide which one becomes the primary key.</p>
+<p>If a connection should be established between the table and another table which have <code>id</code> as an attribute, then <code>id</code> is a foreign key.</p>
 <h3 id="Fundamental-Relational-Algebra-Operations"><a href="#Fundamental-Relational-Algebra-Operations" class="headerlink" title="Fundamental Relational-Algebra Operations"></a>Fundamental Relational-Algebra Operations</h3><p>There are six basic operators:</p>
 <h4 id="Select"><a href="#Select" class="headerlink" title="Select"></a><strong>Select</strong></h4><p>defined as $\sigma_p(r)=\{t|t\in r \land p(t)\}$, where $p$ is a formula in propositional calculas consisting of terms connected by $\land, \vee, \neg.$ e.g. </p>
 <script type="math/tex; mode=display">\mathrm{\sigma_{customer-name='Dickson'\ \land\ type='debit'}(account).}</script><h4 id="Project"><a href="#Project" class="headerlink" title="Project"></a><strong>Project</strong></h4><p>defined as $\prod_{A_1,A_2,\dots,A_k}(r).$ Where $A_1,A_2,\dots,A_k$ are attribute names and $r$ is a relation name. The result is defined as the relation of $k$ columns obtained by <strong>erasing</strong> the columns that are not listed. Note that duplicated rows <strong>must be removed</strong> from the result.  </p>
@@ -334,6 +350,139 @@
 <script type="math/tex; mode=display">\mathrm{r\bowtie s=\prod_{r.A,r.B,r.C,r.D,s.E}(\sigma_{r.B=s.B\land r.D=s.D}(r\times s))}</script><h4 id="Theta-join-Operation"><a href="#Theta-join-Operation" class="headerlink" title="Theta join Operation"></a><strong>Theta join Operation</strong></h4><p>Notation: $r\bowtie_\theta s$<br>where $\theta$ is the predicate on attributes in the schema. note that <script type="math/tex">\mathrm{r\bowtie_\theta s=\sigma_\theta(r\times s)}</script></p>
 <h4 id="Division-Operation"><a href="#Division-Operation" class="headerlink" title="Division Operation"></a><strong>Division Operation</strong></h4><p>Notation: $r\div s$<br>The backward operation of Cartesian Product.</p>
 <script type="math/tex; mode=display">\mathrm{  r\div s=\prod_{R-S}(r)-\prod_{R-S}((\prod_{R-S}(r\times s)-\prod_{R-S,S}(r)) ) }.</script><h4 id="Assignment-Operation"><a href="#Assignment-Operation" class="headerlink" title="Assignment Operation"></a><strong>Assignment Operation</strong></h4><p>Notation: $r\leftarrow s$</p>
+<h2 id="Lec-3-SQL"><a href="#Lec-3-SQL" class="headerlink" title="Lec 3 : SQL"></a>Lec 3 : SQL</h2><p>SQL <code>/ˈsēkw(ə)l/</code> (Structured Query Language, 结构化查询语言)<br>SQL includes these parts:</p>
+<ol>
+<li>Data-Definition Language<ul>
+<li><code>CREATE TABLE;</code></li>
+<li><code>DROP TABLE;</code></li>
+</ul>
+</li>
+<li>Data-Manipulation Language<ul>
+<li><code>SELECT * FROM TABLE;</code></li>
+<li><code>INSERT</code></li>
+</ul>
+</li>
+<li>Data-Control Language<ul>
+<li><code>GRANT</code></li>
+</ul>
+</li>
+</ol>
+<h3 id="Data-Definition-Language"><a href="#Data-Definition-Language" class="headerlink" title="Data-Definition Language"></a>Data-Definition Language</h3><p>What can DDL do?</p>
+<h4 id="Create-drop-or-alter-table-and-Define-the-schema-for-relations"><a href="#Create-drop-or-alter-table-and-Define-the-schema-for-relations" class="headerlink" title="Create, drop or alter table and Define the schema for relations"></a><strong>Create, drop or alter table and Define the schema for relations</strong></h4><p>for example,<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> <span class="keyword">TABLE</span> dick</span><br><span class="line">            (dick_owner  <span class="type">char</span>(<span class="number">20</span>) <span class="keyword">not</span> <span class="keyword">null</span>,</span><br><span class="line">             dick_length <span class="type">numeric</span>(<span class="number">2</span>, <span class="number">2</span>),</span><br><span class="line">             dick_radius <span class="type">numeric</span>(<span class="number">2</span>, <span class="number">2</span>),</span><br><span class="line">             <span class="keyword">primary</span> key (dick_owner));</span><br></pre></td></tr></table></figure><br>creates a new table names <code>dick</code> , and contains three attribute <code>dick_owner</code>, <code>dick_length</code> and <code>dick_radius</code>. We set <code>dick_owner</code> the primary key as no dick can be owned by two.<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">DROP</span> <span class="keyword">TABLE</span> dick;</span><br></pre></td></tr></table></figure><br>this command deletes all information about the dropped relation from the database.<br><strong>One should be careful and responsible to use the <code>DROP</code> command.</strong><br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">ALTER</span> <span class="keyword">TABLE</span> dick <span class="keyword">ADD</span> dick_angle <span class="type">numeric</span>(<span class="number">2</span>, <span class="number">2</span>);</span><br><span class="line"><span class="keyword">ALTER</span> <span class="keyword">TABLE</span> dick <span class="keyword">DROP</span> dick_angle; <span class="operator">/</span><span class="operator">/</span><span class="keyword">not</span> supported <span class="keyword">by</span> many DBMS</span><br><span class="line"><span class="keyword">ALTER</span> <span class="keyword">TABLE</span> dick MODIFY (dick_owner <span class="type">varchar</span>(<span class="number">20</span>));</span><br></pre></td></tr></table></figure><br>this command is used to add, drop or edit attributes to an <strong>existing</strong> relation</p>
+<blockquote>
+<p>Note:<br>“-“ character is invalid in names.<br>SQL names are case-insensitive.</p>
+<h4 id="Define-the-domain-of-values-associated-with-each-attribute"><a href="#Define-the-domain-of-values-associated-with-each-attribute" class="headerlink" title="Define the domain of values associated with each attribute"></a><strong>Define the domain of values associated with each attribute</strong></h4><p>There are several types of domain in SQL</p>
+<ul>
+<li><code>char(n)</code> : <em>Fixed</em> length character string, the length must be <code>n</code>.</li>
+<li><code>varchar(n)</code> : <em>Variable</em> length character string, the maximum length is <code>n</code>.</li>
+<li><code>int</code> : Integer (depend on the machine)</li>
+<li><code>smallint</code> : Subset of Integer type (depend on the machine)</li>
+<li><code>numeric(p, d)</code> : Fixed point number, precision is <code>p</code> digits, <code>d</code> digits to the right of decimal point.</li>
+<li><code>real, double precision</code> : Floating point and double-precision floating point numbers.</li>
+<li><code>float(n)</code> : Floating point number, precision at least <code>n</code> digits.</li>
+<li><code>NULL</code> : nothing.</li>
+<li><code>date</code> : Contain year, month and day.</li>
+<li><code>time</code> : Time of a day. Contain hour, minute and second.</li>
+<li><code>timestamp</code> : date and time.</li>
+</ul>
+</blockquote>
+<p>Functions can be used to handle the conversion of different types. such as <code>Abs()</code>, <code>exp()</code>…</p>
+<h4 id="Define-the-integrity-constraints"><a href="#Define-the-integrity-constraints" class="headerlink" title="Define the integrity constraints."></a><strong>Define the integrity constraints.</strong></h4><p>Integrity Constraints are the protocols that a table’s data columns must follow. Some integrity constraints are shown below:</p>
+<ul>
+<li><code>Not null</code></li>
+<li><code>Primary key (A, B, ..., Z)</code>, ( for SQL_92, this constraint ensures <code>Not null</code> )</li>
+<li><code>Check (P)</code>, where <code>P</code> is a predicate, value of this attribute of each tuple must satisfy <code>P</code>.</li>
+</ul>
+<h4 id="Other"><a href="#Other" class="headerlink" title="Other"></a><strong>Other</strong></h4><ul>
+<li>Define the physical storage structure of each relations on disk</li>
+<li>Define the indices to be maintained for each relations</li>
+<li>Define the view on relations</li>
+</ul>
+<h3 id="Basic-Structure-of-command"><a href="#Basic-Structure-of-command" class="headerlink" title="Basic Structure of command"></a>Basic Structure of command</h3><h4 id="select-clause"><a href="#select-clause" class="headerlink" title="select clause"></a><strong>select clause</strong></h4><p>A typical SQL query can have the form:<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> (<span class="keyword">DISTINCT</span>) A, B, ... </span><br><span class="line"><span class="keyword">FROM</span>   r, s, ...</span><br><span class="line"><span class="keyword">WHERE</span>  P</span><br><span class="line"><span class="keyword">GROUP</span> <span class="keyword">BY</span> C, D, ... </span><br><span class="line"><span class="keyword">HAVING</span> Q</span><br><span class="line"><span class="keyword">ORDER</span> <span class="keyword">BY</span> E, F, ...</span><br></pre></td></tr></table></figure></p>
+<p>where <code>A</code> and <code>B</code> are attributes; <code>r</code> and <code>s</code> are relations; <code>P</code> is a predicate. </p>
+<p>This query is equivalent to the relational algebra expression:</p>
+<script type="math/tex; mode=display">\prod_{A, B,\dots}(\sigma_P(r\times s\times \dots)).</script><p>the result of query is also a relation.</p>
+<p><strong>Distinct</strong>: In the result of query, duplicates is allowed by default, if we want it to be eliminated, key word <code>distinct</code> can be use:<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> <span class="keyword">distinct</span> dick_length</span><br><span class="line"><span class="keyword">FROM</span> dick</span><br></pre></td></tr></table></figure></p>
+<blockquote>
+<p>Note that <code>distinct</code> means every tuple is distinct in the result relation, but not every value of one attribute is distinctive.</p>
+</blockquote>
+<p><strong>Asterisk (*)</strong>: An asterisk in the select clause denotes all attributes.<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> <span class="operator">*</span> <span class="keyword">FROM</span> dick</span><br></pre></td></tr></table></figure><br>The asterisk can also be used in arithmetic expressions, such as<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> dick_owner, dick_length <span class="operator">*</span> <span class="number">10</span></span><br><span class="line"><span class="keyword">FROM</span> dick;</span><br></pre></td></tr></table></figure><br><strong>where clause</strong>: The where clause specifies conditions that the result must satisfy.<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> dick_owner</span><br><span class="line"><span class="keyword">FROM</span> dick</span><br><span class="line"><span class="keyword">WHERE</span> dick_length <span class="operator">&gt;</span> <span class="number">30</span>;</span><br></pre></td></tr></table></figure><br>the SQL query returns all the names of whom have a dick longer than 30. It’s equivalent to the relational algebra expression:</p>
+<script type="math/tex; mode=display">\prod_{\mathrm{dick\_owner}}(\sigma_{\mathrm{dick\_length>30}}(\mathrm{dick})).</script><p>The predicate, <code>P</code> can be a combination of several predicates connected with logical connectives including <code>AND</code>, <code>OR</code> and <code>NOT</code>.</p>
+<p><strong>from clause</strong>: the <code>FROM</code> clause lists the relations involved in the query. If more than one relation is specified in the clause, than select from the Cartesian product relation of all relations.<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> dick.dick_owner, dick_length, dick_used_count</span><br><span class="line"><span class="keyword">FROM</span> dick, dick_usage_record</span><br><span class="line"><span class="keyword">WHERE</span> dick.dick_owner <span class="operator">=</span> dick_usage_record.dick_owner <span class="keyword">AND</span></span><br><span class="line">      dick_used_count <span class="operator">&gt;</span> <span class="number">114514</span> <span class="keyword">AND</span></span><br><span class="line">      dick_length     <span class="operator">&gt;</span> <span class="number">30</span></span><br></pre></td></tr></table></figure><br>The query selects the name of those who have a dick longer than 30 and used for more than 114,514 times. Note that <code>dick.dick_owner</code> is necessary because there are two <code>dick_owner</code> attribute in total.<br><strong>rename(as)</strong>: The SQL allows renaming relations and attributes using the <code>as</code> clause.<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> dick.dick_owner <span class="keyword">as</span> excellent_dick_owner, </span><br><span class="line">       dick_length, dick_used_count</span><br><span class="line"><span class="keyword">FROM</span> dick, dick_usage_record</span><br><span class="line"><span class="keyword">WHERE</span> dick.dick_owner <span class="operator">=</span> dick_usage_record.dick_owner <span class="keyword">AND</span></span><br><span class="line">      dick_used_count <span class="operator">&gt;</span> <span class="number">114514</span> <span class="keyword">AND</span></span><br><span class="line">      dick_length     <span class="operator">&gt;</span> <span class="number">30</span></span><br></pre></td></tr></table></figure><br><strong>tuple variables</strong>: renaming the relation temporarily in the query.<br>for simplification:<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> r.dick_owner, dick_length, dick_used_count</span><br><span class="line"><span class="keyword">FROM</span> dick <span class="keyword">as</span> r, dick_usage_record <span class="keyword">as</span> s</span><br><span class="line"><span class="keyword">WHERE</span> r.dick_owner    <span class="operator">=</span> s.dick_owner <span class="keyword">AND</span></span><br><span class="line">      dick_used_count <span class="operator">&gt;</span> <span class="number">114514</span> <span class="keyword">AND</span></span><br><span class="line">      dick_length     <span class="operator">&gt;</span> <span class="number">30</span></span><br></pre></td></tr></table></figure><br>for self-comparing, the following query selects all the name of those who’s dick is longer than cartman:<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> <span class="keyword">DISTINCT</span> r.dick_owner, r.dick_length</span><br><span class="line"><span class="keyword">FROM</span> dick <span class="keyword">as</span> r, dick <span class="keyword">as</span> s</span><br><span class="line"><span class="keyword">WHERE</span> r.dick_length <span class="operator">&gt;</span> s.dick_length <span class="keyword">AND</span></span><br><span class="line">      s.dick_owner  <span class="operator">=</span> &quot;cartman&quot;;</span><br></pre></td></tr></table></figure></p>
+<h4 id="string-operations"><a href="#string-operations" class="headerlink" title="string operations"></a><strong>string operations</strong></h4><p>SQL includes a string-matching operator for comparisons on character strings</p>
+<ul>
+<li><code>%</code> matches any substring</li>
+<li><code>_</code> matches any character</li>
+<li><code>||</code> Concat strings</li>
+<li><code>lower()</code></li>
+<li><code>upper()</code></li>
+</ul>
+<p><code>LIKE</code> clause can be used to form a predicate<br>e.g. find all dick owner who’s name ends with ‘son’<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">WHERE</span> dick_owner <span class="keyword">LIKE</span> <span class="string">&#x27;%son&#x27;</span></span><br></pre></td></tr></table></figure><br>e.g.<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> <span class="string">&#x27;dick length of him is &#x27;</span> <span class="operator">||</span> dick_length</span><br><span class="line"><span class="keyword">FROM</span> dick</span><br><span class="line"><span class="keyword">WHERE</span> dick_owner <span class="keyword">LIKE</span> <span class="string">&#x27;%son&#x27;</span></span><br></pre></td></tr></table></figure></p>
+<h4 id="ordering-of-display-of-tuples"><a href="#ordering-of-display-of-tuples" class="headerlink" title="ordering of display of tuples"></a><strong>ordering of display of tuples</strong></h4><p>Though tuples in the databse is inordered, but we can define how it will display by using <code>ORDER BY</code> clause.<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> dick_owner</span><br><span class="line"><span class="keyword">FROM</span> dick</span><br><span class="line"><span class="keyword">WHERE</span> dick_length <span class="operator">&gt;</span> <span class="number">30</span></span><br><span class="line"><span class="keyword">ORDER</span> <span class="keyword">BY</span> dick_length <span class="keyword">DESC</span></span><br></pre></td></tr></table></figure></p>
+<h3 id="Set-Operation"><a href="#Set-Operation" class="headerlink" title="Set Operation"></a>Set Operation</h3><p>There are there basic type of Set operations:</p>
+<ul>
+<li><code>UNION</code> : $A\cap B$.</li>
+<li><code>INTERSECT</code> : $A\cup B$.</li>
+<li><code>EXCEPT</code> : $A - B$.</li>
+</ul>
+<p>The three operations eliminates duplicates automatically, if we want every tuple, use <code>ALL</code> clause.<br>e.g.<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">(<span class="keyword">SELECT</span> dick_owner <span class="keyword">FROM</span> dick</span><br><span class="line"> <span class="keyword">WHERE</span>  dick_length <span class="operator">&gt;</span> <span class="number">30</span>)</span><br><span class="line"><span class="keyword">UNION</span></span><br><span class="line">(<span class="keyword">SELECT</span> dick_owner <span class="keyword">FROM</span> dick_usage_record</span><br><span class="line"> <span class="keyword">WHERE</span>  dick_used_count <span class="operator">&gt;</span> <span class="number">114514</span>)</span><br></pre></td></tr></table></figure></p>
+<h3 id="Aggregate-Functions"><a href="#Aggregate-Functions" class="headerlink" title="Aggregate Functions"></a>Aggregate Functions</h3><p>There are functions operate on the multiset values of a relation’s column, and returns a value.</p>
+<ul>
+<li><code>avg(col)</code> : average value</li>
+<li><code>min(col)</code> : minimum value</li>
+<li><code>sum(col)</code> : sum of values</li>
+<li><code>count(col)</code> : number of values</li>
+</ul>
+<p>e.g. Find the average dick length of those who’s name ends with ‘son’<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> <span class="built_in">avg</span>(dick_length) avg_dick_length</span><br><span class="line"><span class="keyword">FROM</span> dick</span><br><span class="line"><span class="keyword">WHERE</span> dick_owner <span class="keyword">LIKE</span> <span class="string">&#x27;%son&#x27;</span>;</span><br></pre></td></tr></table></figure><br><strong>GROUP BY</strong>: if an attribute in the <code>SELECT</code> clause isn’t in the aggregate function, it shall be put into <code>GROUP BY</code> list.<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> dick_owner, <span class="built_in">avg</span>(dick_length) avg_dick_length</span><br><span class="line"><span class="keyword">FROM</span> dick</span><br><span class="line"><span class="keyword">WHERE</span> dick_owner <span class="keyword">LIKE</span> <span class="string">&#x27;%son&#x27;</span></span><br><span class="line"><span class="keyword">GROUP</span> <span class="keyword">BY</span> dick_owner;</span><br></pre></td></tr></table></figure><br><strong>HAVING</strong>: Make predicates on the result of aggregate function.<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">HAVING</span> <span class="built_in">avg</span>(dick_length) <span class="operator">&gt;</span> <span class="number">10</span></span><br></pre></td></tr></table></figure></p>
+<h3 id="Execution-of-SELECT"><a href="#Execution-of-SELECT" class="headerlink" title="Execution of SELECT"></a>Execution of SELECT</h3><p>The execution order of <code>SELECT</code> clause is <code>FROM</code>$\rightarrow$<code>WHERE</code>$\rightarrow$<code>GROUP(functions)</code>$\rightarrow$<code>HAVING</code>$\rightarrow$<code>SELECT</code>$\rightarrow$<code>DISTINCT</code>$\rightarrow$<code>ORDER BY</code></p>
+<blockquote>
+<p>Note that predicates in the <code>HAVING</code> clause are applied after <code>GROUP</code>.<br>Aggregate functions can’t be used in <code>WHERE</code> clause directly.</p>
+</blockquote>
+<h3 id="NULL-values"><a href="#NULL-values" class="headerlink" title="NULL values"></a>NULL values</h3><p><code>NULL</code> is a special marker used in SQL, first introduced by $\mathrm{E.F.Codd.}$. It means ‘missing information’ or ‘unknown’</p>
+<ul>
+<li>The result of any arithmetic expression involving <code>NULL</code> is <code>NULL</code>.</li>
+<li>Any comparison with <code>NULL</code> returns <code>UNKNOWN</code>.<ul>
+<li><code>NULL = NULL</code></li>
+</ul>
+</li>
+</ul>
+<p><strong>Three valued logic</strong> : $\mathrm{\{true,false,UNKNOWN\}}$ </p>
+<ul>
+<li><code>UNKNOWN or TRUE = TRUE</code></li>
+<li><code>UNKNOWN or FALSE = UNKNOWN</code></li>
+<li><code>UNKNOWN or UNKNOWN = UNKNOWN</code></li>
+<li><code>UNKNOWN and TRUE = UNKNOWN</code></li>
+<li><code>UNKNOWN and FALSE = FALSE</code></li>
+<li><code>UNKNOWN and UNKNOWN = UNKNOWN</code></li>
+<li><code>not UNKNOWN = UNKNOWN</code></li>
+</ul>
+<p><code>UNKNOWN</code> is treated as <code>FALSE</code> in <code>WHERE</code> clauses.</p>
+<p><code>P IS UNKNOWN</code> predicate evaluates to true if predicate <code>P</code> equals to <code>UNKNOWN</code></p>
+<p><code>IS NULL</code> and <code>IS NOT NULL</code> predicates:<br>e.g. find all valid tuples:<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> dick_owner</span><br><span class="line"><span class="keyword">FROM</span> dick</span><br><span class="line"><span class="keyword">WHERE</span> dick_length <span class="keyword">IS</span> <span class="keyword">NOT</span> <span class="keyword">NULL</span>;</span><br></pre></td></tr></table></figure></p>
+<p><code>NULL</code> will be ignored in aggregate functions except <code>COUNT()</code>.</p>
+<h3 id="Nested-Subqueries"><a href="#Nested-Subqueries" class="headerlink" title="Nested Subqueries"></a>Nested Subqueries</h3><p>A subquery is a <code>SELECT_FROM_WHERE</code> expression that is nested within another query. A common usage of subqueries is to perform tests for set membership and set comparisons.</p>
+<p>e.g. Find all person who is both rich and stupid.<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> <span class="keyword">distinct</span> names</span><br><span class="line"><span class="keyword">FROM</span> richie</span><br><span class="line"><span class="keyword">WHERE</span> names <span class="keyword">IN</span> (<span class="keyword">SELECT</span> names </span><br><span class="line">                <span class="keyword">FROM</span> douchebag)</span><br></pre></td></tr></table></figure><br>e.g. Find all person who is both rich and NOT stupid.<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> <span class="keyword">distinct</span> names</span><br><span class="line"><span class="keyword">FROM</span> richie</span><br><span class="line"><span class="keyword">WHERE</span> names <span class="keyword">NOT</span> <span class="keyword">IN</span> (<span class="keyword">SELECT</span> names </span><br><span class="line">                    <span class="keyword">FROM</span> douchebag)</span><br></pre></td></tr></table></figure><br>e.g. Find the owner of the biggest dick for every city<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> dick_owner B, dick_length</span><br><span class="line"><span class="keyword">FROM</span> dick A</span><br><span class="line"><span class="keyword">WHERE</span> dick_length <span class="operator">&gt;=</span> (<span class="keyword">SELECT</span> <span class="built_in">max</span>(dick_length)</span><br><span class="line">                      <span class="keyword">FROM</span> dick B</span><br><span class="line">                      <span class="keyword">WHERE</span> A.city <span class="operator">=</span> B.city)</span><br><span class="line"><span class="keyword">ORDER</span> <span class="keyword">BY</span> dick_length</span><br></pre></td></tr></table></figure></p>
+<h4 id="Some-and-all-clause"><a href="#Some-and-all-clause" class="headerlink" title="Some and all clause"></a><strong>Some and all clause</strong></h4><p>$C[comp]$ <code>SOME</code> $r\leftrightarrow \exist t\in r, C[comp]t$ holds, where $[comp]$ could be $&lt;,&gt;,\le,\ge,=,\neq.$</p>
+<p>For example $6&lt;$ <code>SOME</code> $\{2,4,5,7\}=$ <code>TRUE</code>.</p>
+<blockquote>
+<p>$(=$ <code>SOME</code> $)\equiv$ <code>IN</code>.</p>
+</blockquote>
+<p>$C[comp]$ <code>ALL</code> $r\leftrightarrow \forall t\in r, C[comp]t$ holds, where $[comp]$ could be $&lt;,&gt;,\le,\ge,=,\neq.$</p>
+<p>For example $6&lt;$ <code>ALL</code> $\{5,7,9,10\}=$ <code>FALSE</code>.</p>
+<blockquote>
+<p>$(\neq$ <code>ALL</code> $)\equiv$ <code>NOT IN</code>.</p>
+</blockquote>
+<h4 id="Test-for-empty-relations"><a href="#Test-for-empty-relations" class="headerlink" title="Test for empty relations"></a><strong>Test for empty relations</strong></h4><p><code>EXISTS</code> construct returns the value <code>TRUE</code> if the argument subquery is non-empty.</p>
+<p><code>EXISTS</code> $r\leftrightarrow r\neq \phi.$</p>
+<h4 id="Test-for-absence-of-Duplicate-Tuples"><a href="#Test-for-absence-of-Duplicate-Tuples" class="headerlink" title="Test for absence of Duplicate Tuples"></a><strong>Test for absence of Duplicate Tuples</strong></h4><p><code>UNIQUE</code> construct tests whether a subquery has any duplicates in its result.<br>e.g. Find all person who have only one child<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> names</span><br><span class="line"><span class="keyword">FROM</span> child <span class="keyword">as</span> T</span><br><span class="line"><span class="keyword">WHERE</span> <span class="keyword">UNIQUE</span> (<span class="keyword">SELECT</span> names</span><br><span class="line">              <span class="keyword">FROM</span> child <span class="keyword">AS</span> P</span><br><span class="line">              <span class="keyword">WHERE</span> T.names <span class="operator">=</span> P.names)</span><br></pre></td></tr></table></figure></p>
+<h3 id="Views"><a href="#Views" class="headerlink" title="Views"></a>Views</h3><p>Views provide a mechanism to hide certain data from the view of certain users.</p>
+<p>To create a view we use:<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> <span class="keyword">VIEW</span> <span class="operator">&lt;</span>name_v<span class="operator">&gt;</span> <span class="keyword">AS</span></span><br><span class="line">    <span class="keyword">SELECT</span> ... <span class="keyword">FROM</span> ... <span class="keyword">WHERE</span> ...</span><br></pre></td></tr></table></figure><br>To drop a view we use:<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">DROP</span> <span class="keyword">VIEW</span> <span class="operator">&lt;</span>name_v<span class="operator">&gt;</span></span><br></pre></td></tr></table></figure><br>Benefits of using a view</p>
+<ul>
+<li>Easy to use.</li>
+<li>Security.</li>
+<li>Supports logical independent.</li>
+</ul>
+<h3 id="Derived-Relations"><a href="#Derived-Relations" class="headerlink" title="Derived Relations"></a>Derived Relations</h3><p><code>WITH</code> clause allows views to be defined locally for a query rather than globally.</p>
 
                 </div>
 
@@ -354,14 +503,14 @@
         <div class="copyright-info-bottom border-box">
             <div class="copyright-post-author bottom-item">
                 <div class="type">
-                    作者
+                    Author
                 </div>
                 <div class="content">404</div>
             </div>
 
             <div class="post-time bottom-item">
                 <div class="type">
-                    發布于
+                    Published
                 </div>
                 <div class="content">2024-02-29 09:56</div>
             </div>
@@ -369,7 +518,7 @@
 
             <div class="post-license bottom-item">
                 <div class="type">
-                    許可
+                    License
                 </div>
                 <div class="content tooltip" data-tooltip-content="CC BY-NC-SA 4.0">
                     <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed">
@@ -384,7 +533,7 @@
 
         <i class="copyright-bg fa-solid fa-copyright"></i>
     </div>
-    <div class="copy-copyright-info flex-center tooltip" data-tooltip-content="復製版權信息" data-tooltip-offset-y="-2px">
+    <div class="copy-copyright-info flex-center tooltip" data-tooltip-content="Copy copyright info" data-tooltip-offset-y="-2px">
         <i class="fa-solid fa-copy"></i>
     </div>
 </div>
@@ -400,19 +549,19 @@
                             <div class="post-share-container border-box">
     <ul class="share-list-wrap border-box">
         <li class="qq share-item border-box flex-center tooltip"
-            data-tooltip-content="分享到 QQ"
+            data-tooltip-content="Share to QQ"
         >
             <i class="fa-brands fa-qq"></i>
         </li>
         <li class="wechat share-item border-box flex-center tooltip tooltip-img"
-            data-tooltip-content="分享到微信"
-            data-tooltip-img-tip="微信掃壹掃"
+            data-tooltip-content="Share to WeChat"
+            data-tooltip-img-tip="Scan by WeChat"
             data-tooltip-img-style="background-color: #fff; top: -10px; padding: 0.6rem 0.6rem 0.1rem 0.6rem;"
         >
             <i class="fa-brands fa-weixin"></i>
         </li>
         <li class="weibo share-item border-box flex-center tooltip"
-            data-tooltip-content="分享到微博"
+            data-tooltip-content="Share to WeiBo"
         >
             <i class="fa-brands fa-weibo"></i>
         </li>
@@ -439,7 +588,7 @@
                                     </span>
                                     <span class="title flex-center">
                                         <span class="post-nav-title-item text-ellipsis">🖊️ 计算机学院 面向对象程序设计 （Object-Oriented Programming）</span>
-                                        <span class="post-nav-item">上一篇</span>
+                                        <span class="post-nav-item">Prev posts</span>
                                     </span>
                                 </a>
                             </div>
@@ -453,7 +602,7 @@
                                 >
                                     <span class="title flex-center">
                                         <span class="post-nav-title-item text-ellipsis">🖊️ 计算机学院 计算机组成 （Computer Organization）</span>
-                                        <span class="post-nav-item">下一篇</span>
+                                        <span class="post-nav-item">Next posts</span>
                                     </span>
                                     <span class="right arrow-icon flex-center">
                                         <i class="fas fa-chevron-right"></i>
@@ -470,15 +619,15 @@
 
     <div class="comments-container border-box">
         <div id="comments-anchor" class="comment-area-title border-box">
-            <i class="fas fa-comments"></i>&nbsp;留言
+            <i class="fas fa-comments"></i>&nbsp;Comments
         </div>
         <div class="comment-plugin-fail border-box">
-    <span class="fail-tip">評論插件加載失敗</span>
-    <button class="reload keep-button">點擊重新加載</button>
+    <span class="fail-tip">Comment plugin failed to load</span>
+    <button class="reload keep-button">Click to reload</button>
 </div>
 <div class="comment-plugin-loading flex-center border-box">
     <i class="loading-icon fa-solid fa-spinner fa-spin"></i>
-    <span class="load-tip">正在加載評論插件</span>
+    <span class="load-tip">Loading comment plugin</span>
 </div>
 <script data-pjax>
   window.KeepCommentPlugin = {}
@@ -552,7 +701,7 @@
             <div class="pc-post-toc right-toc">
                 <div class="post-toc-wrap border-box">
     <div class="post-toc border-box">
-        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Basic-info"><span class="nav-text">Basic info</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Lec-1-Introduction"><span class="nav-text">Lec 1 : Introduction</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Abstraction-of-a-database-system%EF%BC%9A"><span class="nav-text">Abstraction of a database system：</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Lec-2-Relational-Model"><span class="nav-text">Lec 2 : Relational Model</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Relations"><span class="nav-text">Relations</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Basic-Definition-of-a-relation"><span class="nav-text">Basic Definition of a relation:</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Attribute-Types%EF%BC%9A"><span class="nav-text">Attribute Types：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Properties-of-a-relation"><span class="nav-text">Properties of a relation:</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Database%EF%BC%9A"><span class="nav-text">Database：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Key%EF%BC%9A-K-subseteq-mathbf-R-An-attribute-of-the-relation-schema"><span class="nav-text">Key：$K\subseteq \mathbf{R}$. (An attribute of the relation schema)</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Fundamental-Relational-Algebra-Operations"><span class="nav-text">Fundamental Relational-Algebra Operations</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Select"><span class="nav-text">Select</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Project"><span class="nav-text">Project</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Union"><span class="nav-text">Union</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Set-Difference"><span class="nav-text">Set Difference</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Cartesian-Product"><span class="nav-text">Cartesian Product</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Rename"><span class="nav-text">Rename</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Advanced"><span class="nav-text">Advanced</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Natural-Join-Operation"><span class="nav-text">Natural Join Operation</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Theta-join-Operation"><span class="nav-text">Theta join Operation</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Division-Operation"><span class="nav-text">Division Operation</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Assignment-Operation"><span class="nav-text">Assignment Operation</span></a></li></ol></li></ol></li></ol>
+        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Basic-info"><span class="nav-text">Basic info</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Lec-1-Introduction"><span class="nav-text">Lec 1 : Introduction</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Abstraction-of-a-database-system%EF%BC%9A"><span class="nav-text">Abstraction of a database system：</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Lec-2-Relational-Model"><span class="nav-text">Lec 2 : Relational Model</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Relations"><span class="nav-text">Relations</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Basic-Definition-of-a-relation"><span class="nav-text">Basic Definition of a relation:</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Attribute-Types%EF%BC%9A"><span class="nav-text">Attribute Types：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Properties-of-a-relation"><span class="nav-text">Properties of a relation:</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Database%EF%BC%9A"><span class="nav-text">Database：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Key"><span class="nav-text">Key</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Fundamental-Relational-Algebra-Operations"><span class="nav-text">Fundamental Relational-Algebra Operations</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Select"><span class="nav-text">Select</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Project"><span class="nav-text">Project</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Union"><span class="nav-text">Union</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Set-Difference"><span class="nav-text">Set Difference</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Cartesian-Product"><span class="nav-text">Cartesian Product</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Rename"><span class="nav-text">Rename</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Advanced"><span class="nav-text">Advanced</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Natural-Join-Operation"><span class="nav-text">Natural Join Operation</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Theta-join-Operation"><span class="nav-text">Theta join Operation</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Division-Operation"><span class="nav-text">Division Operation</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Assignment-Operation"><span class="nav-text">Assignment Operation</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Lec-3-SQL"><span class="nav-text">Lec 3 : SQL</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Data-Definition-Language"><span class="nav-text">Data-Definition Language</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Create-drop-or-alter-table-and-Define-the-schema-for-relations"><span class="nav-text">Create, drop or alter table and Define the schema for relations</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Define-the-domain-of-values-associated-with-each-attribute"><span class="nav-text">Define the domain of values associated with each attribute</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Define-the-integrity-constraints"><span class="nav-text">Define the integrity constraints.</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Other"><span class="nav-text">Other</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Basic-Structure-of-command"><span class="nav-text">Basic Structure of command</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#select-clause"><span class="nav-text">select clause</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#string-operations"><span class="nav-text">string operations</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#ordering-of-display-of-tuples"><span class="nav-text">ordering of display of tuples</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Set-Operation"><span class="nav-text">Set Operation</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Aggregate-Functions"><span class="nav-text">Aggregate Functions</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Execution-of-SELECT"><span class="nav-text">Execution of SELECT</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#NULL-values"><span class="nav-text">NULL values</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Nested-Subqueries"><span class="nav-text">Nested Subqueries</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Some-and-all-clause"><span class="nav-text">Some and all clause</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Test-for-empty-relations"><span class="nav-text">Test for empty relations</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Test-for-absence-of-Duplicate-Tuples"><span class="nav-text">Test for absence of Duplicate Tuples</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Views"><span class="nav-text">Views</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Derived-Relations"><span class="nav-text">Derived Relations</span></a></li></ol></li></ol>
     </div>
 </div>
 
@@ -580,7 +729,7 @@
             </div>
 
             <div class="theme-info info-item default">
-                <a target="_blank" href="https://hexo.io">Hexo</a>&nbsp;框架&nbsp;&&nbsp;主題&nbsp;<a class="keep-version" target="_blank" href="https://github.com/XPoet/hexo-theme-keep">Keep</a>
+                Powered by&nbsp;<a target="_blank" href="https://hexo.io">Hexo</a>&nbsp;&&nbsp;Theme&nbsp;<a class="keep-version" target="_blank" href="https://github.com/XPoet/hexo-theme-keep">Keep</a>
             </div>
 
             
@@ -589,7 +738,7 @@
                 
                 <div class="deploy-info info-item default">
                     
-                        本站由 <span class="tooltip" data-tooltip-content="GitHub Pages"><img src="/images/deploy-provider/github.png"></span> 提供部署服務
+                        This site is deployed on <span class="tooltip" data-tooltip-content="GitHub Pages"><img src="/images/deploy-provider/github.png"></span>
                     
                 </div>
             
@@ -701,7 +850,7 @@
                 <input autocomplete="off"
                        autocorrect="off"
                        autocapitalize="off"
-                       placeholder="搜尋..."
+                       placeholder="Search..."
                        spellcheck="false"
                        type="search"
                        class="search-input"
@@ -727,7 +876,7 @@
             <div class="tablet-post-toc">
                 <div class="post-toc-wrap border-box">
     <div class="post-toc border-box">
-        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Basic-info"><span class="nav-text">Basic info</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Lec-1-Introduction"><span class="nav-text">Lec 1 : Introduction</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Abstraction-of-a-database-system%EF%BC%9A"><span class="nav-text">Abstraction of a database system：</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Lec-2-Relational-Model"><span class="nav-text">Lec 2 : Relational Model</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Relations"><span class="nav-text">Relations</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Basic-Definition-of-a-relation"><span class="nav-text">Basic Definition of a relation:</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Attribute-Types%EF%BC%9A"><span class="nav-text">Attribute Types：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Properties-of-a-relation"><span class="nav-text">Properties of a relation:</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Database%EF%BC%9A"><span class="nav-text">Database：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Key%EF%BC%9A-K-subseteq-mathbf-R-An-attribute-of-the-relation-schema"><span class="nav-text">Key：$K\subseteq \mathbf{R}$. (An attribute of the relation schema)</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Fundamental-Relational-Algebra-Operations"><span class="nav-text">Fundamental Relational-Algebra Operations</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Select"><span class="nav-text">Select</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Project"><span class="nav-text">Project</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Union"><span class="nav-text">Union</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Set-Difference"><span class="nav-text">Set Difference</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Cartesian-Product"><span class="nav-text">Cartesian Product</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Rename"><span class="nav-text">Rename</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Advanced"><span class="nav-text">Advanced</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Natural-Join-Operation"><span class="nav-text">Natural Join Operation</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Theta-join-Operation"><span class="nav-text">Theta join Operation</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Division-Operation"><span class="nav-text">Division Operation</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Assignment-Operation"><span class="nav-text">Assignment Operation</span></a></li></ol></li></ol></li></ol>
+        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Basic-info"><span class="nav-text">Basic info</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Lec-1-Introduction"><span class="nav-text">Lec 1 : Introduction</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Abstraction-of-a-database-system%EF%BC%9A"><span class="nav-text">Abstraction of a database system：</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Lec-2-Relational-Model"><span class="nav-text">Lec 2 : Relational Model</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Relations"><span class="nav-text">Relations</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Basic-Definition-of-a-relation"><span class="nav-text">Basic Definition of a relation:</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Attribute-Types%EF%BC%9A"><span class="nav-text">Attribute Types：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Properties-of-a-relation"><span class="nav-text">Properties of a relation:</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Database%EF%BC%9A"><span class="nav-text">Database：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Key"><span class="nav-text">Key</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Fundamental-Relational-Algebra-Operations"><span class="nav-text">Fundamental Relational-Algebra Operations</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Select"><span class="nav-text">Select</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Project"><span class="nav-text">Project</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Union"><span class="nav-text">Union</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Set-Difference"><span class="nav-text">Set Difference</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Cartesian-Product"><span class="nav-text">Cartesian Product</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Rename"><span class="nav-text">Rename</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Advanced"><span class="nav-text">Advanced</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Natural-Join-Operation"><span class="nav-text">Natural Join Operation</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Theta-join-Operation"><span class="nav-text">Theta join Operation</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Division-Operation"><span class="nav-text">Division Operation</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Assignment-Operation"><span class="nav-text">Assignment Operation</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Lec-3-SQL"><span class="nav-text">Lec 3 : SQL</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Data-Definition-Language"><span class="nav-text">Data-Definition Language</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Create-drop-or-alter-table-and-Define-the-schema-for-relations"><span class="nav-text">Create, drop or alter table and Define the schema for relations</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Define-the-domain-of-values-associated-with-each-attribute"><span class="nav-text">Define the domain of values associated with each attribute</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Define-the-integrity-constraints"><span class="nav-text">Define the integrity constraints.</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Other"><span class="nav-text">Other</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Basic-Structure-of-command"><span class="nav-text">Basic Structure of command</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#select-clause"><span class="nav-text">select clause</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#string-operations"><span class="nav-text">string operations</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#ordering-of-display-of-tuples"><span class="nav-text">ordering of display of tuples</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Set-Operation"><span class="nav-text">Set Operation</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Aggregate-Functions"><span class="nav-text">Aggregate Functions</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Execution-of-SELECT"><span class="nav-text">Execution of SELECT</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#NULL-values"><span class="nav-text">NULL values</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Nested-Subqueries"><span class="nav-text">Nested Subqueries</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Some-and-all-clause"><span class="nav-text">Some and all clause</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Test-for-empty-relations"><span class="nav-text">Test for empty relations</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Test-for-absence-of-Duplicate-Tuples"><span class="nav-text">Test for absence of Duplicate Tuples</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Views"><span class="nav-text">Views</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Derived-Relations"><span class="nav-text">Derived Relations</span></a></li></ol></li></ol>
     </div>
 </div>
 
